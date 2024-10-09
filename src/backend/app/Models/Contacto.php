@@ -18,5 +18,10 @@ class Contacto extends Model
     ];
 
     public $timestamps = false;
+
+    public function cliente()
+    {
+        return $this->belongsTo(Cliente::class, 'idCliente');
+    }
     
 }

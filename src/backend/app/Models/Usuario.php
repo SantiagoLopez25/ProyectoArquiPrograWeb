@@ -20,4 +20,14 @@ class Usuario extends Model
     ];
 
     public $timestamps = false;
+
+    public function rol()
+    {
+        return $this->belongsTo(Rol::class, 'idRol');
+    }
+
+    public function empleado()
+    {
+        return $this->belongsTo(Empleado::class, 'idEmpleado');
+    }
 }

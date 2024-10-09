@@ -21,4 +21,14 @@ class Producto extends Model
     ];
 
     public $timestamps = false;
+
+    public function tipoProducto()
+    {
+        return $this->belongsTo(TipoProducto::class, 'tipoProducto');
+    }
+
+    public function marca()
+    {
+        return $this->belongsTo(Marca::class, 'idMarca');
+    }
 }

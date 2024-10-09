@@ -18,4 +18,14 @@ class RProductoSucursal extends Model
     ];
 
     public $timestamps = false;
+
+    public function producto()
+    {
+        return $this->belongsTo(Producto::class, 'idProducto');
+    }
+
+    public function sucursal()
+    {
+        return $this->belongsTo(Sucursal::class, 'idSucursal');
+    }
 }

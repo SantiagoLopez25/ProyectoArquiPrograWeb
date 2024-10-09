@@ -12,7 +12,6 @@ class detalleFactura extends Model
     protected $primaryKey = 'idDetalleFactura';  
 
     protected $fillable = [
-        'telefono',
         'cantidad',
         'idFactura',
         'idSerie',
@@ -20,4 +19,20 @@ class detalleFactura extends Model
     ];
 
     public $timestamps = false;
+
+
+    public function factura()
+    {
+        return $this->belongsTo(Factura::class, 'idFactura');
+    }
+
+    public function serieFactura()
+    {
+        return $this->belongsTo(SerieFactura::class, 'idSerie');
+    }
+    
+    public function producto()
+    {
+        return $this->belongsTo(Producto::class, 'idProducto');
+    }
 }

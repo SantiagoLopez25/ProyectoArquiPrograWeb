@@ -20,4 +20,9 @@ class Empleado extends Model
     ];
 
     public $timestamps = false;
+
+    public function sucursal()
+    {
+        return $this->belongsTo(Sucursal::class, 'idSucursal');
+    }
 }

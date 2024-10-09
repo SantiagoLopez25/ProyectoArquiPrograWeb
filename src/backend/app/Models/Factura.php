@@ -19,4 +19,18 @@ class Factura extends Model
     ];
 
     public $timestamps = false;
+
+    public function cliente()
+    {
+        return $this->belongsTo(Cliente::class, 'idCliente');
+    }
+
+    public function serieFactura()
+    {
+        return $this->belongsTo(SerieFactura::class, 'idSerie');
+    }
+
+   
+
+
 }
