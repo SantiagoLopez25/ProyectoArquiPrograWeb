@@ -3,20 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cliente;
+use App\Models\Usuario;
 
-class ClienteController extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
-        $clientes = Cliente::all();
+        //
+        $usuarios = Usuario::all();
        
-        return response()->json($clientes, 200);
-        //return csrf_token();
+        return response()->json($usuarios, 200);
     }
 
     /**
@@ -33,15 +32,16 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         //
-
         try {
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+                'usuario' => 'required|string|max:20',
+                'password' => 'required',
+                'estado' => 'required|boolean',
+                'idEmpleado' => 'required|exists:Empleado,idEmpleado',
+                 'idRol' => 'required|exists:Rol,idRol'
             ]);
     
-            $clientes = Cliente::create($request->all());
+            $usuarios = Usuario::create($request->all());
            // return response()->json($clientes, 201);
             return 1;
 
@@ -60,10 +60,8 @@ class ClienteController extends Controller
     public function show(string $id)
     {
         //
-        $cliente = Cliente::find($id);
-       return response()->json($cliente, 200);
-       
-        
+        $usuarios = Usuario::find($id);
+        return response()->json($usuarios, 200);
     }
 
     /**
@@ -82,14 +80,16 @@ class ClienteController extends Controller
         //
         try{
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+                'usuario' => 'required|string|max:20',
+                'password' => 'required',
+                'estado' => 'required|boolean',
+                'idEmpleado' => 'required|exists:Empleado,idEmpleado',
+                 'idRol' => 'required|exists:Rol,idRol'
             ]);
     
-            $clientes = Cliente::findOrFail($id); 
+            $usuarios = Usuario::findOrFail($id); 
     
-            $clientes->update($request->all());
+            $usuarios->update($request->all());
             //return response()->json($clientes, 200);
             return 1;
         }
@@ -105,9 +105,5 @@ class ClienteController extends Controller
     public function destroy(string $id)
     {
         //
-       /* $clientes = Cliente::findOrFail($id); //Si no lo encuentra devuelve un error 404
-
-        $clientes->delete();
-        return response()->json('El cliente ha sido eliminado', 200);*/
     }
 }

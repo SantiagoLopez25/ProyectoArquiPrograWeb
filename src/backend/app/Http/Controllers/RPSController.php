@@ -3,20 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cliente;
+use App\Models\RProductoSucursal;
 
-class ClienteController extends Controller
+class RPSController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
-        $clientes = Cliente::all();
+        //
+        $rps = RProductoSucursal::all();
        
-        return response()->json($clientes, 200);
-        //return csrf_token();
+        return response()->json($rps, 200);
     }
 
     /**
@@ -33,15 +32,14 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         //
-
         try {
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+               'cantidad' => 'required|integer',
+                'idProducto' => 'required|exists:Producto|idProducto',
+                'idSucursal' => 'required|exists:Sucursal|idSucursal'
             ]);
     
-            $clientes = Cliente::create($request->all());
+            $rps = RProductoSucursal::create($request->all());
            // return response()->json($clientes, 201);
             return 1;
 
@@ -60,10 +58,8 @@ class ClienteController extends Controller
     public function show(string $id)
     {
         //
-        $cliente = Cliente::find($id);
-       return response()->json($cliente, 200);
-       
-        
+        $rps = RProductoSucursal::find($id);
+        return response()->json($rps, 200);
     }
 
     /**
@@ -82,14 +78,14 @@ class ClienteController extends Controller
         //
         try{
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+                'cantidad' => 'required|integer',
+                'idProducto' => 'required|exists:Producto|idProducto',
+                'idSucursal' => 'required|exists:Sucursal|idSucursal'
             ]);
     
-            $clientes = Cliente::findOrFail($id); 
+            $rps = RProductoSucursal::findOrFail($id); 
     
-            $clientes->update($request->all());
+            $rps->update($request->all());
             //return response()->json($clientes, 200);
             return 1;
         }
@@ -105,9 +101,5 @@ class ClienteController extends Controller
     public function destroy(string $id)
     {
         //
-       /* $clientes = Cliente::findOrFail($id); //Si no lo encuentra devuelve un error 404
-
-        $clientes->delete();
-        return response()->json('El cliente ha sido eliminado', 200);*/
     }
 }

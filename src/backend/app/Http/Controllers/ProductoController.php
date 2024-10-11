@@ -3,20 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cliente;
+use App\Models\Producto;
 
-class ClienteController extends Controller
+class ProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
-        $clientes = Cliente::all();
+        //
+        $productos = Producto::all();
        
-        return response()->json($clientes, 200);
-        //return csrf_token();
+        return response()->json($productos, 200);
     }
 
     /**
@@ -33,15 +32,17 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         //
-
         try {
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+                'nombre' => 'required|string|max:50',
+                'descripcion' => 'required|string|max:500',
+                'precioVenta' => 'decimal|min:0|max:9999999999.99',
+                'estado' => 'required|boolean',
+                'idTipoProducto' => 'required|exists:Producto,idTipoProducto',
+                'idMarca' => 'required|exists:Marca,idMarca'
             ]);
     
-            $clientes = Cliente::create($request->all());
+            $productos = Producto::create($request->all());
            // return response()->json($clientes, 201);
             return 1;
 
@@ -60,10 +61,9 @@ class ClienteController extends Controller
     public function show(string $id)
     {
         //
-        $cliente = Cliente::find($id);
-       return response()->json($cliente, 200);
-       
-        
+        $productos = Producto::find($id);
+         return response()->json($productos, 200);
+        //return 1;
     }
 
     /**
@@ -82,14 +82,17 @@ class ClienteController extends Controller
         //
         try{
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+               'nombre' => 'required|string|max:50',
+                'descripcion' => 'required|string|max:500',
+                'precioVenta' => 'decimal|min:0|max:9999999999.99',
+                'estado' => 'required|boolean',
+                'idTipoProducto' => 'required|exists:Producto,idTipoProducto',
+                'idMarca' => 'required|exists:Marca,idMarca'
             ]);
     
-            $clientes = Cliente::findOrFail($id); 
+            $productos = Producto::findOrFail($id); 
     
-            $clientes->update($request->all());
+            $productos->update($request->all());
             //return response()->json($clientes, 200);
             return 1;
         }
@@ -105,9 +108,5 @@ class ClienteController extends Controller
     public function destroy(string $id)
     {
         //
-       /* $clientes = Cliente::findOrFail($id); //Si no lo encuentra devuelve un error 404
-
-        $clientes->delete();
-        return response()->json('El cliente ha sido eliminado', 200);*/
     }
 }

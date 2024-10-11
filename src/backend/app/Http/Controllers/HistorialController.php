@@ -3,20 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cliente;
+use App\Models\Historial;
 
-class ClienteController extends Controller
+class HistorialController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
-        $clientes = Cliente::all();
+        //
+        $historiales = Historial::all();
        
-        return response()->json($clientes, 200);
-        //return csrf_token();
+        return response()->json($historiales, 200);
     }
 
     /**
@@ -33,15 +32,14 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         //
-
         try {
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+                'descripcion' => 'required|string|max:500',
+                'fecha' => 'required|date',
+                'idUsuario' => 'required|exists:Usuario,idUsuario'
             ]);
     
-            $clientes = Cliente::create($request->all());
+            $historiales = Historial::create($request->all());
            // return response()->json($clientes, 201);
             return 1;
 
@@ -60,9 +58,8 @@ class ClienteController extends Controller
     public function show(string $id)
     {
         //
-        $cliente = Cliente::find($id);
-       return response()->json($cliente, 200);
-       
+        $historiales = Historial::find($id);
+        return response()->json($historiales, 200);
         
     }
 
@@ -82,14 +79,14 @@ class ClienteController extends Controller
         //
         try{
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+               'descripcion' => 'required|string|max:500',
+                'fecha' => 'required|date',
+                'idUsuario' => 'required|exists:Usuario,idUsuario'
             ]);
     
-            $clientes = Cliente::findOrFail($id); 
+            $historiales = Historial::findOrFail($id); 
     
-            $clientes->update($request->all());
+            $historiales->update($request->all());
             //return response()->json($clientes, 200);
             return 1;
         }
@@ -105,9 +102,5 @@ class ClienteController extends Controller
     public function destroy(string $id)
     {
         //
-       /* $clientes = Cliente::findOrFail($id); //Si no lo encuentra devuelve un error 404
-
-        $clientes->delete();
-        return response()->json('El cliente ha sido eliminado', 200);*/
     }
 }

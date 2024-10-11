@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cliente;
+use App\Models\Factura;
 
-class ClienteController extends Controller
+class FacturaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
-        $clientes = Cliente::all();
+        //
+        $facturas = Factura::all();
        
-        return response()->json($clientes, 200);
-        //return csrf_token();
+        return response()->json($facturas, 200);
+        
     }
 
     /**
@@ -33,15 +33,15 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         //
-
         try {
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+                'fechaFactura' => 'required|date',
+                'montoTotal' => 'required|min:0|max:9999999999999999.99',
+                'idCliente' => 'required|exists:Cliente,idCliente',
+                'idSerie' => 'required|exists:SerieFactura|idSerie'
             ]);
     
-            $clientes = Cliente::create($request->all());
+            $facturas = Factura::create($request->all());
            // return response()->json($clientes, 201);
             return 1;
 
@@ -60,10 +60,9 @@ class ClienteController extends Controller
     public function show(string $id)
     {
         //
-        $cliente = Cliente::find($id);
-       return response()->json($cliente, 200);
-       
-        
+        $facturas = Factura::find($id);
+         return response()->json($facturas, 200);
+        //return 1;
     }
 
     /**
@@ -82,14 +81,15 @@ class ClienteController extends Controller
         //
         try{
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+                'fechaFactura' => 'required|date',
+                'montoTotal' => 'required|min:0|max:9999999999999999.99',
+                'idCliente' => 'required|exists:Cliente,idCliente',
+                'idSerie' => 'required|exists:SerieFactura|idSerie'
             ]);
     
-            $clientes = Cliente::findOrFail($id); 
+            $facturas = Factura::findOrFail($id); 
     
-            $clientes->update($request->all());
+            $facturas->update($request->all());
             //return response()->json($clientes, 200);
             return 1;
         }
@@ -105,9 +105,5 @@ class ClienteController extends Controller
     public function destroy(string $id)
     {
         //
-       /* $clientes = Cliente::findOrFail($id); //Si no lo encuentra devuelve un error 404
-
-        $clientes->delete();
-        return response()->json('El cliente ha sido eliminado', 200);*/
     }
 }

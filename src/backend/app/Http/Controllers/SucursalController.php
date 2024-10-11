@@ -3,20 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cliente;
+use App\Models\Sucursal;
 
-class ClienteController extends Controller
+class SucursalController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
-        $clientes = Cliente::all();
+        //
+        $sucursales = Sucursal::all();
        
-        return response()->json($clientes, 200);
-        //return csrf_token();
+        return response()->json($sucursales, 200);
     }
 
     /**
@@ -36,12 +35,16 @@ class ClienteController extends Controller
 
         try {
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+                'nombre' => 'required|string|max:50',
+                'ubicacion' => 'requerid|string|max:100',
+                'telefono' => 'requerid|string|max:8',
+                'email' => 'requerid|string|max:50',
+                'celular' => 'requerid|string|max:8',
+                'estado' => 'required|boolean',
+                'direccion' => 'requerid|string|max:100'
             ]);
     
-            $clientes = Cliente::create($request->all());
+            $sucursales = Sucursal::create($request->all());
            // return response()->json($clientes, 201);
             return 1;
 
@@ -60,10 +63,8 @@ class ClienteController extends Controller
     public function show(string $id)
     {
         //
-        $cliente = Cliente::find($id);
-       return response()->json($cliente, 200);
-       
-        
+        $sucursales = Sucursal::find($id);
+        return response()->json($sucursales, 200);
     }
 
     /**
@@ -82,14 +83,18 @@ class ClienteController extends Controller
         //
         try{
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+                'nombre' => 'required|string|max:50',
+                'ubicacion' => 'requerid|string|max:100',
+                'telefono' => 'requerid|string|max:8',
+                'email' => 'requerid|string|max:50',
+                'celular' => 'requerid|string|max:8',
+                'estado' => 'required|boolean',
+                'direccion' => 'requerid|string|max:100'
             ]);
     
-            $clientes = Cliente::findOrFail($id); 
+            $sucursales = Sucursal::findOrFail($id); 
     
-            $clientes->update($request->all());
+            $sucursales->update($request->all());
             //return response()->json($clientes, 200);
             return 1;
         }
@@ -105,9 +110,5 @@ class ClienteController extends Controller
     public function destroy(string $id)
     {
         //
-       /* $clientes = Cliente::findOrFail($id); //Si no lo encuentra devuelve un error 404
-
-        $clientes->delete();
-        return response()->json('El cliente ha sido eliminado', 200);*/
     }
 }

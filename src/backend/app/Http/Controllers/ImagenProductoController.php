@@ -3,20 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cliente;
+use App\Models\ImagenProducto;
 
-class ClienteController extends Controller
+class ImagenProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
-        $clientes = Cliente::all();
+        //
+        $imagenes = ImagenProducto::all();
        
-        return response()->json($clientes, 200);
-        //return csrf_token();
+        return response()->json($imagenes, 200);
     }
 
     /**
@@ -33,15 +32,13 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         //
-
         try {
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+               'ruta' => 'required|string|max:1000',
+                'nombre' => 'required|string|max:50'
             ]);
     
-            $clientes = Cliente::create($request->all());
+            $imagenes = ImagenProducto::create($request->all());
            // return response()->json($clientes, 201);
             return 1;
 
@@ -60,10 +57,8 @@ class ClienteController extends Controller
     public function show(string $id)
     {
         //
-        $cliente = Cliente::find($id);
-       return response()->json($cliente, 200);
-       
-        
+        $imagenes = ImagenProducto::find($id);
+        return response()->json($imagenes, 200);
     }
 
     /**
@@ -82,14 +77,13 @@ class ClienteController extends Controller
         //
         try{
             $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+                'ruta' => 'required|string|max:1000',
+                'nombre' => 'required|string|max:50'
             ]);
     
-            $clientes = Cliente::findOrFail($id); 
+            $imagenes = ImagenProducto::findOrFail($id); 
     
-            $clientes->update($request->all());
+            $imagenes->update($request->all());
             //return response()->json($clientes, 200);
             return 1;
         }
@@ -105,9 +99,5 @@ class ClienteController extends Controller
     public function destroy(string $id)
     {
         //
-       /* $clientes = Cliente::findOrFail($id); //Si no lo encuentra devuelve un error 404
-
-        $clientes->delete();
-        return response()->json('El cliente ha sido eliminado', 200);*/
     }
 }

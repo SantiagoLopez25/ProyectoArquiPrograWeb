@@ -37,7 +37,7 @@ class ContactoController extends Controller
             $request->validate([
                 'telefono' => 'required|string|max:8',
                 'email' => 'required|string|max:75',
-                'idCliente' => 'required|int'
+                'idCliente' => 'required|exists:Cliente,idCliente'
             ]);
     
             $contactos = Contacto::create($request->all());
@@ -59,6 +59,11 @@ class ContactoController extends Controller
     public function show(string $id)
     {
         //
+
+        $contactos = Contacto::find($id);
+         return response()->json($contactos, 200);
+        //return 1;
+         
     }
 
     /**
@@ -79,7 +84,7 @@ class ContactoController extends Controller
             $request->validate([
                'telefono' => 'required|string|max:8',
                 'email' => 'required|string|max:75',
-                'idCliente' => 'required|int'
+                'idCliente' => 'required|exists:Cliente,idCliente'
             ]);
     
             $contactos = Contacto::findOrFail($id); 

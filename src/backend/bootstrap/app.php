@@ -13,8 +13,12 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         //
         $middleware->validateCsrfTokens(except: [
-            'stripe/*',
+           /* 'stripe/*',
+            'clientes',
             'clientes/*',
+            'contactos',
+            'contactos/*',*/
+            '*'
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
