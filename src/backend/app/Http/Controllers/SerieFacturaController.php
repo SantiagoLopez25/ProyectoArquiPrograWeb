@@ -58,6 +58,8 @@ class SerieFacturaController extends Controller
     public function show(string $id)
     {
         //
+        $serieFacturas = SerieFactura::find($id);
+        return response()->json($roles, 200);
     }
 
     /**
@@ -74,6 +76,23 @@ class SerieFacturaController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        try{
+            $request->validate([
+                'nombre' => 'required|string|max:75',
+                'direccion' => 'required|string|max:100',
+                'estado' => 'required|boolean'
+            ]);
+    
+            $serieFacturas = SerieFactura::findOrFail($id); 
+    
+            $serieFacturas->update($request->all());
+            //return response()->json($clientes, 200);
+            return 1;
+        }
+        catch (\Exception $e) {
+            //return response()->json(['error' => $e], 500);
+            return 0;
+        }
     }
 
     /**

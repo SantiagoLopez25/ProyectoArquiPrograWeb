@@ -11,14 +11,16 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        //Aquí se colocan rutas que uno quiere que no pidan el token CSRF
+        
         $middleware->validateCsrfTokens(except: [
            /* 'stripe/*',
             'clientes',
             'clientes/*',
             'contactos',
             'contactos/*',*/
-            '*'
+            '*' //Este asterisco sirve para que todas las rutas (o todo lo que este a la derecha de el no pida el token)
+            //Si no se puesiera el asterisco se tendría que especificar como está arriba
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
