@@ -105,3 +105,14 @@ INSERT INTO ImagenProducto (ruta, nombre, idProducto)
 VALUES ('https://example.com/images/surface_laptop_4.jpg', 'Microsoft Surface Laptop 4', 19);
 INSERT INTO ImagenProducto (ruta, nombre, idProducto) 
 VALUES ('https://example.com/images/nintendo_switch_lite.jpg', 'Nintendo Switch Lite', 20);
+
+
+--Inserción en la tabla Sucursal
+
+INSERT into sucursal (nombre, ubicacion, telefono, celular, email,  direccion)
+values ('Store Pradera Chimaltenango', '14.660672, -90.809802', '12121212', '21212121', 'storepraderachimaltenango@gmail.com', 'Diagonal 1, Zona 6 75 Chimaltenango'),
+('Store Pradera Escuintla', '14.2899457,-90.7845336', '78898028', '31313131', 'storepraderaescuintla@gmail.com',  '1a. ave. 1-40 zona 3 de Escuintla'),
+('Stores Las Americas Mazatenango', '14.5349775,-91.4947557', '77972525', '14141414', 'storeplazalasamericasmazatenango@gmail.com',  'Km. 158 Carretera a, Mazatenango 10001'),
+('Store La Trinidad Coatepeque', '14.7013053,-91.8535172,767', '15151515', '51515151', 'storelatrinidadcoatepeque@gmail.com', 'Calzada Álvaro Arzu Coatepeque' ),
+('Stroe Pradera Xela', '14.8502391,-91.5371314', '77677884', '16161616', 'storepraderaxela@gmail.com', 'Av. Las Americas 7-12, Quetzaltenango'),
+('Store Miraflores Guatemala', '14.6202631,-90.5545295', '17171717', '71717171', 'storemirafloresguate@gmail.com', '7 calle 12 avenida Guatemala')
