@@ -20,13 +20,13 @@ class DatosProductoController extends Controller
             'producto.estado',
             'imagenproducto.idImagen',
             'ruta',
-            'imagenProducto.nombre as nombre_imagen',
-            'tipoProducto.nombre as nombre_tipo_producto',
+            'imagenproducto.nombre as nombre_imagen',
+            'tipoproducto.nombre as nombre_tipo_producto',
             'marca.nombre as nombre_marca'
         )
-        ->join('ImagenProducto', 'producto.idProducto', '=', 'imagenProducto.idProducto')
-        ->join('Marca', 'marca.idMarca', '=', 'producto.idMarca')
-        ->join('TipoProducto', 'tipoProducto.idTipoProducto', '=', 'producto.idTipoProducto')
+        ->join('imagenproducto', 'producto.idProducto', '=', 'imagenproducto.idProducto')
+        ->join('marca', 'marca.idMarca', '=', 'producto.idMarca')
+        ->join('tipoproducto', 'tipoproducto.idTipoProducto', '=', 'producto.idTipoProducto')
         ->get();
     
        

@@ -35,7 +35,7 @@ Route::resource('marcas', MarcaController::class);
 Route::resource('productos', ProductoController::class);
 Route::resource('roles', RolController::class);
 Route::resource('rps', RPSController::class);
-Route::resource('sucursales', SerieFacturaController::class);
+Route::resource('series', SerieFacturaController::class);
 Route::resource('sucursales', SucursalController::class);
 Route::resource('tiposp', TipoProductoController::class);
 Route::resource('usuarios', UsuarioController::class);

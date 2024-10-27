@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DetalleFactura;
 
-class DetallaFacturaController extends Controller
+class DetalleFacturaController extends Controller
 {
     /**
      * Display a listing of the resource.
