@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\DatosProductoController;
 use App\Http\Controllers\DetalleFacturaController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\FacturaController;
@@ -18,12 +19,14 @@ use App\Http\Controllers\TipoProductoController;
 use App\Http\Controllers\UsuarioController;
 
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::resource('clientes', ClienteController::class);
 Route::resource('contactos', ContactoController::class);
+Route::resource('datosproductos', DatosProductoController::class);
 Route::resource('detalles', DetalleFacturaController::class);
 Route::resource('empleados', EmpleadoController::class);
 Route::resource('historiales', HistorialController::class);

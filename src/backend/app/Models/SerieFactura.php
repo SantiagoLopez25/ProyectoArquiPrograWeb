@@ -9,7 +9,7 @@ class SerieFactura extends Model
 {
     use HasFactory;
 
-    protected $table = 'SerieFactura';  
+    protected $table = 'seriefactura';  
     protected $primaryKey = 'idSerie';  
 
     protected $fillable = [

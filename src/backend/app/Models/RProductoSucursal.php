@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class RProductoSucursal extends Model
 {
     use HasFactory;
-    protected $table = 'RProductoSucursal';  
+    protected $table = 'rproductosucursal';  
     protected $primaryKey = 'idProductoSucursal';  
 
     protected $fillable = [
