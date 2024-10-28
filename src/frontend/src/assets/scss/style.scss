@@ -11,7 +11,7 @@
 // Create SCSS variables
 $white: #ffffff;
 $black: #000000;
-$primary: #3b495d;
+$primary: #000017;
 $secondary: #299bf9;
 $dark: #2f2f2f;
 $light: #dce5e4;
@@ -133,7 +133,8 @@ a {
 
 // Hero 
 .hero {
-	background: $primary;
+	background-image: url('src/assets/images/bg001.jpg');
+	background-size: cover;
 	padding: calc(4rem - 30px) 0 0rem 0;
 	@media (min-width: $md) {
 		padding: calc(4rem - 30px) 0 4rem 0;
@@ -160,7 +161,7 @@ a {
 		}
 	}
 	p {
-		color: rgba($white, .5);
+		color: rgba($white, .95);
 		margin-botom: 30px;
 	}
 	.hero-img-wrap {
@@ -170,8 +171,8 @@ a {
 			top: 0px;
 			right: 0px;
 			z-index: 2;
-			max-width: 780px;
-			left: -20px;
+			max-width: 1000px;
+			left: 0px;
 			@media (min-width: $md) {
 				right: 0px;
 				left: -100px;

@@ -5,16 +5,16 @@
       <div class="row justify-content-between">
         <div class="col-lg-5">
           <div class="intro-excerpt">
-            <h1>Modern Interior <span clsas="d-block">Design Studio</span></h1>
-            <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate
-              velit imperdiet dolor tempor tristique.</p>
-            <p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#"
-                class="btn btn-white-outline">Explore</a></p>
+            <h1>WAM te conecta hacia la <span clsas="d-block">Tecnología</span></h1>
+            <p class="mb-4">¡Compartimos Nuestra Pasión por la Tecnología para Alegrar y Simplificar tu Vida!</p>
+            <p><RouterLink  to="/shop" class="btn btn-secondary me-2">Comprar Ahora</RouterLink>
+              <!--<a href="#product-section"
+                class="btn btn-white-outline">Explorar</a>--></p>
           </div>
         </div>
         <div class="col-lg-7">
           <div class="hero-img-wrap">
-            <img src="@/assets/images/couch.png" class="img-fluid">
+            <img src="@/assets/images/—Pngtree—artificial.png" class="img-fluid">
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
   <!-- End Hero Section -->
 
   <!-- Start Product Section -->
-  <div class="product-section">
+  <div class="product-section" id="#product-section">
     <div class="container">
       <div class="row">
 
