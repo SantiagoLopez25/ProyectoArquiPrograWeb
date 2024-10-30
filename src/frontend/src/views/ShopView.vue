@@ -5,7 +5,7 @@
             <div class="row justify-content-between">
                 <div class="col-lg-5">
                     <div class="intro-excerpt">
-                        <h1>Copras</h1>
+                        <h1>Compras</h1>
                     </div>
                 </div>
                 <div class="col-lg-7">

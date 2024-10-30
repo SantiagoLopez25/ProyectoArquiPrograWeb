@@ -18,7 +18,7 @@ export default {
                 <div class="col-lg-5">
                     <div class="intro-excerpt">
                         <h1>Blog - {{ nombreHost }}</h1>
-                        <p class="mb-4">Haz que tu vida sea más SMART, ¡Pásate por wam.com y descrbrelo!</p>
+                        <p class="mb-4">Haz que tu vida sea más SMART, ¡Pásate por wam.com y descrubrelo!</p>
                         <p><RouterLink  to="/shop" class="btn btn-secondary me-2">Comprar Ahora</RouterLink></p>
                     </div>
                 </div>

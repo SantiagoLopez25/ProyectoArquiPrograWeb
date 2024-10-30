@@ -5,10 +5,10 @@
             <div class="row justify-content-between">
                 <div class="col-lg-5">
                     <div class="intro-excerpt">
-                        <h1>¡Tranquilo! Ponte en contacto con nosotros</h1>
-                        <p class="mb-4">Contamos con un equipo capacitado para brindarle el Soporte 
-                            que Necesitas.</p>
-                            <p><RouterLink  to="/shop" class="btn btn-secondary me-2">Comprar Ahora</RouterLink></p>
+                        <h1>¡Suscríbete en nuestro Plataforma!</h1>
+                        <p class="mb-4">Serás el primero en enterarte de nuestras novedades, descuentos, 
+                            lanzamientos y más.</p>
+                        <p><RouterLink  to="/shop" class="btn btn-secondary me-2">Comprar Ahora</RouterLink></p>
                     </div>
                 </div>
                 <div class="col-lg-7">

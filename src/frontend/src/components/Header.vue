@@ -79,7 +79,7 @@ export default {
                         <RouterLink class="nav-link" to="/blog" @click="selectItem('blog')">Blog</RouterLink>
                     </li>
                     <li id="contact" :class="itemClass[5].estado">
-                        <RouterLink class="nav-link" to="/contact" @click="selectItem('contact')">Contacta con nosotros</RouterLink>
+                        <RouterLink class="nav-link" to="/contact" @click="selectItem('contact')">Registrarse</RouterLink>
                     </li>
                 </ul>
 
