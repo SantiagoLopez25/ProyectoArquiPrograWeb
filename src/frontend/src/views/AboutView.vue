@@ -19,7 +19,7 @@ export default {
         <div class="col-lg-5">
           <div class="intro-excerpt">
             <h1>Sobre Nosotros -  WAM</h1>
-            <p class="mb-4">Somo una empresa que ofrece cualquier tecnología para uso general o empresarial.</p>
+            <p class="mb-4">Somos una empresa que ofrece cualquier tecnología para uso general o empresarial.</p>
             <p><RouterLink  to="/shop" class="btn btn-secondary me-2">Comprar Ahora</RouterLink></p>
           </div>
         </div>
