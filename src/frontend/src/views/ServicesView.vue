@@ -5,16 +5,15 @@
             <div class="row justify-content-between">
                 <div class="col-lg-5">
                     <div class="intro-excerpt">
-                        <h1>Services</h1>
-                        <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                            vulputate velit imperdiet dolor tempor tristique.</p>
-                        <p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#"
-                                class="btn btn-white-outline">Explore</a></p>
+                        <h1>Nuestros servicios WAM</h1>
+                        <p class="mb-4">Contamos con soporte tecnico para cualquier dispositico general e instalaciones 
+                            de software.</p>
+                        <p><RouterLink  to="/shop" class="btn btn-secondary me-2">Comprar Ahora</RouterLink></p>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="hero-img-wrap">
-                        <img src="@/assets/images/couch.png" class="img-fluid">
+                        <img src="@/assets/images/image01.png" class="img-fluid">
                     </div>
                 </div>
             </div>

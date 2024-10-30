@@ -34,7 +34,7 @@ a.more {
 }
 
 .custom-navbar {
-  background: #3b495d !important;
+  background: #000017 !important;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -110,7 +110,8 @@ a.more {
 }
 
 .hero {
-  background: #3b495d;
+  background-image: url("src/assets/images/bg001.jpg");
+  background-size: cover;
   padding: calc(4rem - 30px) 0 0rem 0;
 }
 @media (min-width: 768px) {
@@ -143,7 +144,7 @@ a.more {
   }
 }
 .hero p {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.95);
   margin-botom: 30px;
 }
 .hero .hero-img-wrap {
@@ -154,8 +155,8 @@ a.more {
   top: 0px;
   right: 0px;
   z-index: 2;
-  max-width: 780px;
-  left: -20px;
+  max-width: 1000px;
+  left: 0px;
 }
 @media (min-width: 768px) {
   .hero .hero-img-wrap img {
@@ -213,12 +214,12 @@ a.more {
   box-shadow: none;
 }
 .btn.btn-primary {
-  background: #3b495d;
-  border-color: #3b495d;
+  background: #000017;
+  border-color: #000017;
 }
 .btn.btn-primary:hover {
-  background: rgb(49.1019736842, 60.7532894737, 77.3980263158);
-  border-color: rgb(49.1019736842, 60.7532894737, 77.3980263158);
+  background: black;
+  border-color: black;
 }
 .btn.btn-secondary {
   color: #2f2f2f;
@@ -351,7 +352,7 @@ a.more {
   width: 33px;
   height: 33px;
   position: absolute;
-  background: rgba(59, 73, 93, 0.2);
+  background: rgba(0, 0, 23, 0.2);
   border-radius: 50%;
   right: -8px;
   bottom: 0;
@@ -423,7 +424,7 @@ a.more {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  border: 2px solid #3b495d;
+  border: 2px solid #000017;
   position: absolute;
   left: 0;
   top: 8px;
@@ -519,12 +520,12 @@ a.more {
   height: 58px;
   line-height: 58px;
   border-radius: 50%;
-  background: rgba(59, 73, 93, 0.1);
+  background: rgba(0, 0, 23, 0.1);
   color: #2f2f2f;
   transition: 0.3s all ease;
 }
 .testimonial-slider-wrap #testimonial-nav > span:hover {
-  background: #3b495d;
+  background: #000017;
   color: #ffffff;
 }
 .testimonial-slider-wrap #testimonial-nav .prev {
@@ -566,7 +567,7 @@ a.more {
   background-color: rgb(213.5, 213.5, 213.5);
 }
 .testimonial-slider-wrap .tns-nav button:hover:before, .testimonial-slider-wrap .tns-nav button.tns-nav-active:before {
-  background-color: #3b495d;
+  background-color: #000017;
 }
 
 .before-footer-section {
@@ -637,7 +638,7 @@ a.more {
 .footer-section .subscription-form h3 {
   font-size: 18px;
   font-weight: 500;
-  color: #3b495d;
+  color: #000017;
 }
 .footer-section .subscription-form .form-control {
   height: 50px;
@@ -647,7 +648,7 @@ a.more {
 .footer-section .subscription-form .form-control:active, .footer-section .subscription-form .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #3b495d;
+  border-color: #000017;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
 }
 .footer-section .subscription-form .form-control::-webkit-input-placeholder {
@@ -689,7 +690,7 @@ a.more {
   font-size: 32px;
   font-weight: 500;
   text-decoration: none;
-  color: #3b495d;
+  color: #000017;
 }
 .footer-section .custom-social li {
   margin: 2px;
@@ -702,11 +703,11 @@ a.more {
   line-height: 40px;
   display: inline-block;
   background: #dce5e4;
-  color: #3b495d;
+  color: #000017;
   border-radius: 50%;
 }
 .footer-section .custom-social li a:hover {
-  background: #3b495d;
+  background: #000017;
   color: #ffffff;
 }
 .footer-section .border-top {
@@ -728,7 +729,7 @@ a.more {
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #3b495d;
+  border-color: #000017;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
 }
 .form-control::-webkit-input-placeholder {
@@ -753,7 +754,7 @@ a.more {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  background: #3b495d;
+  background: #000017;
   margin-right: 20px;
   color: #ffffff;
 }
@@ -786,7 +787,7 @@ textarea {
   color: rgba(0, 0, 0, 0.8);
 }
 .site-blocks-table tbody tr:first-child td {
-  border-top: 1px solid #3b495d !important;
+  border-top: 1px solid #000017 !important;
 }
 .site-blocks-table .btn {
   background: none !important;
@@ -807,12 +808,12 @@ textarea {
   border-radius: 10px !important;
 }
 .text-primary {
-  color: #3b495d !important;
+  color: #000017 !important;
 }
 
 .thankyou-icon {
   position: relative;
-  color: #3b495d;
+  color: #000017;
 }
 .thankyou-icon:before {
   position: absolute;
@@ -820,5 +821,5 @@ textarea {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(59, 73, 93, 0.2);
+  background: rgba(0, 0, 23, 0.2);
 }
