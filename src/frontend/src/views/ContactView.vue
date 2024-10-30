@@ -5,7 +5,7 @@
             <div class="row justify-content-between">
                 <div class="col-lg-5">
                     <div class="intro-excerpt">
-                        <h1>¡Suscríbete en nuestro Plataforma!</h1>
+                        <h1>¡Suscríbete en nuestra Plataforma!</h1>
                         <p class="mb-4">Serás el primero en enterarte de nuestras novedades, descuentos, 
                             lanzamientos y más.</p>
                         <p><RouterLink  to="/shop" class="btn btn-secondary me-2">Comprar Ahora</RouterLink></p>
