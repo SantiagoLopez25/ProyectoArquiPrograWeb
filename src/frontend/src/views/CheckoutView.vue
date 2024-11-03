@@ -1,4 +1,30 @@
+<script>
+import { RouterLink } from 'vue-router'
+import Footer from '@/components/Footer.vue';
+import Header from '@/components/Header.vue';
+
+export default {
+  page: { },
+  components: {Header, Footer},
+  data() {
+    return {
+      
+    }
+  },
+  methods: {
+        initialize() {
+            // marcar en el header la pestaña correspondiente
+            this.$refs.vwHeader.selectItem('')
+        }
+    },
+    mounted() {
+        this.initialize();
+    }
+};
+</script>
 <template>
+    <Header ref="vwHeader"></Header>
+
     <!-- Start Hero Section -->
     <div class="hero">
         <div class="container">
@@ -334,4 +360,6 @@
             <!-- </form> -->
         </div>
     </div>
+
+    <Footer></Footer>
 </template>
