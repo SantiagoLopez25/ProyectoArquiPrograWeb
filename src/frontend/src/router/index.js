@@ -5,6 +5,9 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+    //===-----------------------------------------------------===
+    //===                   USER - PATHS
+    //===-----------------------------------------------------===
       path: '/',
       name: 'home',
       component: HomeView
@@ -48,7 +51,66 @@ const router = createRouter({
       path: '/thankyou',
       name: 'thankyou',
       component: () => import('../views/ThankyouView.vue')
-    }
+    },
+
+    //===-----------------------------------------------------===
+    //===                   ADMIN - PATHS
+    //===-----------------------------------------------------===
+    {
+      path: '/admin/',
+      name: 'index',
+      component: () => import('../views/admin/index.vue')
+    },
+    {
+      path: '/admin/button',
+      name: 'button',
+      component: () => import('../views/admin/button.vue')
+    },
+    {
+      path: '/admin/alerts',
+      name: 'alerts',
+      component: () => import('../views/admin/alerts.vue')
+    },
+    {
+      path: '/admin/form',
+      name: 'form',
+      component: () => import('../views/admin/form.vue')
+    },
+    {
+      path: '/admin/signin',
+      name: 'signin',
+      component: () => import('../views/admin/signin.vue')
+    },
+    {
+      path: '/admin/signup',
+      name: 'signup',
+      component: () => import('../views/admin/signup.vue')
+    },
+    {
+      path: '/admin/icon-tabler',
+      name: 'icon-tabler',
+      component: () => import('../views/admin/icon-tabler.vue')
+    },
+    {
+      path: '/admin/card',
+      name: 'card',
+      component: () => import('../views/admin/card.vue')
+    },
+    {
+      path: '/admin/sample-page',
+      name: 'sample-page',
+      component: () => import('../views/admin/sample-page.vue')
+    },
+    {
+      path: '/admin/typography',
+      name: 'typography',
+      component: () => import('../views/admin/typography.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      component: () => import('../components/admin/404.vue')
+    },
+    
   ]
 })
 

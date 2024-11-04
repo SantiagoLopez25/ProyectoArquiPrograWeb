@@ -1,3 +1,57 @@
+<script>
+import { loadScript, unloadScript } from "vue-plugin-load-script";
+
+export default {
+    page: {},
+    components: { },
+    data() {
+        return {
+            scripts: [
+                '/js/bootstrap.bundle.min.js',
+                '/js/tiny-slider.js',
+                '/js/custom.js'
+            ]
+        };
+    },
+    methods: {
+        initialize() {
+            // marcar en el header la pestaña correspondiente
+            this.$refs.vwHeader.selectItem('blog')
+        }
+    },
+    mounted() {
+        this.scripts.forEach((element) => {
+            loadScript(element)
+            .then(() => {
+                if (this.$DEBUG) {
+                    console.info('[ ok ] :Load Script (', element, ')')
+                }                
+            })
+            .catch(() => {
+                if (this.$DEBUG) {
+                    console.error('[ error ] :Load Script {', element, '}')
+                }                
+            });
+        })
+    },
+    unmounted() {
+        this.scripts.forEach((element) => {
+            unloadScript(element)
+            .then(() => {
+                if (this.$DEBUG) {
+                    console.info('[ ok ] :Unload Script', element)
+                }
+            })
+            .catch(() => {
+                if (this.$DEBUG) {
+                    console.error('[ error ] :Unload Script', element)
+                }
+            });
+        })
+    }
+}
+</script>
+
 <template>
     <!-- Start Footer Section -->
     <footer class="footer-section">
@@ -10,8 +64,9 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="subscription-form">
-                        <h3 class="d-flex align-items-center"><span class="me-1"><img src="@/assets/images/envelope-outline.svg"
-                                    alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+                        <h3 class="d-flex align-items-center"><span class="me-1"><img
+                                    src="@/assets/images/envelope-outline.svg" alt="Image"
+                                    class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
 
                         <form action="#" class="row g-3">
                             <div class="col-auto">

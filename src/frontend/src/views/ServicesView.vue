@@ -1,4 +1,31 @@
+<script>
+import { RouterLink } from 'vue-router'
+import Footer from '@/components/Footer.vue';
+import Header from '@/components/Header.vue';
+
+export default {
+    page: {},
+    components: { Header, Footer },
+    data() {
+        return {
+
+        }
+    },
+    methods: {
+        initialize() {
+            // marcar en el header la pestaña correspondiente
+            this.$refs.vwHeader.selectItem('services')
+        }
+    },
+    mounted() {
+        this.initialize();
+    }
+};
+</script>
+
 <template>
+    <Header ref="vwHeader"></Header>
+
     <!-- Start Hero Section -->
     <div class="hero">
         <div class="container">
@@ -6,9 +33,11 @@
                 <div class="col-lg-5">
                     <div class="intro-excerpt">
                         <h1>Nuestros servicios WAM</h1>
-                        <p class="mb-4">Contamos con soporte tecnico para cualquier dispositico general e instalaciones 
+                        <p class="mb-4">Contamos con soporte tecnico para cualquier dispositico general e instalaciones
                             de software.</p>
-                        <p><RouterLink  to="/shop" class="btn btn-secondary me-2">Comprar Ahora</RouterLink></p>
+                        <p>
+                            <RouterLink to="/shop" class="btn btn-secondary me-2">Comprar Ahora</RouterLink>
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -214,7 +243,8 @@
 
                                             <div class="author-info">
                                                 <div class="author-pic">
-                                                    <img src="@/assets/images/person-1.png" alt="Maria Jones" class="img-fluid">
+                                                    <img src="@/assets/images/person-1.png" alt="Maria Jones"
+                                                        class="img-fluid">
                                                 </div>
                                                 <h3 class="font-weight-bold">Maria Jones</h3>
                                                 <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
@@ -242,7 +272,8 @@
 
                                             <div class="author-info">
                                                 <div class="author-pic">
-                                                    <img src="@/assets/images/person-1.png" alt="Maria Jones" class="img-fluid">
+                                                    <img src="@/assets/images/person-1.png" alt="Maria Jones"
+                                                        class="img-fluid">
                                                 </div>
                                                 <h3 class="font-weight-bold">Maria Jones</h3>
                                                 <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
@@ -270,7 +301,8 @@
 
                                             <div class="author-info">
                                                 <div class="author-pic">
-                                                    <img src="@/assets/images/person-1.png" alt="Maria Jones" class="img-fluid">
+                                                    <img src="@/assets/images/person-1.png" alt="Maria Jones"
+                                                        class="img-fluid">
                                                 </div>
                                                 <h3 class="font-weight-bold">Maria Jones</h3>
                                                 <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
@@ -290,4 +322,6 @@
         </div>
     </div>
     <!-- End Testimonial Slider -->
+
+    <Footer></Footer>
 </template>
