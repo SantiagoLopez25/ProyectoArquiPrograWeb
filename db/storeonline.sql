@@ -11,6 +11,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+CREATE DATABASE IF NOT EXISTS `storeonline`;
+USE `storeonline`;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -185,7 +187,7 @@ CREATE TABLE `imagenproducto` (
 
 INSERT INTO `imagenproducto` (`idImagen`, `ruta`, `nombre`, `idProducto`) VALUES
 (1, 'https://i.blogs.es/79a3b7/1366_2000/500_500.jpeg', 'Samsung Galaxy S21', 1),
-(2, 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0PDw8NDw0NDg8NDw8PDQ0ODw8NDQ0NFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGzclHyU3LS0tLy8tLSsrNC0yLSstLystKzUrNS0tLSstLS0rKy0wLy0rLS0rKystKzctLS01K//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAQUBAAAAAAAAAAAAAAAAAQQDBQYHCAL/xABSEAABAwICAggPCg4BBQAAAAABAAIDBBEFEiExBhNBUVKRs9EHCBQiMjM0YXFzdIGSsbIVIzVCU3KCk6G0JCVDVGJjg5Sio8HC0uHDFmSE8PH/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBAX/xAAiEQEAAgICAgIDAQAAAAAAAAAAAQIDERIhBDFB8BORoSL/2gAMAwEAAhEDEQA/AN4oQhAIQhAIQhAISK5ErKqoEsjXTzEte4H32Qi4NjuoOu0XG+Fx9t8h1ySHwvcf6r0CTrJPhJKDr7bG8IcYXkzMGt7R9ILkiKNvBHEFPp4mcFvEEHUpq4R+Vj9NvOk2ugJsJoibE2EjSbAXJ1rmuCJvBHEFdaOqips0r2OcHRTQAMtcPnidC06SNALxfvXQb+FfT/Lw/WM50+roPlovrGc65zq4Gj4o4grXPE3gjiCDqDq2H5aL02869dVw/Kx+m3nXJs8LOC3iChPp4+Az0Qg7A6oj+UZ6TU9uZw2+kFx2YGcBnohXmfY7RilpqhtdS7bOXCSncGNdDa+vTuWtp1ki10HVrXtOog+Agr0tA9AWkDMXqsjmOayhe3M21nZpoiCLXG4d1b+QCEIQCEIQCEIQCEIQCEKybKcb6jiY8BuaR+QF18rfDbvkI1Ss2njC9oWI7Hdlsk7WiaKNrjVdTmRrwGZTFI8Ptps4GMtLSRv95', 'LG Smart Refrigerator', 2),
+(2, 'https://www.lg.com/us/images/refrigerators/md07500695/gallery/desktop-01.jpg', 'LG Smart Refrigerator', 2),
 (3, 'https://www.hoxtonmacs.co.uk/cdn/shop/products/apple-macbook-pro-13-inch-macbook-pro-13-inch-m1-space-grey-2020-fair-40354911191356.jpg?v=1680262183', 'Apple MacBook Pro', 3),
 (4, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwppz6o7Mf8cgG5x9DFpZtFefRvvBJ_cPNMQ&s', 'Sony Bravia TV', 4),
 (5, 'https://i.blogs.es/e28772/img_7621/1366_2000.jpg', 'Huawei MatePad Pro', 5),
