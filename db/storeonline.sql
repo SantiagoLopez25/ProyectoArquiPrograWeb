@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2024 a las 18:59:02
+-- Tiempo de generación: 04-11-2024 a las 16:16:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -11,9 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-CREATE DATABASE IF NOT EXISTS `storeonline`;
-USE `storeonline`;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -71,7 +68,9 @@ INSERT INTO `cliente` (`idCliente`, `nombre`, `direccion`, `estado`) VALUES
 (3, 'Gabriela Munguia', '13 calle zona 10 Quetzaltenango, Quetzaltenango', 1),
 (4, 'Antonio Martinez', '14 calle zona 8 Quetzaltenango, Quetzaltenango', 1),
 (5, 'Alejandro Requena', '14 calle zona 3 Quetzaltenango, Quetzaltenango', 1),
-(6, 'Mariano Baquiax', '10 avenida zona 8 Quetzaltenango, Quetzaltenango', 1);
+(6, 'Mariano Baquiax', '10 avenida zona 8 Quetzaltenango, Quetzaltenango', 1),
+(7, 'Davidsos', 'de Totoyork', 1),
+(8, 'Alejandro Requena', '14 calle zona 3 Quetzaltenango, Quetzaltenango', 1);
 
 -- --------------------------------------------------------
 
@@ -185,26 +184,26 @@ CREATE TABLE `imagenproducto` (
 --
 
 INSERT INTO `imagenproducto` (`idImagen`, `ruta`, `nombre`, `idProducto`) VALUES
-(1, 'https://example.com/images/samsung_galaxy_s21.jpg', 'Samsung Galaxy S21', 1),
-(2, 'https://example.com/images/lg_smart_fridge.jpg', 'LG Smart Refrigerator', 2),
-(3, 'https://example.com/images/macbook_pro_m1.jpg', 'Apple MacBook Pro', 3),
-(4, 'https://example.com/images/sony_bravia_tv.jpg', 'Sony Bravia TV', 4),
-(5, 'https://example.com/images/huawei_matepad_pro.jpg', 'Huawei MatePad Pro', 5),
-(6, 'https://example.com/images/xiaomi_smartwatch.jpg', 'Xiaomi Mi Smartwatch', 6),
-(7, 'https://example.com/images/bose_qc35.jpg', 'Bose QuietComfort 35', 7),
-(8, 'https://example.com/images/canon_eos_r6.jpg', 'Canon EOS R6', 8),
-(9, 'https://example.com/images/nintendo_switch_oled.jpg', 'Nintendo Switch OLED', 9),
-(10, 'https://example.com/images/xbox_series_x.jpg', 'Microsoft Xbox Series X', 10),
-(11, 'https://example.com/images/iphone_13.jpg', 'Apple iPhone 13', 11),
-(12, 'https://example.com/images/lg_instaview_fridge.jpg', 'LG InstaView Refrigerator', 12),
-(13, 'https://example.com/images/samsung_tab_s7.jpg', 'Samsung Galaxy Tab S7', 13),
-(14, 'https://example.com/images/sony_wh1000xm4.jpg', 'Sony WH-1000XM4', 14),
-(15, 'https://example.com/images/huawei_p40_pro.jpg', 'Huawei P40 Pro', 15),
-(16, 'https://example.com/images/bose_soundlink.jpg', 'Bose SoundLink Revolve', 16),
-(17, 'https://example.com/images/xiaomi_mi_11.jpg', 'Xiaomi Mi 11', 17),
-(18, 'https://example.com/images/sony_alpha_a7.jpg', 'Sony Alpha a7 III', 18),
-(19, 'https://example.com/images/surface_laptop_4.jpg', 'Microsoft Surface Laptop 4', 19),
-(20, 'https://example.com/images/nintendo_switch_lite.jpg', 'Nintendo Switch Lite', 20);
+(1, 'https://i.blogs.es/79a3b7/1366_2000/500_500.jpeg', 'Samsung Galaxy S21', 1),
+(2, 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0PDw8NDw0NDg8NDw8PDQ0ODw8NDQ0NFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGzclHyU3LS0tLy8tLSsrNC0yLSstLystKzUrNS0tLSstLS0rKy0wLy0rLS0rKystKzctLS01K//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAQUBAAAAAAAAAAAAAAAAAQQDBQYHCAL/xABSEAABAwICAggPCg4BBQAAAAABAAIDBBEFEiExBhNBUVKRs9EHCBQiMjM0YXFzdIGSsbIVIzVCU3KCk6G0JCVDVGJjg5Sio8HC0uHDFmSE8PH/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBAX/xAAiEQEAAgICAgIDAQAAAAAAAAAAAQIDERIhBDFB8BORoSL/2gAMAwEAAhEDEQA/AN4oQhAIQhAIQhAISK5ErKqoEsjXTzEte4H32Qi4NjuoOu0XG+Fx9t8h1ySHwvcf6r0CTrJPhJKDr7bG8IcYXkzMGt7R9ILkiKNvBHEFPp4mcFvEEHUpq4R+Vj9NvOk2ugJsJoibE2EjSbAXJ1rmuCJvBHEFdaOqips0r2OcHRTQAMtcPnidC06SNALxfvXQb+FfT/Lw/WM50+roPlovrGc65zq4Gj4o4grXPE3gjiCDqDq2H5aL02869dVw/Kx+m3nXJs8LOC3iChPp4+Az0Qg7A6oj+UZ6TU9uZw2+kFx2YGcBnohXmfY7RilpqhtdS7bOXCSncGNdDa+vTuWtp1ki10HVrXtOog+Agr0tA9AWkDMXqsjmOayhe3M21nZpoiCLXG4d1b+QCEIQCEIQCEIQCEIQCEKybKcb6jiY8BuaR+QF18rfDbvkI1Ss2njC9oWI7Hdlsk7WiaKNrjVdTmRrwGZTFI8Ptps4GMtLSRv95', 'LG Smart Refrigerator', 2),
+(3, 'https://www.hoxtonmacs.co.uk/cdn/shop/products/apple-macbook-pro-13-inch-macbook-pro-13-inch-m1-space-grey-2020-fair-40354911191356.jpg?v=1680262183', 'Apple MacBook Pro', 3),
+(4, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwppz6o7Mf8cgG5x9DFpZtFefRvvBJ_cPNMQ&s', 'Sony Bravia TV', 4),
+(5, 'https://i.blogs.es/e28772/img_7621/1366_2000.jpg', 'Huawei MatePad Pro', 5),
+(6, 'https://i.blogs.es/7504f7/captura-de-pantalla-2022-08-11-a-las-15.23.49/650_1200.jpeg', 'Xiaomi Mi Smartwatch', 6),
+(7, 'https://www.cnet.com/a/img/resize/9d56072ccf4afebce8fb20e8d4e85c8d330399e1/hub/2017/09/26/4c6ec5f4-8dcb-45c7-8770-e87208e3d3ae/17bose-quietcomfort-35-ii.jpg?auto=webp&fit=crop&height=1200&width=1200', 'Bose QuietComfort 35', 7),
+(8, 'https://amateurphotographer.com/wp-content/uploads/sites/7/2020/12/Intro-1-Canon_EOS_R6.jpg', 'Canon EOS R6', 8),
+(9, 'https://i.blogs.es/cf5de6/switch/1366_2000.jpg', 'Nintendo Switch OLED', 9),
+(10, 'https://sm.ign.com/ign_latam/news/m/microsoft-/microsoft-working-on-why-ps5-outperforms-xbox-series-x-on-ce_q9vy.jpg', 'Microsoft Xbox Series X', 10),
+(11, 'https://i.blogs.es/f93223/iphone-13-pro-00-01/1366_2000.jpg', 'Apple iPhone 13', 11),
+(12, 'https://i.pinimg.com/736x/d4/74/88/d474886eafe1edd3d2fb0d20831777ba.jpg', 'LG InstaView Refrigerator', 12),
+(13, 'https://movicenter.com.pa/wp-content/uploads/2022/09/1260236-samsung-galaxy-tab-s7.jpg', 'Samsung Galaxy Tab S7', 13),
+(14, 'https://cellexportgt.com/cdn/shop/products/s-l1000_8fba621c-f45e-4e37-be4c-e9103836cee0.jpg?v=1655865379&width=1000', 'Sony WH-1000XM4', 14),
+(15, 'https://img.pacifiko.com/PROD/resize/0/1000x1000/Vogue-L29D.jpg', 'Huawei P40 Pro', 15),
+(16, 'https://cdn.dxomark.com/wp-content/uploads/medias/post-74427/bose_soundlink_revolveII.jpg', 'Bose SoundLink Revolve', 16),
+(17, 'https://i.blogs.es/e2801a/00-xiaomi-mi-11-01/840_560.jpg', 'Xiaomi Mi 11', 17),
+(18, 'https://www.ephotozine.com/articles/sony-alpha-xx-xx-announced-32006/images/highres-Sony-Alpha-A7-III-2-Custom_1519667443.jpg', 'Sony Alpha a7 III', 18),
+(19, 'https://i5.walmartimages.com/seo/Microsoft-Surface-Pro-7-12-3-Touch-Screen-Intel-Core-i7-16GB-Memory-512GB-Solid-State-Drive-Matte-Black-VAT-00016_b1bfeab5-7941-45c0-b9eb-9b1d6edb5f3c.4028a3c80729fd2f07f948d4e86c371e.jpeg', 'Microsoft Surface Laptop 4', 19),
+(20, 'https://www.tecnofacil.com.gt/media/catalog/product/cache/0a3c9f56440fe010e3e9b5a77fcf2268/H/R/HRHSDAZAA_2_1.jpg', 'Nintendo Switch Lite', 20);
 
 -- --------------------------------------------------------
 
@@ -401,12 +400,41 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('6OrWVh2uMHDXKXeJqRYLwejxeYXOy9ECvYzWoJWv', NULL, '127.0.0.1', 'PostmanRuntime/7.42.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZ1dZdEJzeEp3VTBGa1hRTE5NSVZqRldhOU8yODFWWU9qbXE2VUZQSyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jb250YWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1728496692),
-('dYYwGPNIacqla7bdyy1KfSva6CxY83ZqfnYaZ3Hi', NULL, '127.0.0.1', 'PostmanRuntime/7.42.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiR3VyZUZ6VWxBbzdQSEZTNDh3OU1JMU1WRWJHZ29oOXZNUjg0aGE4SyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbGllbnRlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1728443291),
-('HB1VEgbTS1XmY9uM2bCAJ2w0wOWZtPwn4wmTPf9h', NULL, '127.0.0.1', 'PostmanRuntime/7.42.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiejZ3bzVMNFVyMXltS0dJbEZ4S2RBNVJJQjhWbGVuM1Rvc3BxRFkzbCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jb250YWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1728704198),
-('mUBxFx0cQkbt7lkXY4u2TLAIm1LL6OExXOvW3j7S', NULL, '127.0.0.1', 'PostmanRuntime/7.42.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidHp1NzFtR0VuM3lwbG5pRnROYWNIVlFuZzBxZEphZTdWNlNUZmt3ZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1728781534),
-('QBcedJuOGDxfqe2MPve3JadvArHeo1JtzH2L0nBC', NULL, '127.0.0.1', 'PostmanRuntime/7.42.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiR3Fnb0x6Mk1rYVM5NGNIUEhsb09lQlBJcHdIQkhUSUQxN0dxZWlKdSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbGllbnRlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1728482398),
-('SUT78pY67JeRabV7jXkXDLLgb1CC0QDow7a4eD92', NULL, '127.0.0.1', 'PostmanRuntime/7.42.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVUNBV3JaeWVVRVJCTjJmVXZoZ2xvVjlnUVV0MmpjTWZrSU9KSm0zSiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jb250YWN0b3MvMiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1728528542);
+('5Oo45ZxRnf1Ltcu6JByrMeKT5QMfvfW9yKIFPX9g', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUXRQNFBFRHFaaHhWdW9SWXUxaDBBbDhOWHRsS0I2ZnNOMVpybUVMeSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729879207),
+('7e9fQ5lMVx7XMLXIGcQWBR1tQwRPCgES8iy32PRs', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiN2c1WGFPMnFtb0xFMjdpUFdZMnExN0VtVWYxT1BIWFVzSXRySnZWVyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729877417),
+('CxPyb5cy47z25CXzX3F0ryc7xzz98XYvGnqfvNvo', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUE1QTEZhRllSejRkTndQaWt2RUE3NGJUOW41dTRXVlA3NXBQVmJKcSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729877294),
+('de0E1fpRHhIiIXmBLiDbOi631htcwZ9mQi9VJUZZ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWjFFdzFibEI3Nkp5TE5qVU9LMGExdERUbTFZQTh1RTlTS0FEemJENSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729877275),
+('DUxJSsU6mHnRDXOB2tgoMlpas7cj22YS5D8NJgF0', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiTWRSVzJxaHBLMDBlcVI2a2RpUXgzUHlxQUU4MEE3NjdvTEFrYmdaZSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1729877276),
+('dyxCNGbEFBi2FgJpu2YxRbU1gv83lahicnQ2PDGd', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVUVGQWNkOG1mQ1FKWWl3TWxXWTlFaVY1NWJ3SlEyeXhkMG5YOERhNSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729877381),
+('eBgINJp5fnt9Vue8gHlYHiUrJWQdlknlzay6lDwU', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUnhuWWNISVI1Njh0TnBmaVkzcENZbTNFWFF6aUZKSXhwcjRxaGdFNCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729877382),
+('eCzpf3Ha7pexSV9p883957cAS2M7cEBQWGuLAHsF', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibnFJa3Nqd3RvUzFwNE51ZlEwWjRqTzJPa3NuMm1GdTh0WVdBWmxCZiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729880864),
+('ETlfC7MgRVjUDJvyeprXoqSI898MMgHr0feEA6iv', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiU0FhV2hKN2lJcjVOVXpNc3R5UmFRWGV4Y3BSc0lYN0p4RGhXTno5ZiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729878675),
+('EwSJiz4YBmyCIvmgQJjLfHZmVMM8gBlFrNKsGLTE', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibk9kbFprYVp3dVlOY0I2TE9TeklFSzZJNlMyakJWdVlqRm9kdUZsWiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729877275),
+('Fc2yMSgLxG4EMZxyOuNMrpydoFeR0BMmiusCBY89', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUkpURExsakp2ZTBOck56b1RqSWZUN0M0ODN1QmlhUVlmRkVtTFl2dyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729879208),
+('FctC5kHxxxXDIScHQfeFT0rwpNsh2BD0dsDDpl71', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoibTRQOWxXUkxPeTN4OG40V05BRGdGNHpvdWdJY0VKY04wT0xXclJIeSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1729877382),
+('Gz3Pr7Igz3Dm49aGcbDkEss1Mm4Gbqbd7B5XW4tD', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiSDVZVjc3WmhxY0VINFpYVzI2MjZ4WG9kNUFOZGhhdWVYbm9xM1ZJOSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1729879212),
+('HIgJrXNcgwsbTu8Apa9o2YsNIn4Igb6STDLUBsUe', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWVZialdncVBlM3VNampDejhtOEE1bEQ3bHN3TmlSQ1VVR3BDYVg4aSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729878909),
+('hqJE4H0juXgGJ9R3yGh8lHU4OYqc5wqgyk6inFrM', NULL, '127.0.0.1', 'PostmanRuntime/7.42.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicWJ3bk9KOGRJWTdPbUN3aENhZHVsbmROWEZqUGhJYjBFQ0RrV1ppZiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729882408),
+('HZf8SM32K82Pj5P2YkNRFUBmHZHL8vn6oo2IIxex', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoia2dSM01sV1hna2ttWXk5WXM0NUtkNGJKSGZaVXNOckRYVk9GYUhxVCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729877381),
+('iGU7TgDXnW10zDWprXVY7B47hrTuwUOxEnlyXAy0', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibEU5MEp4WFhHSEFZWTFGcm81OVJ3YnJXbjRXZlhkaVZFa2o1YjBpWiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729878900),
+('K7K5wj7or5xFWthDWZmWv0Xkbmz60JTbMyKsR5oL', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiT09FcENzRHlyZ0k3b0NnWVJIYjRORUJIQXBBSU91RTlqcUZQOWNPVSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729877065),
+('K8CK10ManvV47LYFFwmz4BsI5rtugh3V8Jr5K7QW', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiaFQxQ3FQOXRlNTdGV2NjUXJZcEY0WE1rZGxIeElXd095NDdQR2IyYSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729879208),
+('LJuKV09pjfBNIjORmltDL4GjFCUoPKzZDUGxj6h7', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRWsxV01IWVYzdXNlTjltUllRSXB3SWxzSXpmWWRpRHQ2VFNsY2YzayI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729877066),
+('MVbUFHfJY7LUiUlh7Z7l6VH3ThCiOBJFMTP36yQN', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiREZoZDhpNWhlQ3dlZlp4enJjOTdGUE5xRHB6UVppa2JJM0wzREZWdSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1729877382),
+('Nll7dipbNhETfAqIn7hHnCihxp0h45YkV4Hb804g', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWU5vZDJZQlptNHgwcGVFVDV2Y1B3SmhxSWlaTzBlMnN6NTJEWDVqaiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729877255),
+('nMc9760yeFOfAWFKqtRayulAfYmhZ5ygzjku4J6A', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSlN0azBlUnJBV1pjdEZoTWZzZGtTNEZ4b1NWdlhlRHFnS2k0cWE2ciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729877417),
+('OSxjK64Oslhj4sRn1XJxKXM2BFlQv8nwTis5cdwJ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiR0VZTllVZkpPcFF1aXl2dmVJWjJFM0dZY2UxRDlEdm1sVFRkTEFNOSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729877255),
+('poiE3MSf8u7Vt3kfBokexTrQMBIZYvtMkTwR7bl5', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoielB5UjY4aEthMHZLNkxtZ01haUNkY2ZpbnhYS2hKOVlqN3ZwMDB6ZCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729877294),
+('smC20KZ9l5XBix1G2kj2lwO2Y2EtIP7lhC37GrPD', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSmRGakRYN2dqTUp2ZzczeXZIdEdTRjJybEZqYkNqdUJqUk1mdkNkMyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729878901),
+('sPy5uXYC3twt2keYwY4m9E4KJdAp1MvoeQ97lgJE', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieEp5YmxsREJISzB0SGx2cWJLVnFuaGtKdGxIZ3JlVG9NSTlTRVdhRSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729878675),
+('szedbeFcWrIP8dcaiBCw4PopVyMLuH2HAjVK39T3', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRFFnd2I5YUxSTnhteHBBM0MzWnE3SWtLc3NkM3ZEa0JhSjg2a2tZMSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0b3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729878791),
+('tA3dc73fkbhZz2NdaGDodLyp315UXWsOPn5wiYv5', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibTFBeHhoUlp0aTZJVUNXRGxHUGx2QnQyUVBUZWlNaDJpMzljelVxaCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729878909),
+('tCzDjNJiwcnTBfX8a7Fjz35hZ5vM29SAExNDzJTa', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoia1Z6eldJRjB0dEdIcDJKRkpHclNNUTJXcXplQWl4N1JOUWQzQkliaCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729877381),
+('tMvDaRqsrO5hCjgQSp4N7hYDIn1eZqkytErhz6rI', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVktOVU9BQ3Q3b1RMUVFvWWlxdEtwRTlBYmRoZXZreVhBUWNQM3Z5MiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729877417),
+('TUSL5Ng2qs9s9YttZDk1yzWrUErlfuTUtetCnqVN', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoieWYxTU1xZjZuNEhHTlc0OVVhZ25ueXpKNmpYYmtJTzBwdnNjNHNBYSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1729877295),
+('v50ZgQxikcTKp9iQZU3abhqODzWyEI6yasbBBtJJ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWjYxVFRZRDRhWU1sMll4RHRCSkJVaXRFenpScmRuT25nMGlYOHNQbCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729877416),
+('x3VMObWKFG24rOFUIA8MrHTtVCVCbf9Zqp0KD3GR', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQzFDY09IeWRWczgzVk1mTm82YjZRbUZ6OHBYM2p2NkU5SXBqeEwwRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbWFnZW5lcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729878791),
+('xI3bSmkELCgyfzGRKp1Fy1II5vfWCMlh1X2hWV9t', NULL, '127.0.0.1', 'PostmanRuntime/7.42.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoia3pMMm1UWTdJZW9CNkxjY01kekYySjBkeWJvWjEzZ2NiU2toWW4yRSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729985811);
 
 -- --------------------------------------------------------
 
@@ -672,7 +700,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `contacto`
