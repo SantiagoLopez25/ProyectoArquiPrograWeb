@@ -2,13 +2,16 @@
 import { RouterLink } from 'vue-router'
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
+import CarritoService from '@/services/CarritoService';
 
 export default {
   page: { },
   components: {Header, Footer},
   data() {
     return {
-      
+        productos: CarritoService.obtenerProductos(),
+        total: CarritoService.obtenerTotalCompra(),
+        
     }
   },
   methods: {
@@ -277,60 +280,30 @@ export default {
 
                     <div class="row mb-5">
                         <div class="col-md-12">
-                            <h2 class="h3 mb-3 text-black">Your Order</h2>
+                            <h2 class="h3 mb-3 text-black">Detalles de la orden</h2>
                             <div class="p-3 p-lg-5 border bg-white">
                                 <table class="table site-block-order-table mb-5">
                                     <thead>
-                                        <th>Product</th>
+                                        <th>Producto</th>
                                         <th>Total</th>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Top Up T-Shirt <strong class="mx-2">x</strong> 1</td>
-                                            <td>$250.00</td>
+                                        <tr v-for="(producto, index) in productos" :key="index">
+                                            <td>{{producto.nombre}} <strong class="mx-2">x</strong> {{ producto.cantidad }}</td>
+                                            <td>Q.{{ producto.total }}</td>
                                         </tr>
+                                       
+                                        
                                         <tr>
-                                            <td>Polo Shirt <strong class="mx-2">x</strong> 1</td>
-                                            <td>$100.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
-                                            <td class="text-black">$350.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
-                                            <td class="text-black font-weight-bold"><strong>$350.00</strong></td>
+                                            <td class="text-black font-weight-bold"><strong>Total de la compra</strong></td>
+                                            <td class="text-black font-weight-bold"><strong>Q.{{ total }} </strong></td>
                                         </tr>
                                     </tbody>
                                 </table>
 
-                                <div class="border p-3 mb-3">
-                                    <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse"
-                                            href="#collapsebank" role="button" aria-expanded="false"
-                                            aria-controls="collapsebank">Direct Bank Transfer</a></h3>
+                               
 
-                                    <div class="collapse" id="collapsebank">
-                                        <div class="py-2">
-                                            <p class="mb-0">Make your payment directly into our bank account. Please use
-                                                your Order ID as the payment reference. Your order won’t be shipped
-                                                until the funds have cleared in our account.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="border p-3 mb-3">
-                                    <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse"
-                                            href="#collapsecheque" role="button" aria-expanded="false"
-                                            aria-controls="collapsecheque">Cheque Payment</a></h3>
-
-                                    <div class="collapse" id="collapsecheque">
-                                        <div class="py-2">
-                                            <p class="mb-0">Make your payment directly into our bank account. Please use
-                                                your Order ID as the payment reference. Your order won’t be shipped
-                                                until the funds have cleared in our account.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                               
 
                                 <div class="border p-3 mb-5">
                                     <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse"
@@ -348,7 +321,7 @@ export default {
 
                                 <div class="form-group">
                                     <RouterLink class="btn btn-black btn-lg py-3 btn-block"
-                                        to="/thankyou">Place Order</RouterLink>
+                                        to="/thankyou">Finalizar Orden</RouterLink>
                                 </div>
 
                             </div>
