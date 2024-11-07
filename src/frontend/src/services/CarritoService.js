@@ -12,6 +12,11 @@ class CarritoService {
         this.productosSeleccionados.push(producto);
         this.productosSeleccionados[this.productosSeleccionados.length - 1].cantidad = 1;
         this.productosSeleccionados[this.productosSeleccionados.length - 1].total = 0.00;
+        return true;
+      }
+
+      else{
+        return false;
       }
       
     }

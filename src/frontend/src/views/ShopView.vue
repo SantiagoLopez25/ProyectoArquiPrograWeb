@@ -10,7 +10,9 @@ export default {
     components: { Header, Footer },
     data() {
         return {
-            productos: []
+            productos: [],
+            isModalNuevoVisible: false,
+            isModalExistenteVisible: false
         }
     },
     methods: {
@@ -20,16 +22,27 @@ export default {
         },
         agregarCarrito(producto) {
             //console.log(producto)
-            CarritoService.agregarProducto(producto);
+            var resultado = CarritoService.agregarProducto(producto);
+            if(resultado){
+                this.isModalNuevoVisible = true;
+            }
+            else{
+                this.isModalExistenteVisible = true
+            }
 
+        },
+        cerrarModal(){
+            this.isModalNuevoVisible = false
+            this.isModalExistenteVisible = false
         }
+        
     },
 
    
 
     mounted() {
         this.initialize();
-        const producto = new Producto()
+        const producto = new Producto(this.$_SERVER_NAME)
         
         producto.getProductos().then(data => { //Obtiene los productos desde el controlador
             this.productos= data
@@ -67,7 +80,7 @@ export default {
             <div class="row">
 
                 <div v-for="(producto, index) in productos" :key="index" class="col-12 col-md-4 col-lg-3 mb-5">
-                    <a class="product-item" @click="agregarCarrito(producto)">
+                    <a class="product-item" @click="agregarCarrito(producto)" >
                         <img :src="producto.ruta" class="img-fluid product-thumbnail">
                         <h3 class="product-title">{{ producto.nombre }}</h3>
                         <strong class="product-price">{{ producto.precioVenta }}</strong>
@@ -82,5 +95,70 @@ export default {
         </div>
     </div>
 
+    
+    <!-- Modal -->
+    <div v-if="isModalNuevoVisible" class="modal-overlay" @click="cerrarModal">
+      <div class="modal-content" @click.stop>
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="h3 mb-3 text-black">Agregado al carrito</h2>
+            <label for="c_code" class="text-black mb-3">
+              El producto que seleccionaste fue ingresado al carrito
+            </label>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-black btn-sm" @click="cerrarModal">
+                Aceptar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="isModalExistenteVisible" class="modal-overlay" @click="cerrarModal">
+      <div class="modal-content" @click.stop>
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="h3 mb-3 text-black">Ya en el carrito</h2>
+            <label for="c_code" class="text-black mb-3">
+              El producto que seleccionaste ya está ingresado en el carrito
+            </label>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-black btn-sm" @click="cerrarModal">
+                Aceptar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
     <Footer></Footer>
 </template>
+
+<style>
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  z-index: 10000;
+}
+</style>

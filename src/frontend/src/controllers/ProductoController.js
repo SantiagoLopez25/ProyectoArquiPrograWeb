@@ -4,17 +4,16 @@ class Producto {
  
     url
     productos = []; 
-   constructor(){
-        this.url = 'http://127.0.0.1:8000/datosproductos'
+   constructor(server){
+       this.url  = server + '/datosproductos' // Servidor -> Laravel'/datosproductos'
 
    }
 
    async getProductos() { //Esta función trabaja de manera asincrona
-     try {
+    try {
         //Petición tipo get para obtener los productos
          const response = await axios.get(this.url); 
          this.productos = response.data;
-         console.log(this.productos);
          return this.productos; 
      } catch (error) {
          console.error('Error: ', error);

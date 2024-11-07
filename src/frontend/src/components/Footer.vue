@@ -88,7 +88,7 @@ export default {
 
             <div class="row g-5 mb-5">
                 <div class="col-lg-4">
-                    <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">WAM technology<span>.</span></a></div>
+                    <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">{{ this.$APP_NAME }}<span></span></a></div>
                     <p class="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus
                         malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
                         Pellentesque habitant</p>

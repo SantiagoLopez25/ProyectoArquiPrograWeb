@@ -9,7 +9,8 @@ export default {
     components: { Header, Footer },
     data() {
         return {
-            productos: CarritoService.obtenerProductos() //Llena productos con la lista del carrito guardada en CarritoService
+            productos: CarritoService.obtenerProductos(), //Llena productos con la lista del carrito guardada en CarritoService
+            isModalVisible: false
         }
     },
     methods: {
@@ -29,6 +30,7 @@ export default {
             CarritoService.varciarCarrito()
             this.productos = [] //Limpiar la lista del carrito
             this.productos = [...this.productos]
+            this.isModalVisible = false;
         },
 
         calcularTotal(index, cantidad, precio){
@@ -71,6 +73,15 @@ export default {
             CarritoService.guardarTotalCompra(total)
             return total
         
+        },
+
+        cerrarModal(){
+            this.isModalVisible = false
+            
+        },
+
+        abrirModal(){
+            this.isModalVisible = true
         }
 
     },
@@ -155,7 +166,7 @@ export default {
                 <div class="col-md-6">
                     <div class="row mb-5">
                         <div class="col-md-6 mb-3 mb-md-0">
-                            <button class="btn btn-black btn-sm btn-block" @click="limpiarCarrito()">Limpiar Carrito</button>
+                            <button class="btn btn-black btn-sm btn-block" @click="abrirModal">Limpiar Carrito</button>
                         </div>
                         <div class="col-md-6">
                            <RouterLink class="btn btn-black btn-sm btn-block" to="/shop">
@@ -206,5 +217,54 @@ export default {
         </div>
     </div>
 
+<!-- Modal -->
+<div v-if="isModalVisible" class="modal-overlay" @click="cerrarModal">
+      <div class="modal-content" @click.stop>
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="h3 mb-3 text-black">¿Estas seguro de vaciar el carrito?</h2>
+            <label for="c_code" class="text-black mb-3">
+              ¡Si vacias el carrtio no podras recuperarlo!
+            </label>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-black btn-sm" @click="cerrarModal">
+                Cancelar
+                </button>
+                <p>&nbsp; &nbsp; </p>
+                <button class="btn btn-black btn-sm" @click="limpiarCarrito()">
+                Vaciar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
     <Footer></Footer>
 </template>
+
+<style>
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  z-index: 10000;
+}
+</style>
