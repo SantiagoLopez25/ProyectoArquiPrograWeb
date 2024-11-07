@@ -2,23 +2,54 @@
 import { RouterLink } from 'vue-router'
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
+import Producto from '@/controllers/ProductoController';
+import CarritoService from '@/services/CarritoService';
 
 export default {
     page: {},
     components: { Header, Footer },
     data() {
         return {
-
+            productos: [],
+            isModalNuevoVisible: false,
+            isModalExistenteVisible: false
         }
     },
     methods: {
         initialize() {
             // marcar en el header la pestaña correspondiente
             this.$refs.vwHeader.selectItem('shop')
+        },
+        agregarCarrito(producto) {
+            //console.log(producto)
+            var resultado = CarritoService.agregarProducto(producto);
+            if(resultado){
+                this.isModalNuevoVisible = true;
+            }
+            else{
+                this.isModalExistenteVisible = true
+            }
+
+        },
+        cerrarModal(){
+            this.isModalNuevoVisible = false
+            this.isModalExistenteVisible = false
         }
+        
     },
+
+   
+
     mounted() {
         this.initialize();
+        const producto = new Producto(this.$_SERVER_NAME)
+        
+        producto.getProductos().then(data => { //Obtiene los productos desde el controlador
+            this.productos= data
+        });
+
+      
+       
     }
 };
 </script>
@@ -48,122 +79,62 @@ export default {
         <div class="container">
             <div class="row">
 
-                <!-- Start Column 1 -->
-                <div class="col-12 col-md-4 col-lg-3 mb-5">
-                    <a class="product-item" href="#">
-                        <img src="@/assets/images/product-3.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Nordic Chair</h3>
-                        <strong class="product-price">$50.00</strong>
+                <div v-for="(producto, index) in productos" :key="index" class="col-12 col-md-4 col-lg-3 mb-5">
+                    <a class="product-item" @click="agregarCarrito(producto)" >
+                        <img :src="producto.ruta" class="img-fluid product-thumbnail">
+                        <h3 class="product-title">{{ producto.nombre }}</h3>
+                        <strong class="product-price">{{ producto.precioVenta }}</strong>
 
                         <span class="icon-cross">
                             <img src="@/assets/images/cross.svg" class="img-fluid">
                         </span>
                     </a>
                 </div>
-                <!-- End Column 1 -->
-
-                <!-- Start Column 2 -->
-                <div class="col-12 col-md-4 col-lg-3 mb-5">
-                    <a class="product-item" href="#">
-                        <img src="@/assets/images/product-1.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Nordic Chair</h3>
-                        <strong class="product-price">$50.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="@/assets/images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <!-- End Column 2 -->
-
-                <!-- Start Column 3 -->
-                <div class="col-12 col-md-4 col-lg-3 mb-5">
-                    <a class="product-item" href="#">
-                        <img src="@/assets/images/product-2.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Kruzo Aero Chair</h3>
-                        <strong class="product-price">$78.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="@/assets/images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <!-- End Column 3 -->
-
-                <!-- Start Column 4 -->
-                <div class="col-12 col-md-4 col-lg-3 mb-5">
-                    <a class="product-item" href="#">
-                        <img src="@/assets/images/product-3.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Ergonomic Chair</h3>
-                        <strong class="product-price">$43.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="@/assets/images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <!-- End Column 4 -->
-
-
-                <!-- Start Column 1 -->
-                <div class="col-12 col-md-4 col-lg-3 mb-5">
-                    <a class="product-item" href="#">
-                        <img src="@/assets/images/product-3.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Nordic Chair</h3>
-                        <strong class="product-price">$50.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="@/assets/images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <!-- End Column 1 -->
-
-                <!-- Start Column 2 -->
-                <div class="col-12 col-md-4 col-lg-3 mb-5">
-                    <a class="product-item" href="#">
-                        <img src="@/assets/images/product-1.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Nordic Chair</h3>
-                        <strong class="product-price">$50.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="@/assets/images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <!-- End Column 2 -->
-
-                <!-- Start Column 3 -->
-                <div class="col-12 col-md-4 col-lg-3 mb-5">
-                    <a class="product-item" href="#">
-                        <img src="@/assets/images/product-2.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Kruzo Aero Chair</h3>
-                        <strong class="product-price">$78.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="@/assets/images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <!-- End Column 3 -->
-
-                <!-- Start Column 4 -->
-                <div class="col-12 col-md-4 col-lg-3 mb-5">
-                    <a class="product-item" href="#">
-                        <img src="@/assets/images/product-3.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Ergonomic Chair</h3>
-                        <strong class="product-price">$43.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="@/assets/images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <!-- End Column 4 -->
 
             </div>
         </div>
     </div>
 
+    
+    <!-- Modal -->
+    <div v-if="isModalNuevoVisible" class="modal-overlay" @click="cerrarModal">
+      <div class="modal-content" @click.stop>
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="h3 mb-3 text-black">Agregado al carrito</h2>
+            <label for="c_code" class="text-black mb-3">
+              El producto que seleccionaste fue ingresado al carrito
+            </label>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-black btn-sm" @click="cerrarModal">
+                Aceptar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="isModalExistenteVisible" class="modal-overlay" @click="cerrarModal">
+      <div class="modal-content" @click.stop>
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="h3 mb-3 text-black">Ya en el carrito</h2>
+            <label for="c_code" class="text-black mb-3">
+              El producto que seleccionaste ya está ingresado en el carrito
+            </label>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-black btn-sm" @click="cerrarModal">
+                Aceptar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
     <Footer></Footer>
 </template>
+
