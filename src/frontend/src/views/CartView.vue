@@ -60,6 +60,7 @@ export default {
         },
 
         calcularTotalCompra(){
+            //Calcula el total de toda la compra, el cual se muestra en pantalla y se guarda en CarritoService
             var total = 0
             this.productos.forEach(producto => {
                 total= parseFloat( parseFloat(total) + parseFloat(producto.total))

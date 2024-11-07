@@ -31,7 +31,7 @@ export default {
         this.initialize();
         const producto = new Producto()
         
-        producto.getProductos().then(data => {
+        producto.getProductos().then(data => { //Obtiene los productos desde el controlador
             this.productos= data
         });
 
