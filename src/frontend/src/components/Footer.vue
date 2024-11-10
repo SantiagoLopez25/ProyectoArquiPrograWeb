@@ -68,6 +68,7 @@ export default {
                                     src="@/assets/images/envelope-outline.svg" alt="Image"
                                     class="img-fluid"></span><span>¡Suscríbete a nuestro Newsletter!</span></h3>
 
+                         <!--
                         <form action="#" class="row g-3">
                             <div class="col-auto">
                                 <input type="text" class="form-control" placeholder="Ingresa tu nombre">
@@ -81,7 +82,7 @@ export default {
                                 </button>
                             </div>
                         </form>
-
+                    -->
                     </div>
                 </div>
             </div>
