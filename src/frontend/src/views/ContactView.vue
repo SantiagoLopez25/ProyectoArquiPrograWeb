@@ -2,18 +2,45 @@
 import { RouterLink } from "vue-router";
 import Footer from "@/components/Footer.vue";
 import Header from "@/components/Header.vue";
+import axios from "axios";
 
 export default {
-  page: {},
   components: { Header, Footer },
   data() {
-    return {};
+    return {
+      form: {
+        nombre: '',
+        telefono: '',
+        direccion: '',
+        email: '',
+        estado: true
+      }
+    };
   },
   methods: {
     initialize() {
-      // marcar en el header la pestaña correspondiente
+      //Marcar en el header la pestaña correspondiente
       this.$refs.vwHeader.selectItem("contact");
     },
+    async registrarCliente() {
+      try {
+        const response = await axios.post('http://localhost:8000/api/cliente-contacto', this.form);
+        alert("Registrado exitosamente");
+        this.limpiarF();
+      } catch (error) {
+        console.error(error.response?.data || error);
+        alert("Error al registrar cliente");
+      }
+    },
+    limpiarF() {
+      this.form = {
+        nombre: '',
+        telefono: '',
+        direccion: '',
+        email: '',
+        estado: true
+      };
+    }
   },
   mounted() {
     this.initialize();
@@ -84,7 +111,7 @@ export default {
                   </div>
                   <!-- /.icon -->
                   <div class="service-contents">
-                    <p>43 Raymouth Rd. Baltemoer, London 3910</p>
+                    <p>8 Avenida, Zona 1, Quetzaltenango</p>
                   </div>
                   <!-- /.service-contents-->
                 </div>
@@ -113,7 +140,7 @@ export default {
                   </div>
                   <!-- /.icon -->
                   <div class="service-contents">
-                    <p>info@yourdomain.com</p>
+                    <p>infoWAM@outlook.com</p>
                   </div>
                   <!-- /.service-contents-->
                 </div>
@@ -143,7 +170,7 @@ export default {
                   </div>
                   <!-- /.icon -->
                   <div class="service-contents">
-                    <p>+1 294 3925 3939</p>
+                    <p>+502 7761 8937</p>
                   </div>
                   <!-- /.service-contents-->
                 </div>
@@ -151,40 +178,33 @@ export default {
               </div>
             </div>
 
-            <form>
+            <form @submit.prevent="registrarCliente">
               <div class="row">
                 <div class="col-6">
                   <div class="form-group">
-                    <label class="text-black" for="fname">First name</label>
-                    <input type="text" class="form-control" id="fname" />
+                    <label class="text-black" for="nombre">Nombre</label>
+                    <input v-model="form.nombre" type="text" class="form-control" id="nombre" placeholder="David Maldonado"/>
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="form-group">
-                    <label class="text-black" for="lname">Last name</label>
-                    <input type="text" class="form-control" id="lname" />
+                    <label class="text-black" for="tel">Teléfono</label>
+                    <input v-model="form.telefono" type="text" class="form-control" id="tel" placeholder="38153893"/>
                   </div>
                 </div>
               </div>
               <div class="form-group">
-                <label class="text-black" for="email">Email address</label>
-                <input type="email" class="form-control" id="email" />
+                <label class="text-black" for="dir">Dirección</label>
+                <input v-model="form.direccion" type="text" class="form-control" id="dir" placeholder="1ra calle 27-98 zona 14"/>
+              </div>
+              <div class="form-group">
+                <label class="text-black" for="email">Correo electrónico</label>
+                <input v-model="form.email" type="email" class="form-control" id="email" placeholder="david@gmail.com"/>
               </div>
 
-              <div class="form-group mb-5">
-                <label class="text-black" for="message">Message</label>
-                <textarea
-                  name=""
-                  class="form-control"
-                  id="message"
-                  cols="30"
-                  rows="5"
-                ></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary-hover-outline">
-                Send Message
-              </button>
+              <button type="submit" class="btn btn-primary-hover-outline" style="position: relative; top: 30px;">
+                Registrarse
+             </button>
             </form>
           </div>
         </div>

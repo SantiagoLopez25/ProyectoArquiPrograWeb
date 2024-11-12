@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use App\Models\Contacto;
+use Illuminate\Support\Facades\DB;
 
 class ClienteController extends Controller
 {
@@ -32,25 +34,36 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required|string|max:75',
+            'direccion' => 'required|string|max:100',
+            'estado' => 'required|boolean',
+            'telefono' => 'required|string|max:8',
+            'email' => 'required|string|max:75'
+        ]);
 
+        DB::beginTransaction();
         try {
-            $request->validate([
-                'nombre' => 'required|string|max:75',
-                'direccion' => 'required|string|max:100',
-                'estado' => 'required|boolean'
+            //crear un cliente nuevo
+            $cliente = Cliente::create([
+                'nombre' => $request->nombre,
+                'direccion' => $request->direccion,
+                'estado' => $request->estado,
             ]);
-    
-            $clientes = Cliente::create($request->all());
-           // return response()->json($clientes, 201);
-            return 1;
 
+            //crear el contacto asociado al cliente nuevo
+            Contacto::create([
+                'telefono' => $request->telefono,
+                'email' => $request->email,
+                'idCliente' => $cliente->idCliente
+            ]);
 
-        }
+            DB::commit();
+            return response()->json(['mensaje' => 'Cliente creado exitosamente'], 201);
 
-        catch (\Ecception $e) {
-           // return response()->json(['Error' => $e], 500);
-           return 0;
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json(['error' => 'Error al crear cliente', 'error:' => $e->getMessage()], 500);
         }
     }
 
