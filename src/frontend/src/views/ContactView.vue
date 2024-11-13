@@ -14,7 +14,8 @@ export default {
         direccion: '',
         email: '',
         estado: true
-      }
+      },
+      isModalVisible: false
     };
   },
   methods: {
@@ -24,8 +25,7 @@ export default {
     },
     async registrarCliente() {
       try {
-        const response = await axios.post('http://localhost:8000/api/cliente-contacto', this.form);
-        alert("Registrado exitosamente");
+        const response = await axios.post(this.$_SERVER_NAME+'/api/cliente-contacto', this.form);
         this.limpiarF();
       } catch (error) {
         console.error(error.response?.data || error);
@@ -40,6 +40,13 @@ export default {
         email: '',
         estado: true
       };
+    },
+    cerrarModal(){
+          this.isModalVisible = false   
+        },
+
+    abrirModal(){
+      this.isModalVisible = true
     }
   },
   mounted() {
@@ -189,7 +196,7 @@ export default {
                 <div class="col-6">
                   <div class="form-group">
                     <label class="text-black" for="tel">Teléfono</label>
-                    <input v-model="form.telefono" type="text" class="form-control" id="tel" placeholder="38153893"/>
+                    <input v-model="form.telefono" type="text" class="form-control" id="tel" placeholder="38153893" maxlength="8"/>
                   </div>
                 </div>
               </div>
@@ -202,7 +209,7 @@ export default {
                 <input v-model="form.email" type="email" class="form-control" id="email" placeholder="david@gmail.com"/>
               </div>
 
-              <button type="submit" class="btn btn-primary-hover-outline" style="position: relative; top: 30px;">
+              <button type="submit" class="btn btn-primary-hover-outline" style="position: relative; top: 35px; left: 325px;" @click="abrirModal">
                 Registrarse
              </button>
             </form>
@@ -211,6 +218,25 @@ export default {
       </div>
     </div>
   </div>
+
+  <!--Modal-->
+  <div v-if="isModalVisible" class="modal-overlay" @click="cerrarModal">
+      <div class="modal-content" @click.stop>
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="h3 mb-3 text-black" style="position: relative; top: 20px;">Registrado exitosamente</h2>
+            <label for="c_code" class="text-black mb-3" style="position: relative; top: 20px;">
+              Ahora puedes seguir navegando en la tienda
+            </label>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-black btn-sm" @click="cerrarModal" style="position: relative; top: 25px;">
+                Cerrar
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <!-- End Contact Form -->
 
