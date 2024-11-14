@@ -39,4 +39,5 @@ Route::resource('series', SerieFacturaController::class);
 Route::resource('sucursales', SucursalController::class);
 Route::resource('tiposp', TipoProductoController::class);
 Route::resource('usuarios', UsuarioController::class);
+Route::post('/api/cliente-contacto', [ClienteController::class, 'store']);
 

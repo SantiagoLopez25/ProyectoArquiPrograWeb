@@ -2,18 +2,61 @@
 import { RouterLink } from "vue-router";
 import Footer from "@/components/Footer.vue";
 import Header from "@/components/Header.vue";
+import ClienteController from "@/controllers/ClienteController"; 
 
 export default {
-  page: {},
   components: { Header, Footer },
   data() {
-    return {};
+    return {
+      form: {
+        nombre: '',
+        telefono: '',
+        direccion: '',
+        email: '',
+        estado: true
+      },
+      clienteController: null, //instabcia de ClienteController
+      isModalVisible: false,
+      isModalVisible2: false
+    };
   },
   methods: {
     initialize() {
-      // marcar en el header la pestaña correspondiente
+      //Marcar en el header la pestaña correspondiente
       this.$refs.vwHeader.selectItem("contact");
+      this.clienteController = new ClienteController(this.$_SERVER_NAME); //inicializando el controlador con el servidor
     },
+    async registrarCliente() {
+      try {
+        //Se llama al controladorr para registrar el cliente y contacto
+        await this.clienteController.registrarCliente(this.form);
+        this.limpiarFormulario(); this.abrirModal();
+      } catch (error) {
+        console.error('Error al registrar cliente:', error.response?.data || error);
+        this.abrirModal2();
+      }
+    },
+    limpiarFormulario() {
+      this.form = {
+        nombre: '',
+        telefono: '',
+        direccion: '',
+        email: '',
+        estado: true
+      };
+    },
+    cerrarModal(){
+      this.isModalVisible = false
+    },
+    abrirModal(){
+      this.isModalVisible = true
+    },
+    cerrarModal2(){
+      this.isModalVisible2 = false
+    },
+    abrirModal2(){
+      this.isModalVisible2 = true
+    }
   },
   mounted() {
     this.initialize();
@@ -84,7 +127,7 @@ export default {
                   </div>
                   <!-- /.icon -->
                   <div class="service-contents">
-                    <p>43 Raymouth Rd. Baltemoer, London 3910</p>
+                    <p>8 Avenida, Zona 1, Quetzaltenango</p>
                   </div>
                   <!-- /.service-contents-->
                 </div>
@@ -113,7 +156,7 @@ export default {
                   </div>
                   <!-- /.icon -->
                   <div class="service-contents">
-                    <p>info@yourdomain.com</p>
+                    <p>infoWAM@outlook.com</p>
                   </div>
                   <!-- /.service-contents-->
                 </div>
@@ -143,7 +186,7 @@ export default {
                   </div>
                   <!-- /.icon -->
                   <div class="service-contents">
-                    <p>+1 294 3925 3939</p>
+                    <p>+502 7761 8937</p>
                   </div>
                   <!-- /.service-contents-->
                 </div>
@@ -151,46 +194,76 @@ export default {
               </div>
             </div>
 
-            <form>
+            <form @submit.prevent="registrarCliente">
               <div class="row">
                 <div class="col-6">
                   <div class="form-group">
-                    <label class="text-black" for="fname">First name</label>
-                    <input type="text" class="form-control" id="fname" />
+                    <label class="text-black" for="nombre">Nombre</label>
+                    <input v-model="form.nombre" type="text" class="form-control" id="nombre" placeholder="David Maldonado"/>
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="form-group">
-                    <label class="text-black" for="lname">Last name</label>
-                    <input type="text" class="form-control" id="lname" />
+                    <label class="text-black" for="tel">Teléfono</label>
+                    <input v-model="form.telefono" type="text" class="form-control" id="tel" placeholder="38153893" maxlength="8"/>
                   </div>
                 </div>
               </div>
               <div class="form-group">
-                <label class="text-black" for="email">Email address</label>
-                <input type="email" class="form-control" id="email" />
+                <label class="text-black" for="dir">Dirección</label>
+                <input v-model="form.direccion" type="text" class="form-control" id="dir" placeholder="1ra calle 27-98 zona 14"/>
+              </div>
+              <div class="form-group">
+                <label class="text-black" for="email">Correo electrónico</label>
+                <input v-model="form.email" type="email" class="form-control" id="email" placeholder="david@gmail.com"/>
               </div>
 
-              <div class="form-group mb-5">
-                <label class="text-black" for="message">Message</label>
-                <textarea
-                  name=""
-                  class="form-control"
-                  id="message"
-                  cols="30"
-                  rows="5"
-                ></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary-hover-outline">
-                Send Message
-              </button>
+              <button type="submit" class="btn btn-primary-hover-outline" style="position: relative; top: 35px; left: 325px;">
+                Registrarse
+             </button>
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!--Modal-->
+  <div v-if="isModalVisible" class="modal-overlay" @click="cerrarModal">
+      <div class="modal-content" @click.stop>
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="h3 mb-3 text-black" style="position: relative; top: 20px;">Registrado exitosamente</h2>
+            <label for="c_code" class="text-black mb-3" style="position: relative; top: 20px;">
+              Ahora puedes seguir navegando en la tienda.
+            </label>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-black btn-sm" @click="cerrarModal" style="position: relative; top: 25px;">
+                Cerrar
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="isModalVisible2" class="modal-overlay" @click="cerrarModal2">
+      <div class="modal-content" @click.stop>
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="h3 mb-3 text-black" style="position: relative; top: 20px;">Error al registrar</h2>
+            <label for="c_code" class="text-black mb-3" style="position: relative; top: 20px;">
+              Comunicate con la empresa para informar el problema.
+            </label>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-black btn-sm" @click="cerrarModal2" style="position: relative; top: 25px;">
+                Cerrar
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <!-- End Contact Form -->
 
