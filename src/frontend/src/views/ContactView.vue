@@ -2,7 +2,7 @@
 import { RouterLink } from "vue-router";
 import Footer from "@/components/Footer.vue";
 import Header from "@/components/Header.vue";
-import axios from "axios";
+import ClienteController from "@/controllers/ClienteController"; 
 
 export default {
   components: { Header, Footer },
@@ -15,24 +15,28 @@ export default {
         email: '',
         estado: true
       },
-      isModalVisible: false
+      clienteController: null, //instabcia de ClienteController
+      isModalVisible: false,
+      isModalVisible2: false
     };
   },
   methods: {
     initialize() {
       //Marcar en el header la pestaña correspondiente
       this.$refs.vwHeader.selectItem("contact");
+      this.clienteController = new ClienteController(this.$_SERVER_NAME); //inicializando el controlador con el servidor
     },
     async registrarCliente() {
       try {
-        const response = await axios.post(this.$_SERVER_NAME+'/api/cliente-contacto', this.form);
-        this.limpiarF();
+        //Se llama al controladorr para registrar el cliente y contacto
+        await this.clienteController.registrarCliente(this.form);
+        this.limpiarFormulario(); this.abrirModal();
       } catch (error) {
-        console.error(error.response?.data || error);
-        alert("Error al registrar cliente");
+        console.error('Error al registrar cliente:', error.response?.data || error);
+        this.abrirModal2();
       }
     },
-    limpiarF() {
+    limpiarFormulario() {
       this.form = {
         nombre: '',
         telefono: '',
@@ -42,11 +46,16 @@ export default {
       };
     },
     cerrarModal(){
-          this.isModalVisible = false   
-        },
-
+      this.isModalVisible = false
+    },
     abrirModal(){
       this.isModalVisible = true
+    },
+    cerrarModal2(){
+      this.isModalVisible2 = false
+    },
+    abrirModal2(){
+      this.isModalVisible2 = true
     }
   },
   mounted() {
@@ -209,7 +218,7 @@ export default {
                 <input v-model="form.email" type="email" class="form-control" id="email" placeholder="david@gmail.com"/>
               </div>
 
-              <button type="submit" class="btn btn-primary-hover-outline" style="position: relative; top: 35px; left: 325px;" @click="abrirModal">
+              <button type="submit" class="btn btn-primary-hover-outline" style="position: relative; top: 35px; left: 325px;">
                 Registrarse
              </button>
             </form>
@@ -226,10 +235,28 @@ export default {
           <div class="col-md-12 text-center">
             <h2 class="h3 mb-3 text-black" style="position: relative; top: 20px;">Registrado exitosamente</h2>
             <label for="c_code" class="text-black mb-3" style="position: relative; top: 20px;">
-              Ahora puedes seguir navegando en la tienda
+              Ahora puedes seguir navegando en la tienda.
             </label>
             <div class="d-flex justify-content-center">
                 <button class="btn btn-black btn-sm" @click="cerrarModal" style="position: relative; top: 25px;">
+                Cerrar
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="isModalVisible2" class="modal-overlay" @click="cerrarModal2">
+      <div class="modal-content" @click.stop>
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="h3 mb-3 text-black" style="position: relative; top: 20px;">Error al registrar</h2>
+            <label for="c_code" class="text-black mb-3" style="position: relative; top: 20px;">
+              Comunicate con la empresa para informar el problema.
+            </label>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-black btn-sm" @click="cerrarModal2" style="position: relative; top: 25px;">
                 Cerrar
                 </button>
             </div>
