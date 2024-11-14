@@ -6,6 +6,7 @@ class UbicacionService {
         this.ubicaciones = [];
         this.latitud;
         this.longitud;
+        this.idSucursal;
     }
 
     setUbicaciones(ubicaciones){
@@ -27,9 +28,6 @@ class UbicacionService {
     // Función para encontrar la ubicación más cercana
     tiendaMasCercana(){
 
-        this.latitud = 14.033734
-        this.longitud = -90.7188892
-       
         let closest = null;
         let minDistance = Infinity;
        
@@ -48,6 +46,7 @@ class UbicacionService {
             }
         });
 
+        this.idSucursal = closest
         return closest;
 
     }
@@ -78,6 +77,10 @@ class UbicacionService {
         const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
       
         return R * c; // Retorna la distancia en kilómetros
+    }
+
+    getIdSucursal(){
+        return this.idSucursal
     }
 
 }
