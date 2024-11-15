@@ -3,6 +3,8 @@ import { RouterLink } from 'vue-router'
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
 import CarritoService from '@/services/CarritoService';
+import UbicacionService from '@/services/UbicacionesService';
+import Sucursal from '@/controllers/SucursalController';
 
 export default {
   page: { },
@@ -11,6 +13,10 @@ export default {
     return {
         productos: CarritoService.obtenerProductos(),
         total: CarritoService.obtenerTotalCompra(),
+        ubicaciones: [],
+        posicionObtenida: false,
+        lat: 0,
+        lng: 0
         
     }
   },
@@ -18,10 +24,66 @@ export default {
         initialize() {
             // marcar en el header la pestaña correspondiente
             this.$refs.vwHeader.selectItem('')
-        }
+        },
+
+        getUbicacion() {
+           
+            
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    // Obtener latitud y longitud
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+
+                    UbicacionService.setUbicacion(lat, lng)
+                    UbicacionService.tiendaMasCercana()
+                    
+                    
+                    
+                    
+                },
+                (error) => {
+                    //En caso de cualquier error se asigna una ubicación aleatoria
+                    UbicacionService.ubicacionAleatoria()
+                    UbicacionService.tiendaMasCercana()
+                    
+                }
+                );
+
+               
+                  
+                
+                
+            } 
+            else {
+                //alert("La geolocalización no es compatible con este navegador.");
+                UbicacionService.ubicacionAleatoria()
+                UbicacionService.tiendaMasCercana()
+            }
+
+                  
+        },
+  
     },
     mounted() {
         this.initialize();
+        
+
+        const sucursal = new Sucursal(this.$_SERVER_NAME)
+        
+        sucursal.getSucursales().then(data => { //Obtiene las ubicaciones de las sucursales desde el controlador
+            this.ubicaciones= data
+            UbicacionService.setUbicaciones(this.ubicaciones)
+            this.getUbicacion();
+        });
+
+      
+       
+
+       
+
+        
     }
 };
 </script>
