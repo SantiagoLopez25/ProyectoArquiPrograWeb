@@ -37,17 +37,17 @@ export default {
                     const lng = position.coords.longitude;
 
                     UbicacionService.setUbicacion(lat, lng)
-                    const a = UbicacionService.tiendaMasCercana()
-                    alert('Tienda más cercana: ' + a.idSucursal)
+                    UbicacionService.tiendaMasCercana()
                     
                     
-                    alert(`Ubicación obtenida:\nLatitud: ${lat}\nLongitud: ${lng}`);
+                    
+                    
                 },
                 (error) => {
                     //En caso de cualquier error se asigna una ubicación aleatoria
                     UbicacionService.ubicacionAleatoria()
-                    const a = UbicacionService.tiendaMasCercana()
-                    alert('Tienda más cercana: ' + a.idSucursal)
+                    UbicacionService.tiendaMasCercana()
+                    
                 }
                 );
 
@@ -59,8 +59,7 @@ export default {
             else {
                 //alert("La geolocalización no es compatible con este navegador.");
                 UbicacionService.ubicacionAleatoria()
-                const a = UbicacionService.tiendaMasCercana()
-                alert('Tienda más cercana: ' + a.idSucursal)
+                UbicacionService.tiendaMasCercana()
             }
 
                   

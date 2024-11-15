@@ -47,7 +47,7 @@ class UbicacionService {
         });
 
         this.idSucursal = closest
-        return closest;
+        
 
     }
 
