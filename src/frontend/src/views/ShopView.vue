@@ -83,7 +83,7 @@ export default {
                     <a class="product-item" @click="agregarCarrito(producto)" >
                         <img :src="producto.ruta" class="img-fluid product-thumbnail">
                         <h3 class="product-title">{{ producto.nombre }}</h3>
-                        <strong class="product-price">{{ producto.precioVenta }}</strong>
+                        <strong class="product-price">Q.{{ producto.precioVenta }}</strong>
 
                         <span class="icon-cross">
                             <img src="@/assets/images/cross.svg" class="img-fluid">
