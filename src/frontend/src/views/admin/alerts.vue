@@ -6,6 +6,7 @@ import { loadScript, unloadScript } from "vue-plugin-load-script";
 
 import Sidebar from '@/components/admin/Sidebar.vue';
 import Navbar from '@/components/admin/Navbar.vue';
+import Sesion from "@/services/Sesion";
 
 export default {
     page: {},
@@ -26,6 +27,11 @@ export default {
     },
     methods: {
         
+    },
+    beforeMount() {
+      if (! Sesion.check()) {
+        this.$router.push('/admin/signin');
+      }
     },
     mounted() {
       this.scripts.forEach((element) => {

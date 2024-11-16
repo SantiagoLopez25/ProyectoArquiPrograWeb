@@ -124,6 +124,14 @@ CREATE TABLE `empleado` (
   `idSucursal` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `empleado`
+--
+
+INSERT INTO `empleado` (`idEmpleado`, `nombre`, `telefono`, `email`, `estado`, `idSucursal`) VALUES
+(1, 'Juan', '85120354', 'juancho@technology.com.gt', 1, 5),
+(2, 'Miguel', '02024596', 'bob@technology.com.gt', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -355,6 +363,14 @@ CREATE TABLE `rol` (
   `nombre` varchar(30) NOT NULL,
   `estado` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `rol`
+--
+
+INSERT INTO `rol` (`idRol`, `nombre`, `estado`) VALUES
+(1, 'Administrador', 1),
+(2, 'Gerente', 1);
 
 -- --------------------------------------------------------
 
@@ -664,6 +680,14 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`idUsuario`, `password`, `estado`, `usuario`, `idEmpleado`, `idRol`) VALUES
+(1, 0x6261333235333837366165643662633232643461366666353364383430366336616438363431393565643134346162356338373632316236633233336235343862616561653639353664663334366563386331376635656131306633356565336362633531343739376564376464643331343534363465326130626162343133, 1, 'admin', 1, 1),
+(2, 0x6261333235333837366165643662633232643461366666353364383430366336616438363431393565643134346162356338373632316236633233336235343862616561653639353664663334366563386331376635656131306633356565336362633531343739376564376464643331343534363465326130626162343133, 1, 'bob', 2, 2);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -856,7 +880,7 @@ ALTER TABLE `detallefactura`
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `idEmpleado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEmpleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `factura`
@@ -910,7 +934,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
-  MODIFY `idRol` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idRol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `rproductosucursal`
@@ -940,7 +964,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

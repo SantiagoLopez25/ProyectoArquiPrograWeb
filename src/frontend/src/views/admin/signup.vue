@@ -1,5 +1,6 @@
 <script>
 import { loadScript, unloadScript } from "vue-plugin-load-script";
+import Sesion from "@/services/Sesion";
 
 export default {
     page: {},
@@ -16,6 +17,11 @@ export default {
     },
     methods: {
         
+    },
+    beforeMount() {
+      if (Sesion.check()) {
+        this.$router.push('/admin/');
+      }
     },
     mounted() {
       this.scripts.forEach((element) => {
