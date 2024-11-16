@@ -5,6 +5,7 @@ import CryptoJS from "crypto-js";
 
 import UsuarioController from "@/controllers/UsuarioController";
 import Sesion from "@/services/Sesion";
+import LogService from "@/services/LogService";
 
 export default {
   page: {},
@@ -41,7 +42,9 @@ export default {
             CryptoJS.AES.encrypt("true", kv_key.toString())
           );
 
-          Sesion.init(kk_key.toString(), kv_key.toString())
+          Sesion.init(kk_key.toString(), kv_key.toString(), data);
+          LogService.log(this.$_SERVER_NAME, "sesión inicidada");
+          
           this.$router.push('/admin/')
         } else {
           this.$K_OPCION = null;
