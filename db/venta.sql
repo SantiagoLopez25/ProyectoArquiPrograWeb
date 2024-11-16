@@ -7,15 +7,16 @@ CREATE PROCEDURE guardarVenta (
     IN montoTotal DECIMAL(18,2),
     IN idSucursal INT,
     IN detalleFactura JSON,
-    IN idCliente INT,
     IN nombreCliente VARCHAR(75),
     IN direccion VARCHAR(100),
+    IN correo VARCHAR(75),
     OUT mensaje VARCHAR(100)
 )
 ventaSP: BEGIN 
     DECLARE i INT DEFAULT 0;
     DECLARE lenght INT DEFAULT 0;
     DECLARE idFactura INT;
+    DECLARE idCliente INT DEFAULT 0;
     DECLARE idProducto INT;
     DECLARE cantidad INT;
     DECLARE idOtraSucursal INT;
@@ -39,9 +40,14 @@ ventaSP: BEGIN
         LEAVE ventaSP;
     END IF;
 
+    IF EXISTS (SELECT 1 FROM contacto WHERE email = correo) THEN
+        SET idCliente = (SELECT c.idCliente FROM Cliente c INNER JOIN Contacto con ON c.idCliente = con.idContacto
+                        WHERE con.email = correo LIMIT 1);  
+    END IF;
+
     -- Insertar cliente si idCliente es 0
     IF idCliente = 0 THEN
-        INSERT INTO cliente (nombre, direccion, estado)
+        INSERT INTO Cliente (nombre, direccion, estado)
         VALUES (nombreCliente, direccion, 1);
         SET idCliente = LAST_INSERT_ID();
     END IF;
