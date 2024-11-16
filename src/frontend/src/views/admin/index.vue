@@ -7,6 +7,7 @@ import { loadScript, unloadScript } from "vue-plugin-load-script";
 import Sidebar from '@/components/admin/Sidebar.vue';
 import Navbar from '@/components/admin/Navbar.vue';
 import Sesion from "@/services/Sesion";
+import LogService from "@/services/LogService";
 
 export default {
     page: {},
@@ -49,6 +50,9 @@ export default {
                 }                
             });
         })
+
+        // Ejemplo de guardado - logs
+        // LogService.log(this.$_SERVER_NAME, "cambios");
     },
     unmounted() {
       this.scripts.forEach((element) => {

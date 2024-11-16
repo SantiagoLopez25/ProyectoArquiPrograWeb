@@ -36,19 +36,17 @@ class HistorialController extends Controller
             $request->validate([
                 'descripcion' => 'required|string|max:500',
                 'fecha' => 'required|date',
-                'idUsuario' => 'required|exists:Usuario,idUsuario'
+                'idUsuario' => 'required|exists:usuario,idUsuario'
             ]);
     
             $historiales = Historial::create($request->all());
-           // return response()->json($clientes, 201);
+            //return response()->json("ok", 201);
             return 1;
-
-
         }
 
         catch (\Ecception $e) {
-           // return response()->json(['Error' => $e], 500);
-           return 0;
+            return response()->json(['Error' => $e], 500);
+           //return 0;
         }
     }
 

@@ -2,13 +2,13 @@ import Model from "./Model";
 
 class Usuario extends Model {
 
-    #usuario = "";
+    usuario = "";
     #password  = "";
     
-    #estado = false;
+    estado = false;
 
-    #idEmpleado = 0;
-    #idRol = 0;
+    idEmpleado = 0;
+    idRol = 0;
 
     constructor()  {
         super();
@@ -16,38 +16,41 @@ class Usuario extends Model {
 
     // setters 
     setUsuario(usuario) {
-        this.#usuario = usuario;
+        this.usuario = usuario;
     }
     setPassword(password) {
         this.#password = password;
     }
     setEstado(estado) {
-        this.#estado = estado;
+        this.estado = estado;
     }
     setIdEmpleado(idEmpleado) {
-        this.#idEmpleado = idEmpleado;
+        this.idEmpleado = idEmpleado;
     }
     setIdRol(idRol) {
-        this.#idRol = idRol;
+        this.idRol = idRol;
     }
 
     // getters
     getUsuario() {
-        return this.#usuario;
+        return this.usuario;
     }
     getPassword() {
         return this.#password;
     }
     getIdEmpleado() {
-        return this.#idEmpleado;
+        return this.idEmpleado;
     }
     getIdRol() {
-        return this.#idRol;
+        return this.idRol;
     }
 
     // especiales
     isActivo() {
-        return this.#estado;
+        return this.estado;
+    }
+    toString() {
+        return "usuario";
     }
 }
 

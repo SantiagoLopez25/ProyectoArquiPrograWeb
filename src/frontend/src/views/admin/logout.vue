@@ -1,4 +1,5 @@
 <script>
+import LogService from "@/services/LogService";
 import Sesion from "@/services/Sesion";
 
 export default {
@@ -10,10 +11,13 @@ export default {
     methods: {
         
     },
-    beforeMount() {
-      if (Sesion.check()) {
-        Sesion.close();
-      }
+    beforeMount() {      
+      if (Sesion.check()) {        
+        LogService.listener(data => {
+          Sesion.close();
+        });     
+        LogService.log(this.$_SERVER_NAME, "cerrar sesión");   
+      }      
       this.$router.push('/admin/signin');
     }
 }
