@@ -54,6 +54,11 @@ class UsuarioController extends Controller
         }
     }
 
+    public function fecthUser(string $user) {
+        $usuario = Usuario::where('usuario', $user)->get();
+        return response()->json($usuario, 200);
+    }
+
     /**
      * Display the specified resource.
      */

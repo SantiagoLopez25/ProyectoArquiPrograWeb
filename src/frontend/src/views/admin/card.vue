@@ -4,6 +4,8 @@
 <script>
 import { loadScript, unloadScript } from "vue-plugin-load-script";
 
+import Sesion from "@/services/Sesion";
+
 import Sidebar from '@/components/admin/Sidebar.vue';
 import Navbar from '@/components/admin/Navbar.vue';
 

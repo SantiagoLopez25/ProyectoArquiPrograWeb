@@ -107,6 +107,12 @@ const router = createRouter({
       component: () => import('../views/admin/typography.vue')
     },
     {
+      path: '/admin/logout',
+      name: 'logout',
+      component: () => import('../views/admin/logout.vue')
+    },
+    
+    {
       path: '/:pathMatch(.*)*',
       component: () => import('../components/admin/404.vue')
     },

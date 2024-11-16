@@ -1,9 +1,5 @@
 <?php
 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers:*");
-header("Access-Control-Allow-Methods: GET, POST; PUT, OPTIONS");
-
 use Illuminate\Http\Request;
 
 
@@ -21,6 +17,3 @@ require __DIR__.'/../vendor/autoload.php';
 (require_once __DIR__.'/../bootstrap/app.php')
     ->handleRequest(Request::capture());
     
-if($_SERVER['REQUEST_METHOD'] == "OPTIONS"){
-    return "";
-}

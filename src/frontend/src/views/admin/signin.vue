@@ -1,53 +1,97 @@
 <script>
 import { loadScript, unloadScript } from "vue-plugin-load-script";
+import { sha512 } from "js-sha512";
+import CryptoJS from "crypto-js";
+
+import UsuarioController from "@/controllers/UsuarioController";
+import Sesion from "@/services/Sesion";
 
 export default {
-    page: {},
-    components: { },
-    data() {
-        return { 
-            appName: this.$APP_NAME,
-            scripts: [
-                '/libs/jquery/dist/jquery.min.js',
-                '/libs/bootstrap/dist/js/bootstrap.bundle.min.js',
-                /* solar icons */
-                'https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js'
-            ]
-        }
-    },
-    methods: {
-        
-    },
-    mounted() {
-      this.scripts.forEach((element) => {
-            loadScript(element)
-            .then(() => {
-                if (this.$DEBUG) {
-                    console.info('[ ok ] :Load Script (', element, ')')
-                }                
-            })
-            .catch(() => {
-                if (this.$DEBUG) {
-                    console.error('[ error ] :Load Script {', element, '}')
-                }                
-            });
-        })
-    },
-    unmounted() {
-      this.scripts.forEach((element) => {
-            unloadScript(element)
-            .then(() => {
-                if (this.$DEBUG) {
-                    console.info('[ ok ] :Unload Script', element)
-                }
-            })
-            .catch(() => {
-                if (this.$DEBUG) {
-                    console.error('[ error ] :Unload Script', element)
-                }
-            });
-        })
+  page: {},
+  components: {},
+  data() {
+    return {
+      appName: this.$APP_NAME,
+      userController: null,
+      scripts: [
+        '/libs/jquery/dist/jquery.min.js',
+        '/libs/bootstrap/dist/js/bootstrap.bundle.min.js',
+        /* solar icons */
+        'https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js'
+      ]
     }
+  },
+  methods: {
+    initComponents() {
+      this.userController = new UsuarioController(this.$_SERVER_NAME);
+
+    },
+    html(myId) {
+      return document.getElementById(myId);
+    },
+    login() {
+      this.userController.setControllerListener(data => {
+        if (sha512(this.html('pass').value) === data.getPassword()) {
+          // Generamos una clave secreta aleatoria
+          const kk_key = CryptoJS.lib.WordArray.random(15);
+          const kv_key = CryptoJS.lib.WordArray.random(16);
+
+          sessionStorage.setItem(
+            kk_key.toString(),
+            CryptoJS.AES.encrypt("true", kv_key.toString())
+          );
+
+          Sesion.init(kk_key.toString(), kv_key.toString())
+          this.$router.push('/admin/')
+        } else {
+          this.$K_OPCION = null;
+          sessionStorage.clear();
+          alert('Error al iniciar sesión');
+        }
+      })
+      this.userController.buscarUsuario(
+        this.html('user').value, 
+        /*this.html('pass').value*/
+      )
+    }
+  },
+  beforeMount() {
+    if (Sesion.check()) {
+        this.$router.push('/admin/');
+    }
+  },
+  mounted() {
+    this.scripts.forEach((element) => {
+      loadScript(element)
+        .then(() => {
+          if (this.$DEBUG) {
+            console.info('[ ok ] :Load Script (', element, ')')
+          }
+        })
+        .catch(() => {
+          if (this.$DEBUG) {
+            console.error('[ error ] :Load Script {', element, '}')
+          }
+        });
+    })
+
+    this.initComponents();
+  },
+  unmounted() {
+    this.scripts.forEach((element) => {
+      unloadScript(element)
+        .then(() => {
+          if (this.$DEBUG) {
+            console.info('[ ok ] :Unload Script', element)
+          }
+        })
+        .catch(() => {
+          if (this.$DEBUG) {
+            console.error('[ error ] :Unload Script', element)
+          }
+        });
+    })
+  }
 }
 </script>
 
@@ -65,17 +109,18 @@ export default {
                 <RouterLink to="/admin/" class="text-nowrap logo-img text-center d-block py-3 w-100">
                   <img src="@/assets/logo.svg" alt="" width="50px">
                 </RouterLink>
-                <p class="text-center">Your Social Campaigns</p>
-                <form>
+                <p class="text-center">Iniciar sesión en {{ this.$APP_NAME }}</p>
+                <form @submit.prevent="submit">
                   <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Username</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="user" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="user" aria-describedby="emailHelp" required>
                   </div>
                   <div class="mb-4">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="pass" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="pass" required>
                   </div>
-                  <div class="d-flex align-items-center justify-content-between mb-4">
+
+                  <!-- <div class="d-flex align-items-center justify-content-between mb-4">
                     <div class="form-check">
                       <input class="form-check-input primary" type="checkbox" value="" id="flexCheckChecked" checked>
                       <label class="form-check-label text-dark" for="flexCheckChecked">
@@ -83,11 +128,12 @@ export default {
                       </label>
                     </div>
                     <a class="text-primary fw-bold" href="">Forgot Password ?</a>
-                  </div>
-                  <RouterLink to="/admin/" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</RouterLink>
+                  </div> -->
+                  <!--<RouterLink to="/admin/" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</RouterLink>-->
+                  <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" v-on:click="login()">Ingresar</button>
                   <div class="d-flex align-items-center justify-content-center">
-                    <p class="fs-4 mb-0 fw-bold">New to MaterialM?</p>
-                    <a class="text-primary fw-bold ms-2" href="./authentication-register.html">Create an account</a>
+                    <p class="fs-4 mb-0 fw-bold">Eres nuevo en {{ this.$APP_NAME }}?</p>
+                    <RouterLink class="text-primary fw-bold ms-2" to="/admin/signup">Crear una cuenta</RouterLink>
                   </div>
                 </form>
               </div>
