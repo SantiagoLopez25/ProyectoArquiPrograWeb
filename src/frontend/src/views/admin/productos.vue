@@ -324,8 +324,7 @@ export default {
 <!-- Modal formulario para ingresar un producto-->
   <div v-if="isModalNuevoVisible" class="modal-overlay" @click="cerrarModal">
       <div class="modal-content" @click.stop>
-        <br>
-        <br>
+        <br><br><br><br>
         <div class="row mb-5">
             <div class="col-md-12 text-center">
         <div class="card">
@@ -334,6 +333,8 @@ export default {
           
           <form @submit.prevent="crearProducto">
             <div class="card-body">
+              <br>
+              <h1 class="h1 mb-3 text-black">Nuevo Produto</h1>
               <div class="row">
                 <div class="col-md-6 mb-5 mb-md-0">
                     <h2 class="h3 mb-3 text-black">Información del producto</h2>
@@ -452,7 +453,7 @@ export default {
   <div v-if="isModalEditarVisible" class="modal-overlay" @click="cerrarModal">
       <div class="modal-content" @click.stop>
         <br>
-        <br>
+        <br><br><br>
         <div class="row mb-5">
             <div class="col-md-12 text-center">
         <div class="card">
@@ -462,6 +463,8 @@ export default {
           <form @submit.prevent="editarProducto">
             <div class="card-body">
               <div class="row">
+                <br>
+                 <h1 class="h1 mb-3 text-black">Editar Producto</h1>
                 <div class="col-md-6 mb-5 mb-md-0">
                     <h2 class="h3 mb-3 text-black">Información del producto</h2>
                     <div class="p-3 p-lg-5 border bg-white">
@@ -577,11 +580,13 @@ export default {
     <!-- Modal Eliminar -->
     <div v-if="isModalEliminarVisible" class="modal-overlay" @click="cerrarModal">
     <div class="modal-content" @click.stop>
-      <br><br>
+      <br><br><br><br>
       <div class="row mb-5">
         <div class="col-md-12 text-center">
           
           <div class="card">
+            <br>
+              <h1 class="h1 mb-3 text-black">Eliminación de Producto</h1>
             <div class="card-body">
 
              <br><br><br>
@@ -615,6 +620,7 @@ export default {
         <div class="col-md-12 text-center">
           
           <div class="card">
+            
             <div class="card-body">
 
              <br><br><br>
