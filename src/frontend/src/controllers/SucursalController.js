@@ -34,12 +34,14 @@ class Sucursal {
         this.sucursales.forEach(sucursal => {
             const [lat, lng] = sucursal.ubicacion.split(',');
             const id = sucursal.idSucursal
+            const nombreSucursal = sucursal.nombre
 
             
             const ubicacion = {
                 idSucursal : id,
                 latitud: lat,
-                longitud: lng
+                longitud: lng,
+                nombre: nombreSucursal
             }
 
             this.ubicaciones.push(ubicacion)

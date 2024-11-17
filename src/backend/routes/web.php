@@ -29,6 +29,7 @@ Route::resource('contactos', ContactoController::class);
 Route::resource('datosproductos', DatosProductoController::class);
 Route::resource('detalles', DetalleFacturaController::class);
 Route::resource('empleados', EmpleadoController::class);
+Route::resource('facturas', FacturaController::class);
 Route::resource('historiales', HistorialController::class);
 Route::resource('imagenes', ImagenProductoController::class);
 Route::resource('marcas', MarcaController::class);
@@ -40,4 +41,6 @@ Route::resource('sucursales', SucursalController::class);
 Route::resource('tiposp', TipoProductoController::class);
 Route::resource('usuarios', UsuarioController::class);
 Route::post('/api/cliente-contacto', [ClienteController::class, 'store']);
+
+
 

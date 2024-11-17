@@ -15,7 +15,8 @@ class Factura extends Model
         'fechaFactura',
         'montoTotal',
         'idCliente',
-        'idSerie'
+        'idSerie',
+        'idSucursal'
     ];
 
     public $timestamps = false;
@@ -28,6 +29,11 @@ class Factura extends Model
     public function serieFactura()
     {
         return $this->belongsTo(SerieFactura::class, 'idSerie');
+    }
+
+    public function sucursal()
+    {
+        return $this->belongsTo(Sucursal::class, 'idSucursal');
     }
 
    
