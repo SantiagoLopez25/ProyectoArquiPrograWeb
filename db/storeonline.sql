@@ -11,7 +11,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
+CREATE DATABASE IF NOT EXISTS `storeonline`;
+USE `storeonline`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -234,7 +235,7 @@ INSERT INTO `imagenproducto` (`idImagen`, `ruta`, `nombre`, `idProducto`) VALUES
 (23, 'https://puntonaranja.com.gt/wp-content/uploads/2022/08/TA100APL05-1-1024x1024.jpg', 'Apple iPad Pro 12.9\"', 23),
 (24, 'https://m.media-amazon.com/images/I/410+YnkARyL.jpg', 'Sony WH-CH710N', 24),
 (25, 'https://www.resetdigitale.it/128674-thickbox_default/smartwatch-huawei-gt3-active-42mm-nero.jpg', 'Huawei Watch GT 3', 25),
-(26, 'https://www.iphone-droid.net/spec/wp-content/uploads/2022/03/Redmi-Note-11S-5G-Midnight-Black.jpg', 'Xiaomi Redmi Note 11', 26),
+(26, 'https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note-11/mimg01.jpg', 'Xiaomi Redmi Note 11', 26),
 (27, 'https://www.bhphotovideo.com/images/images1000x1000/canon_3616c016_eos_90d_dslr_camera_1502489.jpg', 'Canon EOS 90D', 27),
 (28, 'https://lanoticia.com/wp-content/uploads/2021/05/amazon-nintendo-switch-pro.jpg', 'Nintendo Switch Pro', 28),
 (29, 'https://i.pcmag.com/imagery/reviews/01OQN7sePUgsfxPSDKD4n0G-2.fit_lim.size_768x432.v1633361884.jpg', 'Microsoft Surface Pro 8', 29),
