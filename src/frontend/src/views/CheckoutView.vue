@@ -103,7 +103,7 @@ export default {
            
             const venta = new FacturaController(this.$_SERVER_NAME)
 
-           var datos = {
+           var datos = { //Hacer venta 
                 montoTotal: this.total,
                 idSucursal: UbicacionService.getIdSucursal(),
                 nombreCliente: this.cliente,
@@ -116,7 +116,11 @@ export default {
                 var respuesta = false
                  respuesta = venta.postVenta(datos, this.productos)
                
-                if(respuesta){
+                if(respuesta){ //Compra realizada correctamente
+                    CarritoService.varciarCarrito();
+                    this.nombre = ''
+                    this.direccion=''
+                    this.correo=''
                     this.$router.push('/thankyou'); //Redirigir a /thankyou
                     
                 }

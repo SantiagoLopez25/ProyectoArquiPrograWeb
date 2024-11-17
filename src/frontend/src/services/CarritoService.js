@@ -29,6 +29,7 @@ class CarritoService {
     varciarCarrito(){
       //Vacia el carrito
       this.productosSeleccionados = [];
+      this.total = ''
     }
 
     quitarProducto(indice) {
