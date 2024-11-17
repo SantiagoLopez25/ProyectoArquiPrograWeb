@@ -114,7 +114,7 @@ export default {
               </RouterLink>
             </li>
             <li class="sidebar-item">
-              <RouterLink class="sidebar-link" to="/admin/sample-page" aria-expanded="false">
+              <RouterLink class="sidebar-link" to="/admin/productos" aria-expanded="false">
                 <iconify-icon icon="solar:planet-3-line-duotone"></iconify-icon>
                 <span class="hide-menu">Sample Page</span>
               </RouterLink>

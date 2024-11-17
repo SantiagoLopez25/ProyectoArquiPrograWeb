@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\ImagenProducto;
+use Illuminate\Support\Facades\DB;
 
 class ProductoController extends Controller
 {
@@ -32,27 +34,55 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //
-        try {
+      
             $request->validate([
-                'nombre' => 'required|string|max:50',
+                'nombreProducto' => 'required|string|max:50',
                 'descripcion' => 'required|string|max:500',
-                'precioVenta' => 'decimal|min:0|max:9999999999.99',
-                'estado' => 'required|boolean',
-                'idTipoProducto' => 'required|exists:Producto,idTipoProducto',
+                'precioVenta' => 'min:0|max:9999999999.99',
+                'imagen' => 'required|string|max:1000',
+                'idTipoProducto' => 'required|exists:TipoProducto,idTipoProducto',
                 'idMarca' => 'required|exists:Marca,idMarca'
             ]);
+
+
+            DB::beginTransaction();
+            try {
+
+                //crear una imagen nueva
+                $producto = Producto::create([
+                    'nombre' => $request->nombreProducto,
+                    'descripcion' => $request->descripcion,
+                    'precioVenta' => $request->precioVenta,
+                    'estado' => 1,
+                    'idTipoProducto' => $request->idTipoProducto,
+                    'idMarca' => $request->idMarca
+                    
+
+                ]);
+
+                //crear una imagen nueva
+                ImagenProducto::create([
+                    'ruta' => $request->imagen,
+                    'nombre' => $request->nombreProducto . ' imagen',
+                    'estado' => 1,
+                    'idProducto' => $producto->idProducto
+                ]);
     
-            $productos = Producto::create($request->all());
-           // return response()->json($clientes, 201);
-            return 1;
+               
+    
+                DB::commit();
+                return response()->json(['mensaje' => 'Producto creado exitosamente'], 201);
+    
+            } catch (\Exception $e) {
+                DB::rollBack();
+                return response()->json(['error' => 'Error al crear el producto', 'error:' => $e->getMessage()], 500);
+            }
+
+    
+           
 
 
-        }
-
-        catch (\Ecception $e) {
-           // return response()->json(['Error' => $e], 500);
-           return 0;
-        }
+       
     }
 
     /**
@@ -82,23 +112,23 @@ class ProductoController extends Controller
         //
         try{
             $request->validate([
-               'nombre' => 'required|string|max:50',
-                'descripcion' => 'required|string|max:500',
-                'precioVenta' => 'decimal|min:0|max:9999999999.99',
-                'estado' => 'required|boolean',
-                'idTipoProducto' => 'required|exists:Producto,idTipoProducto',
-                'idMarca' => 'required|exists:Marca,idMarca'
+                'nombre' => 'sometimes|string|max:50',
+                'descripcion' => 'sometimes|string|max:500',
+                'precioVenta' => 'sometimes|min:0|max:9999999999.99',
+                'estado' => 'sometimes|boolean',
+                'idTipoProducto' => 'sometimes|exists:TipoProducto,idTipoProducto',
+                'idMarca' => 'sometimes|exists:Marca,idMarca'
             ]);
     
             $productos = Producto::findOrFail($id); 
     
             $productos->update($request->all());
-            //return response()->json($clientes, 200);
-            return 1;
+           
+            return response()->json(['mensaje' => 'Acción completada  exitosamente'], 201);
         }
         catch (\Exception $e) {
             //return response()->json(['error' => $e], 500);
-            return 0;
+            return response()->json(['error' => 'Error al crear el producto', 'error:' => $e->getMessage()], 500);
         }
     }
 
