@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-11-2024 a las 07:02:24
+-- Tiempo de generación: 17-11-2024 a las 07:53:58
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -229,7 +229,88 @@ INSERT INTO `imagenproducto` (`idImagen`, `ruta`, `nombre`, `idProducto`) VALUES
 (17, 'https://i.blogs.es/e2801a/00-xiaomi-mi-11-01/840_560.jpg', 'Xiaomi Mi 11', 17),
 (18, 'https://www.ephotozine.com/articles/sony-alpha-xx-xx-announced-32006/images/highres-Sony-Alpha-A7-III-2-Custom_1519667443.jpg', 'Sony Alpha a7 III', 18),
 (19, 'https://i5.walmartimages.com/seo/Microsoft-Surface-Pro-7-12-3-Touch-Screen-Intel-Core-i7-16GB-Memory-512GB-Solid-State-Drive-Matte-Black-VAT-00016_b1bfeab5-7941-45c0-b9eb-9b1d6edb5f3c.4028a3c80729fd2f07f948d4e86c371e.jpeg', 'Microsoft Surface Laptop 4', 19),
-(20, 'https://www.tecnofacil.com.gt/media/catalog/product/cache/0a3c9f56440fe010e3e9b5a77fcf2268/H/R/HRHSDAZAA_2_1.jpg', 'Nintendo Switch Lite', 20);
+(20, 'https://www.tecnofacil.com.gt/media/catalog/product/cache/0a3c9f56440fe010e3e9b5a77fcf2268/H/R/HRHSDAZAA_2_1.jpg', 'Nintendo Switch Lite', 20),
+(21, 'https://gsmphone.co/wp-content/uploads/2022/10/SamsungGalaxyS22-1_900x.jpg', 'Samsung Galaxy S22', 21),
+(22, 'https://www.mercamarket88.com/data/productos/d_lg48c14lboled2.jpg', 'LG OLED55C1', 22),
+(23, 'https://puntonaranja.com.gt/wp-content/uploads/2022/08/TA100APL05-1-1024x1024.jpg', 'Apple iPad Pro 12.9\"', 23),
+(24, 'https://m.media-amazon.com/images/I/410+YnkARyL.jpg', 'Sony WH-CH710N', 24),
+(25, 'https://www.resetdigitale.it/128674-thickbox_default/smartwatch-huawei-gt3-active-42mm-nero.jpg', 'Huawei Watch GT 3', 25),
+(26, 'https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note-11/mimg01.jpg', 'Xiaomi Redmi Note 11', 26),
+(27, 'https://www.bhphotovideo.com/images/images1000x1000/canon_3616c016_eos_90d_dslr_camera_1502489.jpg', 'Canon EOS 90D', 27),
+(28, 'https://lanoticia.com/wp-content/uploads/2021/05/amazon-nintendo-switch-pro.jpg', 'Nintendo Switch Pro', 28),
+(29, 'https://i.pcmag.com/imagery/reviews/01OQN7sePUgsfxPSDKD4n0G-2.fit_lim.size_768x432.v1633361884.jpg', 'Microsoft Surface Pro 8', 29),
+(30, 'https://i.ytimg.com/vi/pcBl8W1Od4w/maxresdefault.jpg', 'Samsung QLED Q60A', 30),
+(31, 'https://static.hub.91mobiles.com/wp-content/uploads/2020/10/LG-Gram-14.jpg', 'LG Gram 17', 31),
+(32, 'https://rbtv.disway.id/upload/d0ec8097416ba3aefcb27924860f37a1.jpeg', 'Apple MacBook Air M2', 32),
+(33, 'https://bloganchoi.com/wp-content/uploads/2022/09/ifa-2022-cong-nghe-11.jpg', 'Sony Xperia 10 IV', 33),
+(34, 'https://consumer.huawei.com/content/dam/huawei-cbg-site/mkt/by/plp/5-0/laptops/d14-2020-big.jpg', 'Huawei MateBook D15', 34),
+(35, 'https://joinet.com/wp-content/uploads/2021/04/M5.png', 'Xiaomi Mi Band 6', 35),
+(36, 'https://www.neboweb.nl/media/catalog/product/cache/1/image/600x/602f0fa2c1f0d1ba5e241f914e856ff9/2/6/269250_00.png', 'Canon PowerShot G7 X', 36),
+(37, 'https://files.refurbed.com/ii/nintendo-new-2ds-xl-1646221602.jpg', 'Nintendo 2DS XL', 37),
+(38, 'https://s1.kuantokusta.pt/img_upload/produtos_videojogos/113145_53_microsoft-xbox-one-elite-wireless-controller-series-2.jpg', 'Microsoft Xbox Elite Controller', 38),
+(39, 'https://m.media-amazon.com/images/I/41TxlDQKHlL.jpg', 'Samsung Galaxy Tab A7', 39),
+(40, 'https://electronicstore.com.pe/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/s/1s-12s21.jpg', 'LG 27UL500-W', 40),
+(41, 'https://i.pinimg.com/originals/10/9d/fb/109dfb5711f54eb5230fe005dd5af844.jpg', 'Apple Watch Series 7', 41),
+(42, 'https://img.alicdn.com/bao/uploaded/O1CN01fObzA21uISp0y2S0j_!!6000000006014-0-yinhe.jpg_500x500.jpg', 'Sony Alpha A6400', 42),
+(43, 'https://technave.com/data/files/mall/article/202009101517599626.png', 'Huawei FreeBuds Pro', 43),
+(44, 'https://m.media-amazon.com/images/I/41C5yctI-tL._SL500_.jpg', 'Xiaomi Smart Air Purifier', 44),
+(45, 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6356/6356231_rd.jpg', 'Canon PIXMA G6020', 45),
+(46, 'https://i.gadgets360cdn.com/large/gamecube_purple__1547458731074.jpg', 'Nintendo GameCube Classic', 46),
+(47, 'https://storage.comprasmartphone.com/smartphones/microsoft-surface-duo-2.png', 'Microsoft Surface Duo 2', 47),
+(48, 'https://leclaireur.fnac.com/wp-content/uploads/4d/8806092562554/9214365-pictures-defaut.png', 'Samsung Galaxy Z Fold 3', 48),
+(49, 'https://www.lg.com/us/images/tvs/md08000813/gallery/desktop-02.jpg', 'LG NanoCell 75 Series', 49),
+(50, 'https://brain-images-ssl.cdn.dixons.com/6/2/10207226/u_10207226.jpg', 'Apple AirPods Max', 50),
+(51, 'https://m.media-amazon.com/images/I/71lddEkg7cL.jpg', 'Samsung Galaxy A53', 51),
+(52, 'https://www.parkwaynigeria.com/wp-content/uploads/2022/01/LG-32UK50T-W-32-inch-4K-UHD-Monitor.jpg', 'LG 32UN500-W', 52),
+(53, 'https://assets.hardwarezone.com/img/2021/05/imac-intro1.jpg', 'Apple iMac 24\"', 53),
+(54, 'https://m.media-amazon.com/images/I/61+btxzpfDL._AC_SL1500_.jpg', 'Sony WH-1000XM5', 54),
+(55, 'https://www.gizmochina.com/wp-content/uploads/2022/09/HUawei-Nova-10-SE.png', 'Huawei Nova 10', 55),
+(56, 'https://www.antarti.com/system/products/images/images/000/031/555/original/4f6659a9efad620ffdf7d8d8cee3003f.jpg', 'Xiaomi 12X', 56),
+(57, 'https://www.bhphotovideo.com/images/images1500x1500/canon_2727c002_eos_rebel_t7_dslr_1461734.jpg', 'Canon EOS Rebel T7', 57),
+(58, 'https://i.wfcdn.de/teaser/1920/38487.jpg', 'Nintendo Game & Watch', 58),
+(59, 'https://media.techtribune.net/uploads/2022/10/Surface-Studio-plus-Hero.jpg', 'Microsoft Surface Studio 2', 59),
+(60, 'https://img.welt.de/img/wirtschaft/webwelt/mobile163295452/4802508447-ci102l-w1024/Samsung-2.jpg', 'Samsung The Frame 2022', 60),
+(61, 'https://media.materiel.net/r900/products/MN0005632585_1.jpg', 'LG CineBeam HU70LA', 61),
+(62, 'https://gudagudablog.com/wp-content/uploads/2021/01/IMG_5448.jpg', 'Apple Magic Keyboard', 62),
+(63, 'https://cdn2.cellphones.com.vn/x/media/catalog/product/x/b/xb43_blue_1.jpg', 'Sony SRS-XB43', 63),
+(64, 'https://www.gadgetpilipinas.net/wp-content/uploads/2023/02/Huawei-MatePad-SE-10.4-PH-launch-soon-1-770x433.jpg', 'Huawei MatePad 11', 64),
+(65, 'https://www.startech.com.bd/image/cache/catalog/smart-band/xiaomi/smart-band-7/xiaomi-smart-band-7-black-01-500x500.jpg', 'Xiaomi Smart Band 7', 65),
+(66, 'https://www.bhphotovideo.com/images/images2500x2500/canon_2234c001_selphy_cp1300_compact_photo_1349456.jpg', 'Canon Selphy CP1300', 66),
+(67, 'https://i5.walmartimages.com/asr/765735dd-4c6a-4570-b80b-dfe64296453c.2a51685020fde9fd6b5113cff6bb4360.jpeg', 'Nintendo Switch Joy-Con', 67),
+(68, 'https://i5.walmartimages.com/asr/b98c89b5-033a-4057-b43e-99c913887dd9.35988d8f4d3fe04e2a09b068bdaa0062.jpeg', 'Microsoft Arc Mouse', 68),
+(69, 'https://afdalmuntajat.com/wp-content/uploads/2021/11/Tab-S7-Ecran-scaled-1-1.jpg', 'Samsung Galaxy Tab S8', 69),
+(70, 'https://imgeng.jagran.com/images/2024/05/10/template/image/LG-1715336928171.jpg', 'LG UltraGear 27GP950-B', 70),
+(71, 'https://img2.joongna.com/cafe-article-data/live/2023/07/17/1002099257/1689582428390_006_GO2fs_main.jpg', 'Samsung Galaxy M32', 71),
+(72, 'https://resources.claroshop.com/medios-plazavip/s2/10252/667429/5a8202be760f2-71f-jferpxl-1600x1600.jpg', 'LG Ultragear 24GL600F', 72),
+(73, 'https://cdn.mos.cms.futurecdn.net/6QbFZzDxe3LqFStGGksKLk.jpg', 'Apple Mac Mini M1', 73),
+(74, 'https://telefonika.com/wp-content/uploads/2021/02/Sony-HT-G700-3.1ch-Dolby-AtmosDTS-X-Soundbar.jpg', 'Sony HT-G700', 74),
+(75, 'https://www.gdgtme.com/wp-content/uploads/2021/02/Huawei-FreeLace-Pro-Review-6.jpg', 'Huawei FreeLace Pro', 75),
+(76, 'https://images.frandroid.com/wp-content/uploads/2021/08/xiaomi-mi-pad-5-pro-frandroid-2021.png', 'Xiaomi Mi Pad 5', 76),
+(77, 'https://www.cameralabs.com/wp-content/uploads/2020/07/canon-eos-r6-hero1-945x709.jpg', 'Canon EOS R6', 77),
+(78, 'https://cdn.mos.cms.futurecdn.net/b2iigLABgoNW5UQVPkg4vQ-1200-80.jpg', 'Nintendo Switch Lite Coral', 78),
+(79, 'https://cdn.mos.cms.futurecdn.net/4xypbR6bCaRSMpawkMnnoW-480-80.jpg', 'Microsoft Surface Go 3', 79),
+(80, 'https://images.samsung.com/kdp/static/pcd/lifestyle-tvs/the-serif/interior_05_mo.jpg', 'Samsung The Serif', 80),
+(81, 'https://www.on-mag.fr/images/stories/2021/05/gal_lg_xboom_go_pl7_on/LG_Xboom_Go_PL7_details_on_010.jpg', 'LG XBOOM Go PL7', 81),
+(82, 'https://www.ilounge.com/wp-content/uploads/2020/05/Apple-Pro-Display-XDR.jpg', 'Apple Pro Display XDR', 82),
+(83, 'https://www.bhphotovideo.com/images/images500x500/sony_srs_ra5000_wireless_speaker_1616496628_1630687.jpg', 'Sony SRS-RA5000', 83),
+(84, 'https://cdn.mos.cms.futurecdn.net/aRRfG7wN2Ek99nLMPsVTFY.jpg', 'Huawei MateBook X', 84),
+(85, 'https://www.notebookcheck.org/fileadmin/Notebooks/News/_nc3/Redmi_Smart_Band_Pro_drdNBC.jpg', 'Xiaomi Redmi Smart Band Pro', 85),
+(86, 'https://static.bhphoto.com/images/fb/1428256.jpg', 'Canon PIXMA TS9120', 86),
+(87, 'https://assets.vg247.com/current/2021/07/nintendo_switch_oled_white_1.jpg', 'Nintendo Switch OLED White', 87),
+(88, 'https://images.frandroid.com/wp-content/uploads/2020/09/microsoft-xbox-series-s-frandroid-2020.png', 'Microsoft Xbox Series S', 88),
+(89, 'https://images.idgesg.net/images/article/2021/05/primary-alt-2-100887990-large.jpg', 'Samsung Galaxy Book Pro 360', 89),
+(90, 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5823/5823045_sd.jpg', 'LG UltraFine 5K', 90),
+(91, 'https://images.frandroid.com/wp-content/uploads/2020/01/samsung-galaxy-z-flip-frandroid-2020.png', 'Samsung Galaxy Z Flip 4', 91),
+(92, 'https://www.lg.com/us/images/monitors/md07000511/gallery/zoom-02.jpg', 'LG 34WN80C-B', 92),
+(93, 'https://live.staticflickr.com/2544/4057376721_f812556f69_b.jpg', 'Apple Magic Mouse', 93),
+(94, 'https://images.expertreviews.co.uk/wp-content/uploads/2021/07/sony_wf-1000xm4_review_earbuds_with_case.jpg', 'Sony WF-1000XM4', 94),
+(95, 'https://images.frandroid.com/wp-content/uploads/2023/05/huawei-p60-pro-frandroid-2023-e1683224106720.png', 'Huawei P60 Pro', 95),
+(96, 'https://elchapuzasinformatico.com/wp-content/uploads/2021/07/Xiaomi-Mi-Electric-Scooter-3-2.jpg', 'Xiaomi Mi Electric Scooter 3', 96),
+(97, 'https://amateurphotographer.com/wp-content/uploads/sites/7/2021/04/Canon-EOS-M50-Mark-II-02.jpg', 'Canon EOS M50 Mark II', 97),
+(98, 'https://shop.r10s.jp/otakarasouko/cabinet/_518/1240010413279_1.jpg', 'Nintendo Wii U Deluxe', 98),
+(99, 'https://cdn.wccftech.com/wp-content/uploads/2023/02/Surface-Laptop-Studio-2.jpg', 'Microsoft Surface Laptop Studio', 99),
+(100, 'https://m.media-amazon.com/images/I/61uKcMW9UOL._AC_UL1500_.jpg', 'Samsung Galaxy Watch 5', 100),
+(101, 'https://www.themarysue.com/wp-content/uploads/2024/09/playstation-5-pro.jpg', 'PlayStation 5 PRO', 101);
 
 -- --------------------------------------------------------
 
@@ -367,7 +448,88 @@ INSERT INTO `producto` (`idProducto`, `nombre`, `descripcion`, `precioVenta`, `e
 (17, 'Xiaomi Mi 11', 'Smartphone con pantalla AMOLED de 6.81 pulgadas y 120Hz de refresco', 749.99, 1, 1, 6),
 (18, 'Sony Alpha a7 III', 'Cámara mirrorless de fotograma completo con sensor de 24.2MP', 1999.99, 1, 8, 4),
 (19, 'Microsoft Surface Laptop 4', 'Laptop de 13.5 pulgadas con procesador Intel Core i5', 999.99, 1, 3, 10),
-(20, 'Nintendo Switch Lite', 'Consola portátil de videojuegos con pantalla de 5.5 pulgadas', 199.99, 1, 9, 9);
+(20, 'Nintendo Switch Lite', 'Consola portátil de videojuegos con pantalla de 5.5 pulgadas', 199.99, 1, 9, 9),
+(21, 'Samsung Galaxy S22', 'Smartphone con pantalla AMOLED de 6.1 pulgadas y procesador Exynos', 899.99, 1, 1, 1),
+(22, 'LG OLED55C1', 'Televisor OLED 4K de 55 pulgadas con HDR', 1299.99, 1, 4, 2),
+(23, 'Apple iPad Pro 12.9\"', 'Tablet con pantalla Retina de 12.9 pulgadas y chip M1', 1099.99, 1, 5, 3),
+(24, 'Sony WH-CH710N', 'Auriculares inalámbricos con cancelación de ruido', 199.99, 1, 7, 4),
+(25, 'Huawei Watch GT 3', 'Smartwatch con pantalla AMOLED y duración de batería de 14 días', 249.99, 1, 6, 5),
+(26, 'Xiaomi Redmi Note 11', 'Smartphone con pantalla AMOLED de 6.43 pulgadas', 249.99, 1, 1, 6),
+(27, 'Canon EOS 90D', 'Cámara DSLR con sensor de 32.5 MP', 1199.99, 1, 8, 8),
+(28, 'Nintendo Switch Pro', 'Consola de videojuegos híbrida de última generación', 399.99, 1, 9, 9),
+(29, 'Microsoft Surface Pro 8', 'Tablet con pantalla táctil de 13 pulgadas y procesador Intel i7', 1099.99, 1, 5, 10),
+(30, 'Samsung QLED Q60A', 'Televisor QLED 4K de 65 pulgadas con HDR', 999.99, 1, 4, 1),
+(31, 'LG Gram 17', 'Laptop ultraligera con pantalla de 17 pulgadas', 1299.99, 1, 3, 2),
+(32, 'Apple MacBook Air M2', 'Laptop con chip M2 y pantalla Retina de 13 pulgadas', 999.99, 1, 3, 3),
+(33, 'Sony Xperia 10 IV', 'Smartphone con pantalla OLED de 6 pulgadas', 349.99, 1, 1, 4),
+(34, 'Huawei MateBook D15', 'Laptop con procesador Intel i5 y pantalla de 15 pulgadas', 799.99, 1, 3, 5),
+(35, 'Xiaomi Mi Band 6', 'Pulsera inteligente con pantalla AMOLED', 49.99, 1, 6, 6),
+(36, 'Canon PowerShot G7 X', 'Cámara compacta con sensor de 20 MP', 649.99, 1, 8, 8),
+(37, 'Nintendo 2DS XL', 'Consola portátil de videojuegos con pantalla dual', 149.99, 1, 9, 9),
+(38, 'Microsoft Xbox Elite Controller', 'Control inalámbrico de alto rendimiento', 179.99, 1, 9, 10),
+(39, 'Samsung Galaxy Tab A7', 'Tablet con pantalla de 10.4 pulgadas y procesador Snapdragon', 199.99, 1, 5, 1),
+(40, 'LG 27UL500-W', 'Monitor 4K UHD de 27 pulgadas', 349.99, 1, 4, 2),
+(41, 'Apple Watch Series 7', 'Smartwatch con pantalla Retina Always-On', 399.99, 1, 6, 3),
+(42, 'Sony Alpha A6400', 'Cámara mirrorless con enfoque automático rápido', 899.99, 1, 8, 4),
+(43, 'Huawei FreeBuds Pro', 'Auriculares inalámbricos con cancelación activa de ruido', 149.99, 1, 7, 5),
+(44, 'Xiaomi Smart Air Purifier', 'Purificador de aire inteligente con conectividad Wi-Fi', 199.99, 1, 10, 6),
+(45, 'Canon PIXMA G6020', 'Impresora multifunción con sistema de tinta continua', 249.99, 1, 11, 8),
+(46, 'Nintendo GameCube Classic', 'Consola retro de videojuegos', 99.99, 1, 9, 9),
+(47, 'Microsoft Surface Duo 2', 'Dispositivo móvil de doble pantalla con Android', 1499.99, 1, 1, 10),
+(48, 'Samsung Galaxy Z Fold 3', 'Smartphone plegable con pantalla de 7.6 pulgadas', 1799.99, 1, 1, 1),
+(49, 'LG NanoCell 75 Series', 'Televisor 4K UHD con tecnología NanoCell', 1099.99, 1, 4, 2),
+(50, 'Apple AirPods Max', 'Auriculares inalámbricos premium con audio espacial', 549.99, 1, 7, 3),
+(51, 'Samsung Galaxy A53', 'Smartphone con pantalla AMOLED de 6.5 pulgadas y cámara cuádruple', 399.99, 1, 1, 1),
+(52, 'LG 32UN500-W', 'Monitor 4K UHD de 32 pulgadas con HDR10', 349.99, 1, 4, 2),
+(53, 'Apple iMac 24\"', 'Computadora de escritorio con pantalla Retina 4.5K', 1499.99, 1, 3, 3),
+(54, 'Sony WH-1000XM5', 'Auriculares inalámbricos premium con cancelación de ruido líder', 399.99, 1, 7, 4),
+(55, 'Huawei Nova 10', 'Smartphone con diseño ultradelgado y cámara de 60 MP', 499.99, 1, 1, 5),
+(56, 'Xiaomi 12X', 'Smartphone con procesador Snapdragon 870 y pantalla AMOLED', 599.99, 1, 1, 6),
+(57, 'Canon EOS Rebel T7', 'Cámara DSLR con sensor de 24.1 MP y lente 18-55mm', 449.99, 1, 8, 8),
+(58, 'Nintendo Game & Watch', 'Consola retro con diseño clásico y juegos preinstalados', 49.99, 1, 9, 9),
+(59, 'Microsoft Surface Studio 2', 'Computadora todo-en-uno con pantalla táctil PixelSense', 3499.99, 1, 3, 10),
+(60, 'Samsung The Frame 2022', 'Televisor QLED 4K con diseño de marco de arte', 1299.99, 1, 4, 1),
+(61, 'LG CineBeam HU70LA', 'Proyector 4K UHD con HDR y compatibilidad inteligente', 1699.99, 1, 4, 2),
+(62, 'Apple Magic Keyboard', 'Teclado inalámbrico con retroiluminación para iPad y Mac', 129.99, 1, 10, 3),
+(63, 'Sony SRS-XB43', 'Altavoz inalámbrico portátil con EXTRA BASS', 229.99, 1, 10, 4),
+(64, 'Huawei MatePad 11', 'Tablet con pantalla de 11 pulgadas y 120 Hz', 329.99, 1, 5, 5),
+(65, 'Xiaomi Smart Band 7', 'Pulsera inteligente con pantalla AMOLED y monitoreo de salud', 49.99, 1, 6, 6),
+(66, 'Canon Selphy CP1300', 'Impresora fotográfica portátil con conexión Wi-Fi', 129.99, 1, 11, 8),
+(67, 'Nintendo Switch Joy-Con', 'Controladores inalámbricos para la consola Nintendo Switch', 79.99, 1, 9, 9),
+(68, 'Microsoft Arc Mouse', 'Mouse ergonómico e inalámbrico con diseño plegable', 79.99, 1, 10, 10),
+(69, 'Samsung Galaxy Tab S8', 'Tablet con pantalla de 11 pulgadas y procesador Snapdragon 8 Gen 1', 699.99, 1, 5, 1),
+(70, 'LG UltraGear 27GP950-B', 'Monitor gaming 4K UHD de 27 pulgadas con 144 Hz', 799.99, 1, 4, 2),
+(71, 'Samsung Galaxy M32', 'Smartphone con pantalla AMOLED de 6.4 pulgadas y batería de 6000 mAh', 249.99, 1, 1, 1),
+(72, 'LG Ultragear 24GL600F', 'Monitor gaming Full HD de 24 pulgadas con 144 Hz', 199.99, 1, 4, 2),
+(73, 'Apple Mac Mini M1', 'Computadora compacta con chip M1 y 256GB SSD', 699.99, 1, 3, 3),
+(74, 'Sony HT-G700', 'Barra de sonido Dolby Atmos de 3.1 canales', 599.99, 1, 10, 4),
+(75, 'Huawei FreeLace Pro', 'Auriculares inalámbricos con diseño deportivo y cancelación de ruido', 119.99, 1, 7, 5),
+(76, 'Xiaomi Mi Pad 5', 'Tablet con pantalla de 11 pulgadas y procesador Snapdragon 860', 329.99, 1, 5, 6),
+(77, 'Canon EOS R6', 'Cámara mirrorless con sensor de 20 MP y grabación 4K', 2499.99, 1, 8, 8),
+(78, 'Nintendo Switch Lite Coral', 'Consola portátil de videojuegos en color coral', 199.99, 1, 9, 9),
+(79, 'Microsoft Surface Go 3', 'Tablet con pantalla de 10.5 pulgadas y procesador Intel Pentium', 399.99, 1, 5, 10),
+(80, 'Samsung The Serif', 'Televisor QLED 4K con diseño único y soporte de pie', 1099.99, 1, 4, 1),
+(81, 'LG XBOOM Go PL7', 'Altavoz portátil Bluetooth con iluminación LED', 149.99, 1, 10, 2),
+(82, 'Apple Pro Display XDR', 'Monitor 6K Retina de 32 pulgadas para profesionales', 4999.99, 1, 4, 3),
+(83, 'Sony SRS-RA5000', 'Altavoz inalámbrico premium con sonido de 360 grados', 599.99, 1, 10, 4),
+(84, 'Huawei MateBook X', 'Laptop ultraligera con pantalla táctil de 13 pulgadas', 1499.99, 1, 3, 5),
+(85, 'Xiaomi Redmi Smart Band Pro', 'Pulsera inteligente con pantalla AMOLED y monitoreo deportivo', 59.99, 1, 6, 6),
+(86, 'Canon PIXMA TS9120', 'Impresora multifunción con impresión de alta resolución', 199.99, 1, 11, 8),
+(87, 'Nintendo Switch OLED White', 'Consola híbrida con pantalla OLED de 7 pulgadas', 349.99, 1, 9, 9),
+(88, 'Microsoft Xbox Series S', 'Consola de videojuegos de próxima generación con diseño compacto', 299.99, 1, 9, 10),
+(89, 'Samsung Galaxy Book Pro 360', 'Laptop convertible con pantalla AMOLED de 13.3 pulgadas', 1099.99, 1, 3, 1),
+(90, 'LG UltraFine 5K', 'Monitor profesional con resolución 5K y compatibilidad con Mac', 1299.99, 1, 4, 2),
+(91, 'Samsung Galaxy Z Flip 4', 'Smartphone plegable con pantalla AMOLED de 6.7 pulgadas', 999.99, 1, 1, 1),
+(92, 'LG 34WN80C-B', 'Monitor ultrapanorámico QHD de 34 pulgadas con USB-C', 599.99, 1, 4, 2),
+(93, 'Apple Magic Mouse', 'Mouse inalámbrico con diseño minimalista', 79.99, 1, 10, 3),
+(94, 'Sony WF-1000XM4', 'Auriculares inalámbricos con cancelación activa de ruido', 279.99, 1, 7, 4),
+(95, 'Huawei P60 Pro', 'Smartphone con cámara Leica y pantalla OLED curva', 1199.99, 1, 1, 5),
+(96, 'Xiaomi Mi Electric Scooter 3', 'Scooter eléctrico plegable con autonomía de 30 km', 449.99, 1, 10, 6),
+(97, 'Canon EOS M50 Mark II', 'Cámara mirrorless con sensor de 24.1 MP y grabación 4K', 699.99, 1, 8, 8),
+(98, 'Nintendo Wii U Deluxe', 'Consola híbrida con juegos clásicos y pantalla táctil', 299.99, 1, 9, 9),
+(99, 'Microsoft Surface Laptop Studio', 'Laptop convertible con pantalla táctil PixelSense', 1599.99, 1, 3, 10),
+(100, 'Samsung Galaxy Watch 5', 'Smartwatch con monitoreo avanzado de salud y batería de larga duración', 299.99, 1, 6, 1),
+(101, 'PlayStation 5 PRO', 'Consola de videojuegos de Sony.', 699.99, 1, 9, 4);
 
 -- --------------------------------------------------------
 
@@ -571,6 +733,7 @@ CREATE TABLE `sessions` (
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
 ('0UveC8xDlPKwgwMghumQHWEc4OLB1U4WlsgFnqEN', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQmJ6WW1VWjZCdUdJcVBqc05qcGRJZ0ptNHFla2wwZTJCMXRtZDd3QiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731631178),
 ('15BApYdMjHfEH8mL6VHnvtCYgLfzfPEpQBlrV7Zc', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRmtVbDVSUHBSNFhOY0hNbjd5eGlKWUlGa2NUUXpzeEZUczRBcUY3VCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731637732),
+('1j1d4g9x4N0iEQycj5DrKR21BcwCREDkB0IkpYrV', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVUJTYlZTOVE1NUpHMW1jUVpKUFhOeFJRMXlOZllGRUFSaXBMQWRJZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731825996),
 ('2ZModFLHgSgyXHswhV2AclCmvvxTvRQNkDThvMpt', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYzV4QUpjMGQ5SzIyTlhaTUVVb3BtRlNGS1JYcW1YSHUzbFdadXJQSSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731641167),
 ('4EKXyC8dIe5QO1DBJfeONtAA6RRwrxHdCWNPilwc', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNFVNSTRDRHMxSnI3ZkJ1V1p1c1Brb3RRcWFmS1p3TDZ5VWRIZk9iZyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731631375),
 ('4Qmz5c3Mqb1A0wW136uE0YIPVN54mudfpbdWMM5C', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWjNGMzlSd1N4RzdjcGttTjM4UEcxV3ZIeEk1VG1WckgxTWQ4VDhUaSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731631750),
@@ -583,6 +746,7 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 ('6dZmHaYAQObfoDSnZH71FkvtBOpTy8GDEp1e85xb', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOFR1MVNSR091U0pqckRwMXVRUmgzMExTQkprRVFsa0J6Qng4dHJGSiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731633064),
 ('78451tvXscyvkOnPLg8VftHcU5lnHCRkGw4ZSsP4', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNkxqODhHbE0wMURUTGpqMExnR05pQ2hHdnFDV0dQdlFGNk02SDJvSyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvdXN1YXJpb3MvYWRtaW4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1731729108),
 ('8K5RzJQJbvjL4lDv9Ymkw6rq0JcO7YbyUEESCvhi', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibmYxOFplOTNvZEZQZzVvNVJwNlM5cVpPdDEwaGdrVnNJMDNyVDJPMiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731725044),
+('8RHBx5uEOa8KBEnrFpcsGVdMZ1fenBeSZN1yn8WA', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiT2doWW85QVVvaTd3VEQ3QkFhVjR3NVFXSXBPcUswMmpUelpnN0NaeSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731819738),
 ('8VfKyRWrelToxg9kImizxgwRg34OPIlWhjT9hZsl', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidGlFN0t1S2RtM0k0MTVrS2xwRkJOVmI1RVRtVTZKSnVQUkdZbEIwbyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731725020),
 ('9aCohuPK9teVjX3Fh7RLnEbBXExCDf3oXQBemGD9', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicDRFQVJzVEk1blg1MXRwMEZiYkljZ2hPanl3NVhURDFmUXlGZ3ZFQSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731726656),
 ('aXWfUkq7JcYBQx6vyceuV2BtDKdYm0GtvKA5YcpW', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMDRLclQwSUI4NGhFbVp4TkIxdkVkSkl0Tmx1bU9palV5aHlMaUpZVSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731638519),
@@ -597,6 +761,7 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 ('d54i9X8OTQZb2SLzTgP1WN7YrB7w8rPv5RgLPxmw', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUkhXSkltRnc4cWFyQ0NGeW85THBhT1VNNGVrUjBvbENiajVzb3VEYyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731641057),
 ('D7VGr5cBu6nx99s7SDlif6YYY0WXh9qIIohntFvZ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUDZhTHNXTDRwYmZQbDBBV2tlYXg2WmJrYWZTcElZWUN5RzF2WmNZMyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731730038),
 ('DBfhQeC7HOhD04xzFrEvg61bQZn0PTkdmsJl5K3D', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiR01MekpUWENLY29GSG5BQUFLbVBiZEdBTGhHVjJnM1JJelZVV1BqOCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731641964),
+('DnGlY7NdLZBYMqu5UBYaLxY2uCv5GZfPZn7RJvYp', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMmxpd0FDWGZkUEt6VlNyV3dBd3BlcDltaHZmTU9WRWYxejNiT2hISCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731826138),
 ('F8VrE7s3UyFG0WkcT5dmjunOXCzHfKnLqYZMnNfn', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTDM2a2ptVjA1V0ZMeFozaEI2VDlXaUFEM1dVMVF6YzRLNzBXb1hhZyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731641943),
 ('F9MCHv3NOJRfr6gOTJeCBPGA7Uc0OWKosPPVuvXH', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSnZpYkdmYVVxOVNKb1JTZnZDQzVQOUprRjhvUEg4NjNQMk9QaTZ5ZiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731725024),
 ('fkQwfh6khR2k9mRegEARai6A0R94q4Np6VJCwEJM', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiblZMblhSNm1FOUFJSzBBcXJESGFxTkhnWFhFWjhTSk10NFFNdm1LaiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvdXN1YXJpb3MvYWRtaW4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1731729724),
@@ -604,6 +769,7 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 ('GEmHt7jiuBEocxltq4O1BLwUrtLtsPGhVGRauqYR', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNFlMTTBReWZ2R2J2RFdZV2Q1dVdWSkNjSnZnTnlVNG9FV1hyMmpPYiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731735552),
 ('h5uBMsLkUfTsz6JzPMF0sX02xZjcqTMlW5j3htwS', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibTZRVlc1VElKcU1zcUZ4WUxvdzdOSTlXdkJZUGRzRDlETmlINVoyVSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731725821),
 ('hifFz1zcyAZcSjiKhXsNnQE34SxhjihbtbpWrTRi', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoia3NGVDdmMzIxeUNLdEpIN1p4TG9pSnlubWk5Y2JyNnlNbExsWHZjZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731726800),
+('HJTl3a0ixBcAhh20b02ydqzivMyA7oJrqLjwEVWl', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSUQ0M0Y3d0lvYlM5d1hxMVpsMG0xeVVrRUthekRSQTY5cmFSYVhKZCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731826113),
 ('jD9OHJuKF7htmYGHryd3xuD7w8yvW9wyo9tv805n', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiemgzSTZsaGJVRlB6VmhOQU9RaVkxdHlJVkdhRVFpcjNER0Y5M3JZQSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvdXN1YXJpb3MvYWRtaW4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1731729429),
 ('jQHK5Oob1qJ2ggJB9wHuNIanxw90s4BvuPHsZH4m', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRmswZEZuRlFRMk9lZVhLdTN2cHByVFRBTUEwSDI1M0NxeVh0czdhTCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731730686),
 ('LAJSoIr6RR3dekOwuy4nSinbvQJrvq42giOf84vZ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiV3VjbUhDRzBSNVJRZXQ0MjZ5Q2RnV2dHbFpxeXJzU3FCeHZVb0RMZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731727920),
@@ -625,6 +791,7 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 ('R1pvxXoR4uoVPuZGfma9q1DO4eGGCjUE4vK1zV4e', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidmdRYnUzWXZNcXVQRllua2p1b0IxREM5MmZ3VHYzazNIYnZwYW9jUyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731730676),
 ('R9ADrFw5wIaG4oUj5TLL4QfexIUer3FxgjknvPz4', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTjRaWmtPOFFPR1MyUnppVWozZzdkZVRhMlhMV2NDd1F0emFLSExwaSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731641373),
 ('rf49d2j4aymd7Hju82IwAN6vFfc99ZoWxhHJ6Udg', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZkswREpJN1dqWEpUODNldEFuczJVOWJuR2pWUzJyMzh5V3ZROFpZRiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzg6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvdXN1YXJpb3MvYm9iIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731729787),
+('RLYv0DYMXYvNkuVvE6tlPvsSUjiYafCcrkMcvAcF', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicEp1T1VXZ3FhdHRmRjdKYWFON01iTlBLT0l5N25QMUhPR3Zxb2k4MiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731819715),
 ('RskXUz2MAQdwnV6S9I7huTmOJsnFuTv4crhEsHnW', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiaWhRYWJTeDF2bjM0TlZCTDNWRWt1UkdDbnhsV21HTHpNOHdOYmwwayI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731726763),
 ('RTgLR6iLjhVRruY88mr0lDxHkima2sTO36x1iq1D', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOUQyM2J1MGxGQ3Q4WE84OFdxYkpRd3ROdTNXTEdvajJsV1NweVVLUiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731637577),
 ('RzGUVB7tbjy9nVCMeANt7dweYvJnwBZGazlZv4uH', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNnQ5d2x6aHFqQWFJM2NFTG5YTGFaSThqZGczbVJhWWV3SmJ4SktBdSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731727232),
@@ -637,6 +804,7 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 ('uwD6Rt7xzCrHH7VMQZ9TCxi428JQAEqlT2mEQ9Gc', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNkNySHRDbGZEbWNjbEE1QW93bkU2ZTZsckJuVlhBbnpJUEt0S3dDdyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731631177),
 ('v97vPSqDZ72R35jPZWglprTv0yELfShsORAIcO0t', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiY2VrSzFiclo2ZHNQQ0FYNWc2MzM2ZmpSckZzUzZWWHBHQUg1a0tKeiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731725032),
 ('VESbT5iVMJUH9iLPLRXcgNTJB5GU3A9WKaD33SZk', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMnpsdkx2UjZ1czE4bzFQNG8yUVpRemtPRHNvZXB6WWYxWFRWRGt1eiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731726838),
+('WO9IF4ZJtYTGEmkkprbjdEqjYJyFOKiEwXNahMVW', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibk5oNlVDWEFZUTNCQVdiZHFGa3RvZThEZTdEUEZRQXo2cWdBdzNrSyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731819793),
 ('X8xCoe08uroLUiDnJicqFY4xs9Khm9P1J4uYYKbx', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiY2hQcjlTZUYzTDl1VXZPM1RTbVFkMEhNdHhEdG81djFYbkFNZFRVWiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731725047),
 ('x9ts2NLxxNTPGT9WOxgZhFvFmwDKGxdrAdrMEZf0', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoid21qT0VuQWZhajdPMzd2bHhscXlwTGpyaHhsSFBWTmJ5OEJNWDdCUSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731641635),
 ('xECRvAddF8bavbLG6UVq5r55ra1NZZlKROPzdHfI', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiN1FTNUk0amg5RFVZTFpDaGNCdlloMkhValNuTFpjSHBBMG15NFl4eiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731725132),
@@ -655,7 +823,8 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 ('ZhvC4b5LD0pHxW9ylkWmfWp8ivXbbBZ6soCV7S89', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQmZIZzNaUzBibmlWbzdvdWJUSm1HS2N3ZG9ZSmYyNkxrdEE5ekRrZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731636587),
 ('zJlfP2BjdJAbZNQFtBZVUESCvXVgTAowUnZgS6cj', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibjkyYjVkbWxsTTBod0xKemNXT0hIRFhwSEdyRGxmNlpGVWZJZ2NRbCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731730449),
 ('ZnGqHnu9M8U5gKmHjEceUCYrsrZelzPP4j6K43hK', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidk5McVZrWFFRSlFXMUI0bTdoU3FPbGtlaVNXZDhaNUhVQmdleEwxUCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731730292),
-('zO0DDzbM4ihYAbyxS3DOAsTvqqhpceCkazqnDg5D', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibjQ1RGV6b3hFTGRzM2EwclcxT1c1OVB3WEtaZkVUOUpvelZNcTZnVCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731726620);
+('zO0DDzbM4ihYAbyxS3DOAsTvqqhpceCkazqnDg5D', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibjQ1RGV6b3hFTGRzM2EwclcxT1c1OVB3WEtaZkVUOUpvelZNcTZnVCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zdWN1cnNhbGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731726620),
+('zv78FN55ILn2LSaQbks0xLZkIkA20JHbAsq4uCQN', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidnQ2bWJIa0pwbUk2ZmFXWUE5TE1hT0oxWWNhTnBKMldqcGphUmk5VyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXRvc3Byb2R1Y3RvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731819726);
 
 -- --------------------------------------------------------
 
@@ -712,7 +881,8 @@ INSERT INTO `tipoproducto` (`idTipoProducto`, `nombre`, `estado`) VALUES
 (7, 'Auriculares', 1),
 (8, 'Cámara', 1),
 (9, 'Consola de videojuegos', 1),
-(10, 'Altavoz', 1);
+(10, 'Altavoz', 1),
+(11, 'Impresora', 1);
 
 -- --------------------------------------------------------
 
@@ -985,7 +1155,7 @@ ALTER TABLE `historial`
 -- AUTO_INCREMENT de la tabla `imagenproducto`
 --
 ALTER TABLE `imagenproducto`
-  MODIFY `idImagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idImagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT de la tabla `jobs`
@@ -1009,7 +1179,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
@@ -1033,7 +1203,7 @@ ALTER TABLE `sucursal`
 -- AUTO_INCREMENT de la tabla `tipoproducto`
 --
 ALTER TABLE `tipoproducto`
-  MODIFY `idTipoProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idTipoProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
