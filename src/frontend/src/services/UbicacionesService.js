@@ -7,6 +7,7 @@ class UbicacionService {
         this.latitud;
         this.longitud;
         this.idSucursal;
+        this.sucursal; //Originalmente no se guardaba esto acá
     }
 
     setUbicaciones(ubicaciones){
@@ -43,11 +44,12 @@ class UbicacionService {
             minDistance = distance
             
             closest = ubicacion
+            this.sucursal = ubicacion.nombre
             }
         });
 
-        this.idSucursal = closest
-        
+        this.idSucursal = closest.idSucursal
+       return this.sucursal
 
     }
 
