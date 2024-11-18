@@ -97,6 +97,11 @@ const router = createRouter({
       component: () => import('../views/admin/card.vue')
     },
     {
+      path: '/admin/compras',
+      name: 'compras',
+      component: () => import('../views/admin/compras.vue')
+    },
+    {
       path: '/admin/sample-page',
       name: 'sample-page',
       component: () => import('../views/admin/sample-page.vue')

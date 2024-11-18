@@ -16,6 +16,26 @@ class ComprasController extends Controller  {
             console.log(error);
         }
     }
+
+    async listar() {
+        try {
+            await axios.get(this.prepararRutaConexion(['compras'])).then(data => {
+                this.fireControllerListener(data.data);
+            });
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    async completar(id) {
+        try {
+            await axios.put(this.prepararRutaConexion(['compras', id])).then(data => {
+                this.fireControllerListener(data);
+            });
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
 
 export default ComprasController;

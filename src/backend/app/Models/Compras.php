@@ -20,4 +20,9 @@ class Compras extends Model
     ];
 
     public $timestamps = false;
+
+    public function getIdProductoSucursal()
+    {
+        return $this->belongsTo(Factura::class, 'idProductoSucursal');
+    }
 }

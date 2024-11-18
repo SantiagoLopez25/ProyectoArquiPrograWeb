@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 use App\Models\Compras;
+use App\Models\RProductoSucursal;
+use App\Models\Sucursal;
 
 class ComprasController extends Controller
 {
@@ -12,7 +16,8 @@ class ComprasController extends Controller
      */
     public function index()
     {
-        //
+        $compras = Compras::where('estado', 1)->get();
+        return response()->json($compras, 200);
     }
 
     /**
@@ -36,7 +41,7 @@ class ComprasController extends Controller
     
             $rps = Compras::create($request->all());
             return 1;
-        } catch (\Ecception $e) {
+        } catch (\Exception $e) {
             return response()->json(['error' => $e], 500);
         }
     }
@@ -62,7 +67,35 @@ class ComprasController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        DB::beginTransaction();
+        try {
+            $cantidad = $request->input("cantidad");
+            $db_compra = Compras::where('idCompra', $id)->first();
+
+            if ($db_compra) {
+                $idProductoSucursal = $db_compra->idProductoSucursal;
+                $cantidad = $db_compra->cantidad;
+
+                $productoActual = RProductoSucursal::where('idProductoSucursal', $idProductoSucursal)->first();
+                $total = intval($productoActual->cantidad) + $cantidad;
+
+                Compras::where('idCompra', $id)->update([
+                    'cantidad' => 0,
+                    'estado' => false
+                ]);
+
+                RProductoSucursal::where('idProductoSucursal', $idProductoSucursal)->update([
+                    'cantidad' => $total
+                ]);
+            }
+            //$json_compra = response()->json($db_compra, 200);
+            
+            DB::commit();
+            return "ID: $id -> ok";
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json(['error' => $e], 500);
+        }
     }
 
     /**
