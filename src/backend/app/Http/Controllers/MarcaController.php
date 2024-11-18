@@ -13,7 +13,12 @@ class MarcaController extends Controller
     public function index()
     {
         //
-        $marcas = Marca::all();
+        $marcas = Marca::select(
+            'idMarca',
+            'nombre'
+        )
+        ->where('marca.estado',1)
+        ->get();
        
         return response()->json($marcas, 200);
     }
