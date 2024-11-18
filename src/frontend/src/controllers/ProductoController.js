@@ -22,6 +22,7 @@ class Producto extends Controller {
         }
     }
 
+
     async buscarProducto(id) {
         try {
             await axios.get(this.prepararRutaConexion(['datosproductos', id])).then(data => {
@@ -31,6 +32,49 @@ class Producto extends Controller {
             console.error(error)
         }
     }
+
+   async deleteProducto(id) {
+      try {
+          const request = this.urlProducto + id
+          const response = await axios.patch(request, {
+              estado: false
+          });
+
+          console.log('Producto eliminado exitosamente:', response.data);
+      } catch (error) {
+          console.error('Error al eliminar el producto:', error);
+      }
+    }
+
+
+    async postProducto(datosP){
+      try {
+          const response = await axios.post(this.urlProducto, datosP);
+
+
+          console.log(response.data.mensaje)
+
+          return 1
+        } catch (error) {
+          console.error('Error:', error.response?.data?.mensaje || error.mensaje);
+          return 0
+        }
+
+    }
+
+    async patchProducto(id, datos) {
+        try {
+            const request = this.urlProducto + id
+            const response = await axios.patch(request, datos);
+
+            
+            console.log('Producto editado exitosamente:', response.data);
+        } catch (error) {
+            console.error('Error al editar el producto:', error);
+        }
+
+    }   
+
 }
 
 export default Producto;
