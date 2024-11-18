@@ -33,7 +33,9 @@ export default {
         }
     },
     methods: {
-      cambiarProducto(id) {
+      cambiarProducto() {
+        const id = parseInt(this.html('opcionSucursalesProducto').value);
+
         var rps = new RPSController(this.$_SERVER_NAME);
         rps.setControllerListener(dt => {
           this.productos = dt;
@@ -41,7 +43,8 @@ export default {
         rps.listar(id);
         
       },
-      seleccionarProducto(id) {
+      seleccionarProducto() {
+        const id = this.html('opcionesComraPedidoSucursal').value;
         this.idProductoSucursal = id;
       },
       guardarCompra() {
@@ -142,18 +145,18 @@ export default {
                         <input type="date" id="fechaCompraSRP" class="form-control" placeholder="2020/12/12">
                       </div>
                       <div class="mb-3">
-                        <label for="disabledSelect" class="form-label">Compra - Sucursal</label>
-                        <select id="disabledSelect" class="form-select">
-                          <option v-for="(element, index) in datos" :key="index" :value="element.idSucursal" @click="cambiarProducto(element.idSucursal)">
+                        <label for="opcionSucursalesProducto" class="form-label">Compra - Sucursal</label>
+                        <select id="opcionSucursalesProducto" class="form-select" v-on:change="cambiarProducto()">
+                          <option v-for="(element, index) in datos" :key="index" :value="element.idSucursal">
                             {{ element.nombre }}
                           </option>
                         </select>
                       </div>
 
                       <div class="mb-3">
-                        <label for="disabledSelect" class="form-label">Producto - Sucursal</label>
-                        <select id="disabledSelect" class="form-select">
-                          <option v-for="(element, index) in productos" :key="index" @click="seleccionarProducto(element.idProductoSucursal)">
+                        <label for="opcionesComraPedidoSucursal" class="form-label">Producto - Sucursal</label>
+                        <select id="opcionesComraPedidoSucursal" class="form-select" v-on:change="seleccionarProducto()">
+                          <option v-for="(element, index) in productos" :key="index" :value="element.idProductoSucursal">
                             {{ element.nombre}}
                           </option>
                         </select>
