@@ -8,12 +8,18 @@ import Sesion from "@/services/Sesion";
 
 import Sidebar from '@/components/admin/Sidebar.vue';
 import Navbar from '@/components/admin/Navbar.vue';
+import RPSController from "@/controllers/RPSController";
+import Sucursal from "@/controllers/SucursalController";
+import ComprasController from "@/controllers/ComprasController";
 
 export default {
     page: {},
     components: { Sidebar, Navbar },
     data() {
         return {
+            datos: [],
+            productos: [],
+            idProductoSucursal: -1,
             scripts: [
                 '/libs/jquery/dist/jquery.min.js',
                 '/libs/bootstrap/dist/js/bootstrap.bundle.min.js',
@@ -27,7 +33,38 @@ export default {
         }
     },
     methods: {
+      cambiarProducto(id) {
+        var rps = new RPSController(this.$_SERVER_NAME);
+        rps.setControllerListener(dt => {
+          this.productos = dt;
+        });
+        rps.listar(id);
         
+      },
+      seleccionarProducto(id) {
+        this.idProductoSucursal = id;
+      },
+      guardarCompra() {
+        const pack = {
+          idProductoSucursal: this.idProductoSucursal,
+          cantidad: parseInt(this.html('cantidadProducto').value),
+          fecha: this.html('fechaCompraSRP').value,
+          estado: this.html('esadoCompraSucursal').checked
+        };
+
+        var c = new ComprasController(this.$_SERVER_NAME);
+        c.guardar(pack);
+        this.resetUI();
+
+        alert('Compra Exitosa...');
+      },
+      html(myId) {
+        return document.getElementById(myId)
+      },
+      resetUI() {
+        this.html('cantidadProducto').value = "0";
+        this.html('esadoCompraSucursal').checked = true;
+      }
     },
     mounted() {
       this.scripts.forEach((element) => {
@@ -43,6 +80,13 @@ export default {
                 }                
             });
         })
+
+        var sucursales = new Sucursal(this.$_SERVER_NAME);
+        sucursales.setControllerListener(data => {
+          console.log(data)
+          this.datos = data;
+        });
+        sucursales.listarSucursal();
     },
     unmounted() {
       this.scripts.forEach((element) => {
@@ -74,57 +118,63 @@ export default {
     <div class="body-wrapper">
       <!--  Header Start -->
       <Navbar></Navbar>
+
       <!--  Header End -->
       <div class="body-wrapper-inner">
         <div class="container-fluid">
           <div class="card">
             <div class="card-body">
               <div class="row">
-                <div class="col-md-4">
-                  <h5 class="card-title fw-semibold mb-4">Card</h5>
-                  <div class="card">
-                    <img src="@/assets/images/products/s4.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <h5 class="card-title fw-semibold mb-4">Header and footer</h5>
-                  <div class="card">
-                    <div class="card-header">
-                      Featured
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <h5 class="card-title fw-semibold mb-4">Titles, text, and links</h5>
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                      <a href="#" class="card-link">Card link</a>
-                      <a href="#" class="card-link">Another link</a>
-                    </div>
-                  </div>
-                </div>
+                <form @submit.prevent="prevent">
+                    <fieldset>
+                      <legend><h1>Gestión - Compras</h1></legend>
+                      <div class="mb-3">
+                        <label for="cantidadProducto" class="form-label">Cantidad Comprada:</label>
+                        <input type="number" id="cantidadProducto" class="form-control" placeholder="Ingrese cantidad (entero)">
+                      </div>
+                      <div class="mb-3">
+                        <label for="fechaCompraSRP" class="form-label">Fecha Ingreso:</label>
+                        <input type="date" id="fechaCompraSRP" class="form-control" placeholder="2020/12/12">
+                      </div>
+                      <div class="mb-3">
+                        <label for="disabledSelect" class="form-label">Compra - Sucursal</label>
+                        <select id="disabledSelect" class="form-select">
+                          <option v-for="(element, index) in datos" :key="index" :value="element.idSucursal" @click="cambiarProducto(element.idSucursal)">
+                            {{ element.nombre }}
+                          </option>
+                        </select>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="disabledSelect" class="form-label">Producto - Sucursal</label>
+                        <select id="disabledSelect" class="form-select">
+                          <option v-for="(element, index) in productos" :key="index" @click="seleccionarProducto(element.idProductoSucursal)">
+                            {{ element.nombre}}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="esadoCompraSucursal" checked>
+                          <label class="form-check-label" for="esadoCompraSucursal">
+                            Estado de la compra
+                          </label>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary" @click="guardarCompra()">Guardar transacción</button>
+                    </fieldset>
+                  </form>
+
+
+
               </div>
             </div>
           </div>
         </div>
       </div>
+
+
+
     </div>
   </div>
 </template>

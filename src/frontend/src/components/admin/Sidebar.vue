@@ -66,7 +66,7 @@ export default {
             <li class="sidebar-item">
               <RouterLink class="sidebar-link" to="/admin/card" aria-expanded="false">
                 <iconify-icon icon="solar:bookmark-square-minimalistic-line-duotone"></iconify-icon>
-                <span class="hide-menu">Card</span>
+                <span class="hide-menu">Compras</span>
               </RouterLink>
             </li>
             <li class="sidebar-item">
