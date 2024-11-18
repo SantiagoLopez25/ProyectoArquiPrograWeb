@@ -108,30 +108,27 @@ export default {
                 this.isModalMensaje = true
            }
 
-           this.productos = []
-           producto.getProductos().then(data => { //Obtiene los productos desde el controlador
-            this.productos= data
-        });
         },
 
 
-        editarProducto(){
+        async editarProducto(){
           this.isModalEditarVisible = false
           
           const producto = new Producto(this.$_SERVER_NAME)
           try{
                 var datos = {
-                  nombreProducto: this.nombre,
+                  nombre: this.nombre,
                   precioVenta: this.precio,
                   descripcion: this.descripcion,
-                  imagen: this.imagen,
+                  ruta: this.imagen,
                   idMarca: this.marca.idMarca,
                   idTipoProducto: this.tipoP.idTipoProducto
                 }
+                console.log(datos)
                 var respuesta = false
-                respuesta = producto.patchProducto(this.id,datos )
-                 console.log('editar')
-                 console.log(datos)
+                respuesta =  producto.patchProducto(this.id,datos )
+                
+                
                
                 if(respuesta){ //Producto editado correctamente
                     this.nombre = ''
@@ -140,25 +137,23 @@ export default {
                     this.marca = '',
                     this.tipoP = '',
                     this.precio= ''
+                    
                     this.mensajeModal = 'Producto editado'
                     this.isModalMensaje = true
-                    
-                    
+  
                 }
                 else {
+                  
                   this.mensajeModal = 'Error al editar el producto'
                   this.isModalMensaje = true
                 }
                
            } catch (error){
+           
                 this.mensajeModal = 'Error al editar el producto'
                 this.isModalMensaje = true
            }
 
-           this.productos = []
-           producto.getProductos().then(data => { //Obtiene los productos desde el controlador
-            this.productos= data
-        });
         },
 
         eliminarProducto(){
@@ -170,10 +165,6 @@ export default {
             this.isModalMensaje= true
             this.mensajeModal= 'Producto eliminado'
 
-            this.productos = []
-            productoController.getProductos().then(data => { //Obtiene los productos desde el controlador
-            this.productos= data
-            });
 
           }
           catch(error){
@@ -192,6 +183,12 @@ export default {
             this.isModalEditarVisible = false
             this.isModalEliminarVisible = false
             this.isModalMensaje = false
+            const producto = new Producto(this.$_SERVER_NAME)
+            producto.getProductos().then(data => { //Obtiene los productos desde el controlador
+            this.productos= data
+           });
+
+            
         }
     },
     mounted() {
@@ -590,7 +587,7 @@ export default {
             <div class="card-body">
 
              <br><br><br>
-              <h2 class="h3 mb-3 text-black">¿Está seguro de eliminar el prudcto: {{ nombre }}</h2>
+              <h2 class="h3 mb-3 text-black">¿Está seguro de eliminar el producto: {{ nombre }}</h2>
               <br><br><br><br>
               
               <div class="d-flex justify-content-center">

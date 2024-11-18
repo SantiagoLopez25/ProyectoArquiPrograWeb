@@ -117,12 +117,20 @@ class ProductoController extends Controller
                 'precioVenta' => 'sometimes|min:0|max:9999999999.99',
                 'estado' => 'sometimes|boolean',
                 'idTipoProducto' => 'sometimes|exists:TipoProducto,idTipoProducto',
-                'idMarca' => 'sometimes|exists:Marca,idMarca'
+                'idMarca' => 'sometimes|exists:Marca,idMarca',
+                'ruta' => 'sometimes|string'
             ]);
     
             $productos = Producto::findOrFail($id); 
     
             $productos->update($request->all());
+
+            
+            $imagen = ImagenProducto::where('idProducto', $id)->first();
+
+            $imagen->update($request->all());
+               
+            
            
             return response()->json(['mensaje' => 'Acción completada  exitosamente'], 201);
         }
