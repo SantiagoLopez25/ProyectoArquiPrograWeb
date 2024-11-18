@@ -111,8 +111,8 @@ const router = createRouter({
       component: () => import('../components/admin/404.vue')
     },
     {
-      path: '/admin/productos',
-      name: 'productos',
+      path: '/admin/crud-productos',
+      name: 'crud-productos',
       component: () => import('../views/admin/productos.vue')
     },
     
