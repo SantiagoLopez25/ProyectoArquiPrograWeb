@@ -66,6 +66,11 @@ export default {
         this.html('esadoCompraSucursal').checked = true;
       }
     },
+    beforeMount() {
+      if (! Sesion.check()) {
+        this.$router.push('/admin/signin');
+      }
+    },
     mounted() {
       this.scripts.forEach((element) => {
             loadScript(element)
