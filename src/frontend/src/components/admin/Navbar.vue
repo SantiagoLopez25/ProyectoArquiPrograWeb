@@ -1,11 +1,26 @@
 <script>
+import RolController from '@/controllers/RolController';
+import Sesion from '@/services/Sesion';
+
 export default {
     page: {},
     components: {},
     data() {
-        return { }
+        return { 
+          myUsuario: 'My User',
+          myRol: 'My Rol'
+        }
     },
     methods: {
+    },
+    mounted() {
+      var user = Sesion.getUsuario();
+      const control = new RolController(this.$_SERVER_NAME);
+      control.setControllerListener(reponse => {
+        this.myUsuario = user.getUsuario();
+        this.myRol = reponse.getNombre();
+      });
+      control.buscarRol(user.getId());
     }
 };
 </script>
@@ -13,23 +28,19 @@ export default {
 <!--  Header Start -->
 <header class="app-header">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav" id="header">
             <li class="nav-item d-block d-xl-none">
               <a class="nav-link sidebartoggler " id="headerCollapse" href="javascript:void(0)">
                 <i class="ti ti-menu-2"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="javascript:void(0)">
-                <iconify-icon icon="solar:bell-linear" class="fs-6"></iconify-icon>
-                <div class="notification bg-primary rounded-circle"></div>
-              </a>
+              <h1>{{ this.$APP_NAME }}</h1>
             </li>
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-              <a href="https://www.wrappixel.com/templates/materialm-free-bootstrap-admin/" target="_blank"
-                class="btn btn-primary">Download Free</a>
+
               <li class="nav-item dropdown">
                 <a class="nav-link " href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -37,17 +48,9 @@ export default {
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                   <div class="message-body">
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                    <a href="#" class="d-flex align-items-center gap-2 dropdown-item">
                       <i class="ti ti-user fs-6"></i>
-                      <p class="mb-0 fs-3">My Profile</p>
-                    </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-mail fs-6"></i>
-                      <p class="mb-0 fs-3">My Account</p>
-                    </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-list-check fs-6"></i>
-                      <p class="mb-0 fs-3">My Task</p>
+                      <p class="mb-0 fs-3">{{ this.myUsuario }} - <b>{{ this.myRol }}</b></p>
                     </a>
                     <RouterLink to="/admin/logout" class="btn btn-outline-primary mx-3 mt-2 d-block">Salir</RouterLink>
                   </div>
@@ -59,3 +62,9 @@ export default {
       </header>
       <!--  Header End -->
 </template>
+
+<style>
+#header {
+  padding: 10px;;
+}
+</style>

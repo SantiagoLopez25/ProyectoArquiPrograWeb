@@ -18,11 +18,6 @@ export default {
     methods: {
         
     },
-    beforeMount() {
-      if (Sesion.check()) {
-        this.$router.push('/admin/');
-      }
-    },
     mounted() {
       this.scripts.forEach((element) => {
             loadScript(element)

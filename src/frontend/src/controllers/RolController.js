@@ -17,9 +17,9 @@ class RolController extends Controller {
         return user;
     }
 
-    async buscarRol(ruta, id) {
+    async buscarRol(id) {
         try {
-            await axios.get(this.prepararRutaConexion([ruta, id])).then(data => {
+            await axios.get(this.prepararRutaConexion(['roles', id])).then(data => {
                 this.fireControllerListener(this.prepareNewUserRol(data.data));
             });
         } catch (error) {
