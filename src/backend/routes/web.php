@@ -17,7 +17,11 @@ use App\Http\Controllers\SerieFacturaController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\TipoProductoController;
 use App\Http\Controllers\UsuarioController;
+
+use App\Http\Controllers\ReporteController;
+
 use App\Http\Controllers\ComprasController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -45,6 +49,13 @@ Route::get('/api/usuarios/{user}', [UsuarioController::class, 'fecthUser']);
 Route::get('/api/rps/{id}', [RPSController::class, 'findSucursal']);
 #Route::get('/api/rps/{id1}&{id2}', [RPSController::class, 'findSucursal']);
 Route::post('/api/cliente-contacto', [ClienteController::class, 'store']);
-
-
-
+Route::get('/reportes/top-productos/sucursal', [ReporteController::class, 'topProductosPorSucursal']);
+Route::get('/reportes/top-productos/general', [ReporteController::class, 'topProductosGeneral']);
+Route::get('/reportes/productos-baja-existencia', [ReporteController::class, 'productosConBajaExistencia']);
+Route::get('/reportes/productos-mas-vendidos-mes', [ReporteController::class, 'productosMasVendidosPorMesG']);
+Route::get('/reportes/productos-mas-vendidos-sucursal', [ReporteController::class, 'productosMasVendidosPorMesYSucursal']);
+Route::get('/reportes/productos-mas-vendidos-general', [ReporteController::class, 'productosMasVendidosPorMesGeneral']);
+Route::get('/reportes/clientes-frecuentes-sucursal', [ReporteController::class, 'clientesFrecuentesPorSucursal']);
+Route::get('/reportes/clientes-frecuentes-general', [ReporteController::class, 'clientesFrecuentesGeneral']);
+Route::get('/reportes/comprasR', [ReporteController::class, 'reporteComprasPorRango']);
+Route::get('/reportes/historial', [ReporteController::class, 'mostrarHistorial']);
