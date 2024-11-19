@@ -34,4 +34,10 @@ class DatosProductoController extends Controller
        
         return response()->json($productos, 200);
     }
+
+    public function show(string $id)
+    {
+        $rps = Producto::find($id);
+        return response()->json($rps, 200);
+    }
 }

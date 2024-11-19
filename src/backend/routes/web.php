@@ -17,6 +17,7 @@ use App\Http\Controllers\SerieFacturaController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\TipoProductoController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\ComprasController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,8 +39,11 @@ Route::resource('series', SerieFacturaController::class);
 Route::resource('sucursales', SucursalController::class);
 Route::resource('tiposp', TipoProductoController::class);
 Route::resource('usuarios', UsuarioController::class);
+Route::resource('compras', ComprasController::class);
 
 Route::get('/api/usuarios/{user}', [UsuarioController::class, 'fecthUser']);
+Route::get('/api/rps/{id}', [RPSController::class, 'findSucursal']);
+#Route::get('/api/rps/{id1}&{id2}', [RPSController::class, 'findSucursal']);
 Route::post('/api/cliente-contacto', [ClienteController::class, 'store']);
 
 
