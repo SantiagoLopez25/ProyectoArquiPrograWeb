@@ -10,24 +10,109 @@ export default {
 </script>
 <template>
     <!-- 404 Start -->
-    <div class="container-fluid pt-4 px-4">
-        <div class="row vh-100 bg-secondary rounded align-items-center justify-content-center mx-0">
-            <div class="col-md-6 text-center p-4">
-                <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
-                <h1 class="display-1 fw-bold">404</h1>
-                <h1 class="mb-4">Page Not Found</h1>
-                <p class="mb-4">
-                    We’re sorry, the page you have looked for does not exist in our
-                    website! Maybe go to our home page or try to use a search?
-                </p>
-                <a class="btn btn-primary rounded-pill py-3 px-5" href="">Go Back To Home</a>
+
+
+    <div id="notfound">
+        <div class="notfound">
+            <div class="notfound-404">
+                <h1>4<span>0</span>4</h1>
             </div>
+            <br><br>
+            <br>
+            <div>
+                <p>Es posible que la página que está buscando se haya eliminado, se haya cambiado de nombre o no esté
+                    disponible temporalmente..</p>
+            </div>
+            <a href="/">home page</a>
         </div>
     </div>
+
+
     <!-- 404 End -->
 </template>
 
 <style>
-/*@import "../../assets/css/bootstrap.min.css";
-//@import "../../assets/css/style.css";*/
+#notfound {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+    height: 100vh;
+    background-color: #222;
+}
+
+#notfound .notfound {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.notfound {
+    max-width: 460px;
+    width: 100%;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.notfound .notfound-404 {
+    height: 158px;
+    line-height: 153px;
+}
+
+.notfound .notfound-404 h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #222;
+    font-size: 220px;
+    letter-spacing: 10px;
+    margin: 0px;
+    font-weight: 700;
+    text-shadow: 2px 2px 0px #c9c9c9, -2px -2px 0px #c9c9c9;
+}
+
+.notfound .notfound-404 h1>span {
+    text-shadow: 2px 2px 0px #ffab00, -2px -2px 0px #ffab00, 0px 0px 8px #ff8700;
+}
+
+.notfound p {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #c9c9c9;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.notfound a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: transparent;
+    color: #c9c9c9;
+    border: 2px solid #c9c9c9;
+    display: inline-block;
+    padding: 10px 25px;
+    font-weight: 700;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.notfound a:hover {
+    color: #ffab00;
+    border-color: #ffab00;
+}
+
+@media only screen and (max-width: 480px) {
+    .notfound .notfound-404 {
+        height: 122px;
+        line-height: 122px;
+    }
+
+    .notfound .notfound-404 h1 {
+        font-size: 122px;
+    }
+}
 </style>
