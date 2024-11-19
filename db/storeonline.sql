@@ -85,20 +85,7 @@ INSERT INTO `cliente` (`idCliente`, `nombre`, `direccion`, `estado`) VALUES
 	(19, 'Fernando Morales', 'Av. Juárez #101, Cancún', 1);
 
 
---
--- Volcado de datos para la tabla `cliente`
---
 
-INSERT INTO `cliente` (`idCliente`, `nombre`, `direccion`, `estado`) VALUES
-(1, 'Manuel Rodríguez', '43 avenida zona 4 Quetzaltenango, Quetzaltenango', 1),
-(2, 'Juan Pérez', '5 calle zona 1 Quetzaltenango, Quetzaltenango', 1),
-(3, 'Gabriela Munguia', '13 calle zona 10 Quetzaltenango, Quetzaltenango', 1),
-(4, 'Antonio Martinez', '14 calle zona 8 Quetzaltenango, Quetzaltenango', 1),
-(5, 'Alejandro Requena', '14 calle zona 3 Quetzaltenango, Quetzaltenango', 1),
-(6, 'Mariano Baquiax', '10 avenida zona 8 Quetzaltenango, Quetzaltenango', 1),
-(7, 'Davidsos', 'de Totoyork', 1),
-(8, 'Alejandro Requena', '14 calle zona 3 Quetzaltenango, Quetzaltenango', 1),
-(9, 'Victor Hugo', '4ta calle zona 5 Quetzaltenango', 1);
 
 -- --------------------------------------------------------
 
