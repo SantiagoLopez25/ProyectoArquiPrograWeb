@@ -1,6 +1,6 @@
 class Controller {
 
-    listener;
+    listener = null;
 
     constructor(hostname) {
         this.hostname = hostname;

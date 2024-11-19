@@ -13,7 +13,12 @@ class TipoProductoController extends Controller
     public function index()
     {
         //
-        $tipoP = TipoProducto::all();
+        $tipoP = TipoProducto::select(
+            'idTipoProducto',
+            'nombre'
+        )
+        ->where('estado',1)
+        ->get();
        
         return response()->json($tipoP, 200);
     }

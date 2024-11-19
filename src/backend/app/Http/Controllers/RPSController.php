@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\RProductoSucursal;
+use App\Models\Sucursal;
 
 class RPSController extends Controller
 {
@@ -60,6 +61,14 @@ class RPSController extends Controller
         //
         $rps = RProductoSucursal::find($id);
         return response()->json($rps, 200);
+    }
+
+    public function findSucursal(string $id) {
+        $uscursal = Sucursal::join('rproductosucursal', 'sucursal.idSucursal', '=', 'rproductosucursal.idSucursal')
+                            ->join('producto', 'rproductosucursal.idProducto', '=', 'producto.idProducto')
+                            ->where('sucursal.idSucursal', $id)
+                            ->select('sucursal.idSucursal', 'rproductosucursal.idProductoSucursal', 'producto.nombre')->get();
+        return response()->json($uscursal, 200);
     }
 
     /**

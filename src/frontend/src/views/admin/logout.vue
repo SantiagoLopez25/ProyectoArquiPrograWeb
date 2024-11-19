@@ -18,6 +18,7 @@ export default {
         });     
         LogService.log(this.$_SERVER_NAME, "cerrar sesión");   
       }      
+      sessionStorage.clear();
       this.$router.push('/admin/signin');
     }
 }

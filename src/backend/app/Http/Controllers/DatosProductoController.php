@@ -27,9 +27,17 @@ class DatosProductoController extends Controller
         ->join('imagenproducto', 'producto.idProducto', '=', 'imagenproducto.idProducto')
         ->join('marca', 'marca.idMarca', '=', 'producto.idMarca')
         ->join('tipoproducto', 'tipoproducto.idTipoProducto', '=', 'producto.idTipoProducto')
+        ->where('producto.estado', 1) 
+        ->orderBy('producto.idProducto', 'asc')
         ->get();
     
        
         return response()->json($productos, 200);
+    }
+
+    public function show(string $id)
+    {
+        $rps = Producto::find($id);
+        return response()->json($rps, 200);
     }
 }

@@ -66,7 +66,13 @@ export default {
             <li class="sidebar-item">
               <RouterLink class="sidebar-link" to="/admin/card" aria-expanded="false">
                 <iconify-icon icon="solar:bookmark-square-minimalistic-line-duotone"></iconify-icon>
-                <span class="hide-menu">Card</span>
+                <span class="hide-menu">Nueva Compra</span>
+              </RouterLink>
+            </li>
+            <li class="sidebar-item">
+              <RouterLink class="sidebar-link" to="/admin/compras" aria-expanded="false">
+                <iconify-icon icon="solar:bookmark-square-minimalistic-line-duotone"></iconify-icon>
+                <span class="hide-menu">Administrar Pedidos</span>
               </RouterLink>
             </li>
             <li class="sidebar-item">
@@ -114,7 +120,7 @@ export default {
               </RouterLink>
             </li>
             <li class="sidebar-item">
-              <RouterLink class="sidebar-link" to="/admin/sample-page" aria-expanded="false">
+              <RouterLink class="sidebar-link" to="/admin/administrar-productos" aria-expanded="false">
                 <iconify-icon icon="solar:planet-3-line-duotone"></iconify-icon>
                 <span class="hide-menu">Sample Page</span>
               </RouterLink>
