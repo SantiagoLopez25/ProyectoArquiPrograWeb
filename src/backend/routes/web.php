@@ -57,3 +57,5 @@ Route::get('/reportes/productos-mas-vendidos-sucursal', [ReporteController::clas
 Route::get('/reportes/productos-mas-vendidos-general', [ReporteController::class, 'productosMasVendidosPorMesGeneral']);
 Route::get('/reportes/clientes-frecuentes-sucursal', [ReporteController::class, 'clientesFrecuentesPorSucursal']);
 Route::get('/reportes/clientes-frecuentes-general', [ReporteController::class, 'clientesFrecuentesGeneral']);
+Route::get('/reportes/comprasR', [ReporteController::class, 'reporteComprasPorRango']);
+Route::get('/reportes/historial', [ReporteController::class, 'mostrarHistorial']);

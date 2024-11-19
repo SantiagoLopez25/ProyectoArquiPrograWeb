@@ -242,5 +242,38 @@ class ReporteController extends Controller
                 'error' => $e->getMessage()
             ], 500);
         }
-    }    
+    }
+
+    public function reporteComprasPorRango(Request $request)
+    {
+        //validar el rango de fechas
+        $request->validate([
+            'fecha_inicio' => 'required|date',
+            'fecha_fin' => 'required|date|after_or_equal:fecha_inicio',
+        ]);
+
+        //consulta para obtener el reporte de compras
+        $reporte = DB::select("
+            SELECT c.idCompra, s.nombre AS sucursal, c.cantidad, c.fecha, c.estado
+            FROM compra c
+            JOIN rproductosucursal ps ON c.idProductoSucursal = ps.idProductoSucursal
+            JOIN sucursal s ON ps.idSucursal = s.idSucursal
+            WHERE c.fecha BETWEEN ? AND ?
+        ", [$request->fecha_inicio, $request->fecha_fin]);
+
+        return response()->json($reporte);
+    }
+
+    public function mostrarHistorial()
+    {
+        //consulta para obtener el historial
+        $historial = DB::select("
+            SELECT h.idHistorial, h.descripcion, h.fecha, u.usuario
+            FROM historial h
+            JOIN usuario u ON h.idUsuario = u.idUsuario
+            ORDER BY h.fecha DESC
+        ");
+
+        return response()->json($historial);
+    }
 }
