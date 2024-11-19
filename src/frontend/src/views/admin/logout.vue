@@ -15,10 +15,9 @@ export default {
       if (Sesion.check()) {        
         LogService.listener(data => {
           Sesion.close();
-        });     
-        LogService.log(this.$_SERVER_NAME, "cerrar sesión");   
-      }      
-      sessionStorage.clear();
+        });
+        sessionStorage.clear();
+      }
       this.$router.push('/admin/signin');
     }
 }

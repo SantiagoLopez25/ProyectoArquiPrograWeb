@@ -22,7 +22,7 @@ export default {
       let user = Sesion.getUsuario();
       const control = new RolController(this.$_SERVER_NAME);
       control.setControllerListener(reponse => {
-        this.visible = TipoRol.isAdministrador(reponse);
+        this.visible = TipoRol.isGerente(reponse);
       });
       control.buscarRol(user.getId());
     }
@@ -61,7 +61,7 @@ export default {
               <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
               <span class="hide-menu">Control</span>
             </li>
-            <li v-if="visible"  class="sidebar-item">
+            <li v-if="visible" class="sidebar-item">
               <RouterLink class="sidebar-link" to="/admin/button" aria-expanded="false">
                 <iconify-icon icon="solar:layers-minimalistic-bold-duotone"></iconify-icon>
                 <span class="hide-menu">Reportes</span>
