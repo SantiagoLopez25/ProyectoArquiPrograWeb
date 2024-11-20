@@ -84,7 +84,7 @@ export default {
 
         completarCompra(){
             if (this.nombre == '' || this.direccion == '' ) {
-                this.mensajeModal = 'Su nomber y su dirección son requeridos'
+                this.mensajeModal = 'Su nombre y su dirección son requeridos'
                 this.isModalDatos = true
             }
             else if(!this.productos){

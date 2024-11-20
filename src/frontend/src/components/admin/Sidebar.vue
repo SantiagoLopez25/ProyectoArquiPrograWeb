@@ -74,6 +74,12 @@ export default {
               </RouterLink>
             </li>
             <li class="sidebar-item">
+              <RouterLink class="sidebar-link" to="/admin/inventario" aria-expanded="false">
+                <iconify-icon icon="solar:planet-3-line-duotone"></iconify-icon>
+                <span class="hide-menu">Inventario</span>
+              </RouterLink>
+            </li>
+            <li class="sidebar-item">
               <RouterLink class="sidebar-link" to="/admin/card" aria-expanded="false">
                 <iconify-icon icon="solar:bookmark-square-minimalistic-line-duotone"></iconify-icon>
                 <span class="hide-menu">Nueva Compra</span>

@@ -134,10 +134,7 @@ export default {
                   </div> -->
                   <!--<RouterLink to="/admin/" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</RouterLink>-->
                   <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" v-on:click="login()">Ingresar</button>
-                  <div class="d-flex align-items-center justify-content-center">
-                    <p class="fs-4 mb-0 fw-bold">Eres nuevo en {{ this.$APP_NAME }}?</p>
-                    <RouterLink class="text-primary fw-bold ms-2" to="/admin/signup">Crear una cuenta</RouterLink>
-                  </div>
+                  
                 </form>
               </div>
             </div>

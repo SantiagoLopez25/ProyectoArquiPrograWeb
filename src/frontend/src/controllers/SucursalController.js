@@ -23,7 +23,6 @@ class Sucursal extends Controller {
 
 
             this.separarUbicaciones()
-
             return this.ubicaciones;
         } catch (error) {
             console.error('Error: ', error);

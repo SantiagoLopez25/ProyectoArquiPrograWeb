@@ -9,6 +9,7 @@ import Navbar from '@/components/admin/Navbar.vue';
 import Producto from '@/controllers/ProductoController';
 import Marca from "@/controllers/MarcaController";
 import TipoProducto from "@/controllers/TipoProductoController";
+import LogService from "@/services/LogService";
 
 export default {
     page: {},
@@ -97,6 +98,7 @@ export default {
                     this.precio= ''
                     this.mensajeModal = 'Producto registrado'
                     this.isModalMensaje = true
+                    LogService.log(this.$_SERVER_NAME, "[POST]: Crear nuevo producto")
                 }
                 else {
                   this.mensajeModal = 'Error al registrar el producto'
@@ -140,6 +142,7 @@ export default {
                     
                     this.mensajeModal = 'Producto editado'
                     this.isModalMensaje = true
+                    LogService.log(this.$_SERVER_NAME, "[PATCH]: Editar producto")
   
                 }
                 else {
@@ -164,6 +167,7 @@ export default {
 
             this.isModalMensaje= true
             this.mensajeModal= 'Producto eliminado'
+            LogService.log(this.$_SERVER_NAME, "[PATCH]: Eliminación de un producto (parcialmente)")
 
 
           }
@@ -187,6 +191,7 @@ export default {
             producto.getProductos().then(data => { //Obtiene los productos desde el controlador
             this.productos= data
            });
+           LogService.log(this.$_SERVER_NAME, "[GET]: Obtener listado de productos")
 
             
         }
@@ -211,6 +216,7 @@ export default {
         producto.getProductos().then(data => { //Obtiene los productos desde el controlador
             this.productos= data
         });
+        LogService.log(this.$_SERVER_NAME, "[GET]: Obtener listado de productos")
 
         const marca = new Marca(this.$_SERVER_NAME)
         marca.getMarcas().then(data => { 

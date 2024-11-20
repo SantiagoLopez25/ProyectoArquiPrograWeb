@@ -1,12 +1,16 @@
 import axios from "axios";
 import Controller from "./Controller";
+import LogService from "@/services/LogService";
 
 class Producto extends Controller {
     url;
+    urlProducto;
     productos = [];
+
     constructor(server) {
         super(server);
         this.url = server + "/datosproductos"; // Servidor -> Laravel'/datosproductos'
+        this.urlProducto  = server + "/productos/"
     }
 
     async getProductos() {
@@ -15,6 +19,7 @@ class Producto extends Controller {
             //Petición tipo get para obtener los productos
             const response = await axios.get(this.url);
             this.productos = response.data;
+            LogService.log(this.$_SERVER_NAME, "[GET]: Obtener listado de productos")
             return this.productos;
         } catch (error) {
             console.error("Error: ", error);
@@ -36,10 +41,12 @@ class Producto extends Controller {
    async deleteProducto(id) {
       try {
           const request = this.urlProducto + id
+         
           const response = await axios.patch(request, {
               estado: false
           });
 
+          
           console.log('Producto eliminado exitosamente:', response.data);
       } catch (error) {
           console.error('Error al eliminar el producto:', error);
@@ -54,17 +61,19 @@ class Producto extends Controller {
 
           console.log(response.data.mensaje)
 
-          return 1
+          return true
         } catch (error) {
           console.error('Error:', error.response?.data?.mensaje || error.mensaje);
-          return 0
+          return false
         }
 
     }
 
     async patchProducto(id, datos) {
         try {
-            const request = this.urlProducto + id
+             request = this.urlProducto + id
+            
+           
             const response = await axios.patch(request, datos);
 
             
