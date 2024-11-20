@@ -38,10 +38,8 @@ class ReporteController extends Controller
         {
             $productos = DB::table('detallefactura as df')
             ->join('producto as p', 'df.idProducto', '=', 'p.idProducto')
-            ->join('factura as f', 'df.idFactura', '=', 'f.idFactura')
-            ->join('sucursal as s', 'f.idSucursal', '=', 's.idSucursal')
-            ->select('s.nombre as Sucursal', 'p.nombre as Producto', DB::raw('SUM(df.cantidad) as Cantidad_total'))
-            ->groupBy('s.nombre', 'p.nombre', 's.idSucursal', 'p.idProducto')
+            ->select('p.nombre as Producto', DB::raw('SUM(df.cantidad) as Cantidad_Total'))
+            ->groupBy('p.nombre', 'p.idProducto')
             ->orderByDesc('cantidad_total')
             ->limit(100)
             ->get();
@@ -94,12 +92,11 @@ class ReporteController extends Controller
                 ->join('producto as p', 'df.idProducto', '=', 'p.idProducto')
                 ->join('factura as f', 'df.idFactura', '=', 'f.idFactura')
                 ->select(
-                    DB::raw('MONTHNAME(f.fechaFactura) as Mes'),
                     'p.nombre as Producto',
                     DB::raw('SUM(df.cantidad) as Cantidad_Total')
                 )
                 ->whereRaw('MONTH(f.fechaFactura) = ?', [$mes])
-                ->groupBy('mes', 'p.idProducto')
+                ->groupBy('p.idProducto')
                 ->orderByDesc('cantidad_total')
                 ->limit(100)
                 ->get();
