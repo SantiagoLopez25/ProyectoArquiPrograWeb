@@ -24,6 +24,16 @@ class UsuarioController extends Controller {
         return us;
     }
 
+    async listarTodo() {
+        try {
+            await axios.get(this.prepararRutaConexion(['usuarios'])).then(data => {
+                this.fireControllerListener(data.data);
+            })
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     async buscarUsuario(nombre) {
         if (nombre == null || nombre.length === 0) {
             return;
@@ -39,6 +49,26 @@ class UsuarioController extends Controller {
             });
         } catch (error) {
             console.error('js.class.UsuarioController ' , error);
+        }
+    }
+
+    async actualizar(id, datos) {
+        try {
+            await axios.put(this.prepararRutaConexion(['usuarios', id]), datos).then(data => {
+                this.fireControllerListener(data);
+            });
+        } catch (error) {
+            console.error('js.class.RolController ' , error);
+        }
+    }
+
+    async guardar(datos) {
+        try {            
+            await axios.post(this.prepararRutaConexion(['usuarios']), datos).then(data => {
+                this.fireControllerListener(data);
+            });
+        } catch (error) {
+            console.error('js.class.RolController ' , error);
         }
     }
 }

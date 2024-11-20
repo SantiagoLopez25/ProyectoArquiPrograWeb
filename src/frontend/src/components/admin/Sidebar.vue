@@ -93,15 +93,9 @@ export default {
               <span class="hide-menu">Sistema</span>
             </li>
             <li v-if="visible"  class="sidebar-item">
-              <RouterLink class="sidebar-link" to="/admin/signup" aria-expanded="false">
+              <RouterLink class="sidebar-link" to="/admin/permisos" aria-expanded="false">
                 <iconify-icon icon="solar:user-plus-rounded-line-duotone"></iconify-icon>
                 <span class="hide-menu">Usuarios</span>
-              </RouterLink>
-            </li>
-            <li v-if="visible"  class="sidebar-item">
-              <RouterLink class="sidebar-link" to="/admin/signin" aria-expanded="false">
-                <i class="ti ti-lock"></i>
-                <span class="hide-menu">Permisos</span>
               </RouterLink>
             </li>
             <li class="sidebar-item">

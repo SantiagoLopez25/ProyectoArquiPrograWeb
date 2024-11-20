@@ -12,12 +12,8 @@ export default {
         
     },
     beforeMount() {      
-      if (Sesion.check()) {        
-        LogService.listener(data => {
-          Sesion.close();
-        });
-        sessionStorage.clear();
-      }
+      Sesion.close();
+      sessionStorage.clear();
       this.$router.push('/admin/signin');
     }
 }
