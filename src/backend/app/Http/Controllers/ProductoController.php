@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\ImagenProducto;
+use App\Models\RProductoSucursal;
 use Illuminate\Support\Facades\DB;
 
 class ProductoController extends Controller
@@ -40,8 +41,8 @@ class ProductoController extends Controller
                 'descripcion' => 'required|string|max:500',
                 'precioVenta' => 'min:0|max:9999999999.99',
                 'imagen' => 'required|string|max:1000',
-                'idTipoProducto' => 'required|exists:TipoProducto,idTipoProducto',
-                'idMarca' => 'required|exists:Marca,idMarca'
+                'idTipoProducto' => 'required',
+                'idMarca' => 'required'
             ]);
 
 
@@ -67,6 +68,14 @@ class ProductoController extends Controller
                     'estado' => 1,
                     'idProducto' => $producto->idProducto
                 ]);
+
+                for($i = 0; $i<6;$i++){
+                    RProductoSucursal::create([
+                        'idSucursal' => $i+1,
+                        'cantidad' => 0,
+                        'idProducto' => $producto->idProducto
+                    ]);
+                }
     
                
     

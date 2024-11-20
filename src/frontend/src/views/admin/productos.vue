@@ -593,7 +593,7 @@ export default {
             <div class="card-body">
 
              <br><br><br>
-              <h2 class="h3 mb-3 text-black">¿Está seguro de eliminar el producto: {{ nombre }}</h2>
+              <h2 class="h3 mb-3 text-black">¿Está seguro de eliminar el producto: {{ nombre }}?</h2>
               <br><br><br><br>
               
               <div class="d-flex justify-content-center">
