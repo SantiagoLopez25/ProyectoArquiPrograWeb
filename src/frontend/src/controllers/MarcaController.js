@@ -1,4 +1,5 @@
 import axios from 'axios';
+import LogService from '@/services/LogService';
 class Marca {
      
  
@@ -15,6 +16,7 @@ class Marca {
         //Petición tipo get para obtener las marcas
          const response = await axios.get(this.url); 
          this.marcas = response.data;
+         LogService.log(this.$_SERVER_NAME, "[GET]: Obtener listado de marcas")
          return this.marcas; 
      } catch (error) {
          console.error('Error: ', error);

@@ -87,8 +87,8 @@ export default {
                   idProducto: this.idProducto,
                   cantidad: this.cantidadTraslado
                 }
-               console.log('hola')
-                console.log(datos)
+               
+                
                  var respuesta = false
                  respuesta = traslado.putTraslado(datos)
                
@@ -96,6 +96,10 @@ export default {
                   
                     this.mensajeModal = 'Producto trasladado'
                     this.isModalMensaje = true
+                    LogService.log(this.$_SERVER_NAME, "[PUT]: Traslado de producto con id "
+                      + this.idProducto + " de la sucursal con id " + this.sucursal.idSucursal
+                      + " a la sucursal con id " + this.sucursalTraslado.idSucursal
+                    )
                 }
                 else {
                   this.mensajeModal = 'Error al trasladar el producto'
@@ -141,6 +145,7 @@ export default {
             this.sucursal = this.sucursales[0]
             this.listarInventario()
         });
+        LogService.log(this.$_SERVER_NAME, "[GET]: Obtener listado de sucursales")
 
     },
     unmounted() {

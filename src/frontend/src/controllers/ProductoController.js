@@ -1,5 +1,6 @@
 import axios from "axios";
 import Controller from "./Controller";
+import LogService from "@/services/LogService";
 
 class Producto extends Controller {
     url;
@@ -18,6 +19,7 @@ class Producto extends Controller {
             //Petición tipo get para obtener los productos
             const response = await axios.get(this.url);
             this.productos = response.data;
+            LogService.log(this.$_SERVER_NAME, "[GET]: Obtener listado de productos")
             return this.productos;
         } catch (error) {
             console.error("Error: ", error);
@@ -44,6 +46,7 @@ class Producto extends Controller {
               estado: false
           });
 
+          
           console.log('Producto eliminado exitosamente:', response.data);
       } catch (error) {
           console.error('Error al eliminar el producto:', error);
