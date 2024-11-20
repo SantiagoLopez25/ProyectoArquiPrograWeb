@@ -19,7 +19,6 @@ class Producto extends Controller {
             //Petición tipo get para obtener los productos
             const response = await axios.get(this.url);
             this.productos = response.data;
-            LogService.log(this.$_SERVER_NAME, "[GET]: Obtener listado de productos")
             return this.productos;
         } catch (error) {
             console.error("Error: ", error);
@@ -55,10 +54,11 @@ class Producto extends Controller {
 
 
     async postProducto(datosP){
-      try {
+        
+        try {
           const response = await axios.post(this.urlProducto, datosP);
 
-
+        
           console.log(response.data.mensaje)
 
           return true
