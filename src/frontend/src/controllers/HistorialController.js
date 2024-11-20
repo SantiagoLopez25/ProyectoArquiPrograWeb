@@ -24,8 +24,8 @@ class HistorialController extends Controller {
                 this.prepararRutaConexion(['historiales']),
                 datos
             ).then(data => {
-                console.log("#LOG()", Sesion.getUsuario().getUsuario());
-                this.fireControllerListener(data);
+                console.log("[ ok ] Logguer >", Sesion.getUsuario().getUsuario());
+                //this.fireControllerListener(data);
             });
         } catch (error) {
             console.error(error)

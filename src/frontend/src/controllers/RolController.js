@@ -17,10 +17,30 @@ class RolController extends Controller {
         return user;
     }
 
+    async listarTodo() {
+        try {
+            await axios.get(this.prepararRutaConexion(['roles'])).then(data => {
+                this.fireControllerListener(data.data);
+            });
+        } catch (error) {
+            console.error('js.class.RolController ' , error);
+        }
+    }
+
     async buscarRol(id) {
         try {
             await axios.get(this.prepararRutaConexion(['roles', id])).then(data => {
                 this.fireControllerListener(this.prepareNewUserRol(data.data));
+            });
+        } catch (error) {
+            console.error('js.class.RolController ' , error);
+        }
+    }
+
+    async actualizar(id, datos) {
+        try {
+            await axios.put(this.prepararRutaConexion(['roles', id]), datos).then(data => {
+                this.fireControllerListener(data);
             });
         } catch (error) {
             console.error('js.class.RolController ' , error);

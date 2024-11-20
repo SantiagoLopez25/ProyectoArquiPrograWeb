@@ -12,8 +12,13 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
-        $usuarios = Usuario::all();
+        //SELECT U.idUsuario, U.usuario, R.idRol, R.nombre, E.idEmpleado, E.nombre FROM usuario U INNER JOIN rol R ON U.idRol = R.idRol 
+        // INNER JOIN empleado E ON U.idEmpleado=E.idEmpleado;
+        $usuarios = Usuario::join('rol', 'usuario.idRol', '=', 'rol.idRol')
+                            ->join('empleado', 'usuario.idEmpleado', '=', 'empleado.idEmpleado')
+                            ->where('usuario.estado', true)
+                            ->select('usuario.idUsuario', 'usuario.password', 'usuario.usuario', 'rol.idRol', 'rol.nombre', 'empleado.idEmpleado', 'empleado.nombre AS empleado')
+                            ->get();
        
         return response()->json($usuarios, 200);
     }
@@ -37,8 +42,8 @@ class UsuarioController extends Controller
                 'usuario' => 'required|string|max:20',
                 'password' => 'required',
                 'estado' => 'required|boolean',
-                'idEmpleado' => 'required|exists:Empleado,idEmpleado',
-                 'idRol' => 'required|exists:Rol,idRol'
+                'idEmpleado' => 'required|exists:empleado,idEmpleado',
+                 'idRol' => 'required|exists:rol,idRol'
             ]);
     
             $usuarios = Usuario::create($request->all());
@@ -88,8 +93,8 @@ class UsuarioController extends Controller
                 'usuario' => 'required|string|max:20',
                 'password' => 'required',
                 'estado' => 'required|boolean',
-                'idEmpleado' => 'required|exists:Empleado,idEmpleado',
-                 'idRol' => 'required|exists:Rol,idRol'
+                'idEmpleado' => 'required|exists:empleado,idEmpleado',
+                 'idRol' => 'required|exists:rol,idRol'
             ]);
     
             $usuarios = Usuario::findOrFail($id); 

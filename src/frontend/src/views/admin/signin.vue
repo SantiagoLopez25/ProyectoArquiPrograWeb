@@ -43,7 +43,7 @@ export default {
           );
 
           Sesion.init(kk_key.toString(), kv_key.toString(), data);
-          LogService.log(this.$_SERVER_NAME, "sesión inicidada");
+          LogService.log(this.$_SERVER_NAME, "[GET|SESSION] :Inicio de sesión");
           
           this.$router.push('/admin/')
         } else {

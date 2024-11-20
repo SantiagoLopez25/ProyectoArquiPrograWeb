@@ -13,6 +13,9 @@ class LogService {
     static log(hostname, info) {
         LogService.check(hostname);
         LogService.#LOG_CONTROLLER.log(info);
+
+        /* debug */
+        console.info(info);
     }
 
     static check(hostname) {

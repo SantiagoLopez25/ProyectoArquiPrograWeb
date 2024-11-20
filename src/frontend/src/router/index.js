@@ -87,6 +87,11 @@ const router = createRouter({
       component: () => import('../views/admin/signup.vue')
     },
     {
+      path: '/admin/permisos',
+      name: 'permiso',
+      component: () => import('../views/admin/permisos.vue')
+    },
+    {
       path: '/admin/icon-tabler',
       name: 'icon-tabler',
       component: () => import('../views/admin/icon-tabler.vue')
