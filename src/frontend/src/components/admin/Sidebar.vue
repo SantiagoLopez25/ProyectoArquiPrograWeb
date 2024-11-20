@@ -46,19 +46,6 @@ export default {
           <ul id="sidebarnav">
             <li class="nav-small-cap">
               <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
-              <span class="hide-menu">Inicio</span>
-            </li>
-            <li class="sidebar-item">
-              <RouterLink class="sidebar-link" to="/admin/" aria-expanded="false">
-                <iconify-icon icon="solar:widget-add-line-duotone"></iconify-icon>
-                <span class="hide-menu">Dashboard</span>
-              </RouterLink>
-            </li>
-            <li>
-              <span class="sidebar-divider lg"></span>
-            </li>
-            <li class="nav-small-cap">
-              <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
               <span class="hide-menu">Control</span>
             </li>
             <li v-if="visible" class="sidebar-item">
