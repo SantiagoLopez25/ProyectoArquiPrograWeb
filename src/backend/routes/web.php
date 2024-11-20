@@ -22,6 +22,8 @@ use App\Http\Controllers\ReporteController;
 
 use App\Http\Controllers\ComprasController;
 
+use App\Http\Controllers\InventarioController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -59,3 +61,5 @@ Route::get('/reportes/clientes-frecuentes-sucursal', [ReporteController::class, 
 Route::get('/reportes/clientes-frecuentes-general', [ReporteController::class, 'clientesFrecuentesGeneral']);
 Route::get('/reportes/comprasR', [ReporteController::class, 'reporteComprasPorRango']);
 Route::get('/reportes/historial', [ReporteController::class, 'mostrarHistorial']);
+Route::get('/inventario/{idsucursal}', [InventarioController::class, 'getInventario']);
+Route::put('/inventario', [InventarioController::class, 'putTraslado']);

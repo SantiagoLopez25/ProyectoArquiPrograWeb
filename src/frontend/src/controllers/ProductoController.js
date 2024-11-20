@@ -3,10 +3,13 @@ import Controller from "./Controller";
 
 class Producto extends Controller {
     url;
+    urlProducto;
     productos = [];
+
     constructor(server) {
         super(server);
         this.url = server + "/datosproductos"; // Servidor -> Laravel'/datosproductos'
+        this.urlProducto  = server + "/productos/"
     }
 
     async getProductos() {
@@ -36,6 +39,7 @@ class Producto extends Controller {
    async deleteProducto(id) {
       try {
           const request = this.urlProducto + id
+         
           const response = await axios.patch(request, {
               estado: false
           });
@@ -54,17 +58,19 @@ class Producto extends Controller {
 
           console.log(response.data.mensaje)
 
-          return 1
+          return true
         } catch (error) {
           console.error('Error:', error.response?.data?.mensaje || error.mensaje);
-          return 0
+          return false
         }
 
     }
 
     async patchProducto(id, datos) {
         try {
-            const request = this.urlProducto + id
+             request = this.urlProducto + id
+            
+           
             const response = await axios.patch(request, datos);
 
             
