@@ -109,7 +109,7 @@ export default {
                     <thead>
                         <tr>
                         <th scope="col">#</th>
-                        <th scope="col"><h6>Sucursal</h6></th>
+                        <th scope="col"><h6>No. Stock</h6></th>
                         <th scope="col"><h6>Cantidad</h6></th>
                         <th scope="col"><h6>Fecha</h6></th>
                         <th scope="col"><h6>Estado</h6></th>

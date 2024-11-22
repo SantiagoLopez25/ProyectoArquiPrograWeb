@@ -71,7 +71,7 @@ class Producto extends Controller {
 
     async patchProducto(id, datos) {
         try {
-             request = this.urlProducto + id
+             const request = this.urlProducto + id
             
            
             const response = await axios.patch(request, datos);
