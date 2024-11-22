@@ -11,14 +11,22 @@ Para este proyecto, es necesario tener previamente instalado NodeJS, composer y 
 Localice el directorio `backend`, ejecute los siguiente comandos:
 ```bash
 composer install
+```
+```bash
 php artisan key:generate
+```
+```bash
 php artisan config:cache
+```
+```bash
 php artisan serve
 ```
 
 2. Inicializar frontend
 ```bash
 npm install
+```
+```bash
 npm run dev
 ```
 
