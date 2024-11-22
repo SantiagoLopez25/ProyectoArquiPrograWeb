@@ -125,8 +125,8 @@ class ProductoController extends Controller
                 'descripcion' => 'sometimes|string|max:500',
                 'precioVenta' => 'sometimes|min:0|max:9999999999.99',
                 'estado' => 'sometimes|boolean',
-                'idTipoProducto' => 'sometimes|exists:TipoProducto,idTipoProducto',
-                'idMarca' => 'sometimes|exists:Marca,idMarca',
+                'idTipoProducto' => 'sometimes',
+                'idMarca' => 'sometimes',
                 'ruta' => 'sometimes|string'
             ]);
     
